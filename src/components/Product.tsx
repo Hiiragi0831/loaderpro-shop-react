@@ -6,7 +6,6 @@ type Props = {
   image: string;
   article: number;
   weight: number;
-  count: number;
   like: boolean;
   status: string;
   statusColor: string;
@@ -30,7 +29,7 @@ const Product = (props: Props) => {
   const price = props.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 
   return (
-    <form className="product" key={props.id}>
+    <form className="product">
       <input type="hidden" name="id" value={props.id} />
       <div className={`product__like ${props.like ? "is-active" : ""}`}>
         <svg>

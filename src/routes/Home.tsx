@@ -1,8 +1,34 @@
+import { useEffect, useState } from "preact/hooks";
+
 import HomeSlider from "../components/HomeSlider";
 import PopCategory from "../components/PopCategory";
 import Product from "../components/Product";
 
 export default function Home() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        return await fetch("https://76fbb2aa70af7ba2.mokky.dev/products");
+      } catch (error) {
+        console.error("Error fetching:", error.message);
+      }
+    };
+
+    fetchData()
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Something went wrong");
+        }
+
+        return response.json();
+      })
+      .then((data) => {
+        setData(data);
+      });
+  }, []);
+
   return (
     <main>
       <HomeSlider />
@@ -27,71 +53,21 @@ export default function Home() {
             <a href="#">Все товары</a>
           </div>
           <div class="row">
-            <Product
-              id={231}
-              article={5033665196970105}
-              count={8}
-              description="New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart"
-              image="/assets/images/image_1.png"
-              price={300738}
-              title={'Масло ROLF 5W30 3-SYNTHETIC A3/B4 (5л) синт. АКЦИЯ "4+1"'}
-              weight={6592}
-              like={true}
-              status="В наличии"
-              statusColor="green"
-            />
-            <Product
-              id={231}
-              article={5033665196970105}
-              count={8}
-              description="New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart"
-              image="/assets/images/image_1.png"
-              price={300738}
-              title={'Масло ROLF 5W30 3-SYNTHETIC A3/B4 (5л) синт. АКЦИЯ "4+1"'}
-              weight={6592}
-              like={false}
-              status="В наличии"
-              statusColor="green"
-            />
-            <Product
-              id={231}
-              article={5033665196970105}
-              count={8}
-              description="New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart"
-              image="/assets/images/image_1.png"
-              price={300738}
-              title={'Масло ROLF 5W30 3-SYNTHETIC A3/B4 (5л) синт. АКЦИЯ "4+1"'}
-              weight={6592}
-              like={false}
-              status="В наличии"
-              statusColor="green"
-            />
-            <Product
-              id={231}
-              article={5033665196970105}
-              count={8}
-              description="New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart"
-              image="/assets/images/image_1.png"
-              price={300738}
-              title={'Масло ROLF 5W30 3-SYNTHETIC A3/B4 (5л) синт. АКЦИЯ "4+1"'}
-              weight={6592}
-              like={false}
-              status="В наличии"
-              statusColor="green"
-            />
-            <Product
-              id={231}
-              article={5033665196970105}
-              count={8}
-              description="New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart"
-              image="/assets/images/image_1.png"
-              price={300738}
-              title={'Масло ROLF 5W30 3-SYNTHETIC A3/B4 (5л) синт. АКЦИЯ "4+1"'}
-              weight={6592}
-              like={true}
-              status="В наличии"
-              statusColor="green"
-            />
+            {data.map((post) => (
+              <Product
+                key={post.id}
+                id={post.id}
+                article={post.article}
+                description={post.description}
+                image={post.image}
+                price={post.price}
+                title={post.title}
+                weight={post.weight}
+                like={post.like}
+                status={post.status}
+                statusColor={post.statusColor}
+              />
+            ))}
           </div>
         </div>
       </section>
