@@ -1,47 +1,30 @@
-import { useEffect, useState } from "preact/hooks";
+import { useLayoutEffect, useMemo, useState } from "preact/hooks";
 
 import HomeSlider from "../components/HomeSlider";
 import PopCategory from "../components/PopCategory";
-import Product from "../components/Product";
+import Products from "../components/Products";
+import { api } from "../services/api";
 
 export default function Home() {
   const [data, setData] = useState([]);
-  const popular = [];
-  const inStock = [];
+  const [isLoading, setIsLoading] = useState(true);
+  const popular = useMemo(() => data.slice(0, 5), [data]);
+  const inStock = useMemo(
+    () => data.filter((item) => item.status === 1).slice(0, 5),
+    [data],
+  );
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        return await fetch("https://76fbb2aa70af7ba2.mokky.dev/products");
-      } catch (error) {
-        console.error("Error fetching:", error.message);
-      }
-    };
-
-    fetchData()
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Something went wrong");
-        }
-
-        return response.json();
-      })
-      .then((data) => {
-        setData(data);
-      });
-  }, []);
-
-  data.forEach((item) => {
-    if (popular.length < 5) {
-      popular.push(item);
+  const loadProducts = async () => {
+    try {
+      const data = await api.getAllProducts();
+      setData(data);
+      setIsLoading(false);
+    } catch (error) {
+      console.error("Error fetching:", error.message);
     }
+  };
 
-    if (inStock.length < 5) {
-      if (item.status === 1) {
-        inStock.push(item);
-      }
-    }
-  });
+  useLayoutEffect(() => void loadProducts(), []);
 
   return (
     <main>
@@ -60,54 +43,8 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section class="product__section">
-        <div class="container">
-          <div class="title">
-            <p class="h1">Часто ищут</p>
-            <a href="#">Все товары</a>
-          </div>
-          <div class="row">
-            {popular.map((post) => (
-              <Product
-                key={post.id}
-                id={post.id}
-                article={post.article}
-                description={post.description}
-                image={post.image}
-                price={post.price}
-                title={post.title}
-                weight={post.weight}
-                like={post.like}
-                status={post.status}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-      <section class="product__section">
-        <div class="container">
-          <div class="title">
-            <p class="h1">В наличии</p>
-            <a href="#">Все товары</a>
-          </div>
-          <div class="row">
-            {inStock.map((post) => (
-              <Product
-                key={post.id}
-                id={post.id}
-                article={post.article}
-                description={post.description}
-                image={post.image}
-                price={post.price}
-                title={post.title}
-                weight={post.weight}
-                like={post.like}
-                status={post.status}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
+      <Products data={popular} isLoading={isLoading} />
+      <Products data={inStock} isLoading={isLoading} />
       <section class="advantage__section">
         <div class="container">
           <div class="row">

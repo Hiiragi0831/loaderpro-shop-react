@@ -1,6 +1,6 @@
 import { hydrate, prerender as ssr } from "preact-iso";
 import * as React from "react";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 // import function to register Swiper custom elements
 import { register } from "swiper/element/bundle";
 
@@ -13,9 +13,21 @@ import "./assets/main.css";
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <Home />,
+    element: (
+      <div>
+        {"Header"}
+        <Outlet />
+        {"footer"}
+      </div>
+    ),
     errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+        errorElement: <ErrorPage />,
+      },
+    ],
   },
 ]);
 

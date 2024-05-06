@@ -10,20 +10,6 @@ type Props = {
   status: number;
 };
 
-// article
-// brand
-// comment
-// count
-// deliverytime
-// id
-// img-drop
-// measurement
-// price
-// productname
-// quality
-// searchname
-// weight
-
 const Product = (props: Props) => {
   const price = props.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
   let status: string;
