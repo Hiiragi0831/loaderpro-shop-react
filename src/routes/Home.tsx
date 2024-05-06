@@ -6,6 +6,8 @@ import Product from "../components/Product";
 
 export default function Home() {
   const [data, setData] = useState([]);
+  const popular = [];
+  const inStock = [];
 
   useEffect(() => {
     const fetchData = async () => {
@@ -28,6 +30,18 @@ export default function Home() {
         setData(data);
       });
   }, []);
+
+  data.forEach((item) => {
+    if (popular.length < 5) {
+      popular.push(item);
+    }
+
+    if (inStock.length < 5) {
+      if (item.status === 1) {
+        inStock.push(item);
+      }
+    }
+  });
 
   return (
     <main>
@@ -53,7 +67,7 @@ export default function Home() {
             <a href="#">Все товары</a>
           </div>
           <div class="row">
-            {data.map((post) => (
+            {popular.map((post) => (
               <Product
                 key={post.id}
                 id={post.id}
@@ -65,7 +79,6 @@ export default function Home() {
                 weight={post.weight}
                 like={post.like}
                 status={post.status}
-                statusColor={post.statusColor}
               />
             ))}
           </div>
@@ -78,251 +91,20 @@ export default function Home() {
             <a href="#">Все товары</a>
           </div>
           <div class="row">
-            <form className="product">
-              <input type="hidden" name="id" value="322610" />
-              <div class="product__like">
-                <svg>
-                  <use xlinkHref="/spritemap.svg#icon-heart" />
-                </svg>
-              </div>
-              <div class="product__img">
-                <picture>
-                  <source srcSet="/assets/images/image_1.png" />
-                  <img
-                    src="/assets/images/image_1.png"
-                    alt=""
-                    decoding="async"
-                  />
-                </picture>
-              </div>
-              <div class="product__info">
-                <div class="product__price">
-                  <p>300 738 ₽</p>
-                </div>
-                <div class="product__article">
-                  <p>Артикул: 12345678910546</p>
-                </div>
-              </div>
-              <div class="product__main">
-                <div class="product__status product__status--green">
-                  <span />
-                  <p>В наличии</p>
-                </div>
-                <div class="product__title">
-                  <p>
-                    Масло ROLF 5W30 3-SYNTHETIC A3/B4 (5л) синт. АКЦИЯ "4+1"
-                  </p>
-                </div>
-              </div>
-              <div class="product__buttons">
-                <button
-                  className="button button__primary button__icon"
-                  type="submit"
-                  name="basket"
-                >
-                  <svg>
-                    <use xlinkHref="/spritemap.svg#icon-shopping-cart" />
-                  </svg>
-                  В корзину
-                </button>
-              </div>
-            </form>
-            <form className="product">
-              <input type="hidden" name="id" value="322610" />
-              <div class="product__like">
-                <svg>
-                  <use xlinkHref="/spritemap.svg#icon-heart" />
-                </svg>
-              </div>
-              <div class="product__img">
-                <picture>
-                  <source srcSet="/assets/images/image_1.png" />
-                  <img
-                    src="/assets/images/image_1.png"
-                    alt=""
-                    decoding="async"
-                  />
-                </picture>
-              </div>
-              <div class="product__info">
-                <div class="product__price">
-                  <p>300 738 ₽</p>
-                </div>
-                <div class="product__article">
-                  <p>Артикул: 12345678910546</p>
-                </div>
-              </div>
-              <div class="product__main">
-                <div class="product__status product__status--green">
-                  <span />
-                  <p>В наличии</p>
-                </div>
-                <div class="product__title">
-                  <p>
-                    Масло ROLF 5W30 3-SYNTHETIC A3/B4 (5л) синт. АКЦИЯ "4+1"
-                  </p>
-                </div>
-              </div>
-              <div class="product__buttons">
-                <button
-                  className="button button__primary button__icon"
-                  type="submit"
-                  name="basket"
-                >
-                  <svg>
-                    <use xlinkHref="/spritemap.svg#icon-shopping-cart" />
-                  </svg>
-                  В корзину
-                </button>
-              </div>
-            </form>
-            <form className="product">
-              <input type="hidden" name="id" value="322610" />
-              <div class="product__like">
-                <svg>
-                  <use xlinkHref="/spritemap.svg#icon-heart" />
-                </svg>
-              </div>
-              <div class="product__img">
-                <picture>
-                  <source srcSet="/assets/images/image_1.png" />
-                  <img
-                    src="/assets/images/image_1.png"
-                    alt=""
-                    decoding="async"
-                  />
-                </picture>
-              </div>
-              <div class="product__info">
-                <div class="product__price">
-                  <p>300 738 ₽</p>
-                </div>
-                <div class="product__article">
-                  <p>Артикул: 12345678910546</p>
-                </div>
-              </div>
-              <div class="product__main">
-                <div class="product__status product__status--green">
-                  <span />
-                  <p>В наличии</p>
-                </div>
-                <div class="product__title">
-                  <p>
-                    Масло ROLF 5W30 3-SYNTHETIC A3/B4 (5л) синт. АКЦИЯ "4+1"
-                  </p>
-                </div>
-              </div>
-              <div class="product__buttons">
-                <button
-                  className="button button__primary button__icon"
-                  type="submit"
-                  name="basket"
-                >
-                  <svg>
-                    <use xlinkHref="/spritemap.svg#icon-shopping-cart" />
-                  </svg>
-                  В корзину
-                </button>
-              </div>
-            </form>
-            <form className="product">
-              <input type="hidden" name="id" value="322610" />
-              <div class="product__like">
-                <svg>
-                  <use xlinkHref="/spritemap.svg#icon-heart" />
-                </svg>
-              </div>
-              <div class="product__img">
-                <picture>
-                  <source srcSet="/assets/images/image_1.png" />
-                  <img
-                    src="/assets/images/image_1.png"
-                    alt=""
-                    decoding="async"
-                  />
-                </picture>
-              </div>
-              <div class="product__info">
-                <div class="product__price">
-                  <p>300 738 ₽</p>
-                </div>
-                <div class="product__article">
-                  <p>Артикул: 12345678910546</p>
-                </div>
-              </div>
-              <div class="product__main">
-                <div class="product__status product__status--green">
-                  <span />
-                  <p>В наличии</p>
-                </div>
-                <div class="product__title">
-                  <p>
-                    Масло ROLF 5W30 3-SYNTHETIC A3/B4 (5л) синт. АКЦИЯ "4+1"
-                  </p>
-                </div>
-              </div>
-              <div class="product__buttons">
-                <button
-                  className="button button__primary button__icon"
-                  type="submit"
-                  name="basket"
-                >
-                  <svg>
-                    <use xlinkHref="/spritemap.svg#icon-shopping-cart" />
-                  </svg>
-                  В корзину
-                </button>
-              </div>
-            </form>
-            <form className="product">
-              <input type="hidden" name="id" value="322610" />
-              <div class="product__like">
-                <svg>
-                  <use xlinkHref="/spritemap.svg#icon-heart" />
-                </svg>
-              </div>
-              <div class="product__img">
-                <picture>
-                  <source srcSet="/assets/images/image_1.png" />
-                  <img
-                    src="/assets/images/image_1.png"
-                    alt=""
-                    decoding="async"
-                  />
-                </picture>
-              </div>
-              <div class="product__info">
-                <div class="product__price">
-                  <p>300 738 ₽</p>
-                </div>
-                <div class="product__article">
-                  <p>Артикул: 12345678910546</p>
-                </div>
-              </div>
-              <div class="product__main">
-                <div class="product__status product__status--green">
-                  <span />
-                  <p>В наличии</p>
-                </div>
-                <div class="product__title">
-                  <p>
-                    Масло ROLF 5W30 3-SYNTHETIC A3/B4 (5л) синт. АКЦИЯ "4+1"
-                  </p>
-                </div>
-              </div>
-              <div class="product__buttons">
-                <button
-                  className="button button__primary button__icon"
-                  type="submit"
-                  name="basket"
-                >
-                  <svg>
-                    <use xlinkHref="/spritemap.svg#icon-shopping-cart" />
-                  </svg>
-                  В корзину
-                </button>
-              </div>
-            </form>
+            {inStock.map((post) => (
+              <Product
+                key={post.id}
+                id={post.id}
+                article={post.article}
+                description={post.description}
+                image={post.image}
+                price={post.price}
+                title={post.title}
+                weight={post.weight}
+                like={post.like}
+                status={post.status}
+              />
+            ))}
           </div>
         </div>
       </section>

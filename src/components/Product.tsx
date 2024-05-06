@@ -7,8 +7,7 @@ type Props = {
   article: number;
   weight: number;
   like: boolean;
-  status: string;
-  statusColor: string;
+  status: number;
 };
 
 // article
@@ -27,6 +26,22 @@ type Props = {
 
 const Product = (props: Props) => {
   const price = props.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+  let status: string;
+  let statusColor: string;
+
+  switch (props.status) {
+    case 1:
+      status = "В наличии";
+      statusColor = "green";
+      break;
+    case 2:
+      status = "2-3 недели";
+      statusColor = "orange";
+      break;
+    default:
+      status = "Нет в наличии";
+      statusColor = "red";
+  }
 
   return (
     <form className="product">
@@ -51,11 +66,9 @@ const Product = (props: Props) => {
         </div>
       </div>
       <div className="product__main">
-        <div
-          className={`product__status product__status--${props.statusColor}`}
-        >
+        <div className={`product__status product__status--${statusColor}`}>
           <span />
-          <p>{props.status}</p>
+          <p>{status}</p>
         </div>
         <div className="product__title">
           <p>{props.title}</p>
