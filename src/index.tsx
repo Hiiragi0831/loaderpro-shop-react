@@ -11,13 +11,16 @@ register();
 
 import "./assets/main.css";
 
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+
 const router = createBrowserRouter([
   {
     element: (
-      <div>
-        {"Header"}
+      <div className="site">
+        <Header />
         <Outlet />
-        {"footer"}
+        <Footer />
       </div>
     ),
     errorElement: <ErrorPage />,
@@ -25,7 +28,6 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        errorElement: <ErrorPage />,
       },
     ],
   },
