@@ -1,7 +1,7 @@
 import { useLayoutEffect, useMemo, useState } from "preact/hooks";
 
+import Categorys from "../components/Categorys";
 import HomeSlider from "../components/HomeSlider";
-import PopCategory from "../components/PopCategory";
 import Products from "../components/Products";
 import { api } from "../services/api";
 
@@ -29,20 +29,7 @@ export default function Home() {
   return (
     <main>
       <HomeSlider />
-      <section className="popCategory__section">
-        <div className="container">
-          <div className="title">
-            <h1>Популярные категории</h1>
-          </div>
-          <div className="row">
-            <PopCategory />
-            <PopCategory />
-            <PopCategory />
-            <PopCategory />
-            <PopCategory />
-          </div>
-        </div>
-      </section>
+      <Categorys />
       <Products data={popular} isLoading={isLoading} />
       <Products data={inStock} isLoading={isLoading} />
       <section className="advantage__section">

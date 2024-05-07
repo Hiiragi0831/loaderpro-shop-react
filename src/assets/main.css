@@ -1345,7 +1345,7 @@ h2,
   }
 }
 
-.popCategory {
+.category {
   position: relative;
   display: flex;
   align-items: flex-end;
@@ -1356,11 +1356,11 @@ h2,
   min-height: calc(340 * var(--width-multiplier));
   transition: opacity 0.35s ease;
 }
-.popCategory__section {
+.category__section {
   margin: calc(60 * 1920px / 1920) 0;
   margin: calc(60 * var(--width-multiplier)) 0;
 }
-.popCategory__section .row {
+.category__section .row {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-gap: calc(14 * 1920px / 1920);
@@ -1369,11 +1369,11 @@ h2,
   gap: calc(14 * var(--width-multiplier));
 }
 @media (max-width: 1024px) {
-  .popCategory__section .row {
+  .category__section .row {
     grid-template-columns: 100%;
   }
 }
-.popCategory__bg {
+.category__bg {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -1382,7 +1382,7 @@ h2,
   bottom: 0;
   left: 0;
 }
-.popCategory__bg::before {
+.category__bg::before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -1391,17 +1391,17 @@ h2,
   height: 50%;
   background: linear-gradient(0deg, #000 0%, rgba(0, 0, 0, 0) 100%);
 }
-.popCategory__bg picture,
-.popCategory__bg img {
+.category__bg picture,
+.category__bg img {
   height: 100%;
 }
-.popCategory__info {
+.category__info {
   position: relative;
   z-index: 2;
   padding: calc(25 * 1920px / 1920) calc(20 * 1920px / 1920);
   padding: calc(25 * var(--width-multiplier)) calc(20 * var(--width-multiplier));
 }
-.popCategory__title {
+.category__title {
   margin-bottom: calc(10 * 1920px / 1920);
   margin-bottom: calc(10 * var(--width-multiplier));
   font-weight: 600;
@@ -1409,7 +1409,7 @@ h2,
   font-size: calc(20 * var(--width-multiplier));
   color: #fff;
 }
-.popCategory__button {
+.category__button {
   display: flex;
   font-weight: 400;
   font-size: calc(16 * 1920px / 1920);
@@ -1418,7 +1418,7 @@ h2,
   gap: calc(10 * 1920px / 1920);
   gap: calc(10 * var(--width-multiplier));
 }
-.popCategory__button svg {
+.category__button svg {
   border-radius: 100%;
   padding: calc(4 * 1920px / 1920);
   padding: calc(4 * var(--width-multiplier));
@@ -1430,7 +1430,7 @@ h2,
   background: #f8991d;
 }
 @media (min-width: 1025px) {
-  .popCategory:hover, .popCategory.is-active {
+  .category:hover, .category.is-active {
     opacity: 0.8;
   }
 }
@@ -1476,7 +1476,7 @@ h2,
   }
 }
 
-.category {
+.group {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -1494,19 +1494,19 @@ h2,
   gap: calc(30 * 1920px / 1920);
   gap: calc(30 * var(--width-multiplier));
 }
-.category svg {
+.group svg {
   width: calc(100 * 1920px / 1920);
   width: calc(100 * var(--width-multiplier));
   height: calc(100 * 1920px / 1920);
   height: calc(100 * var(--width-multiplier));
 }
-.category p {
+.group p {
   font-weight: 400;
   font-size: calc(20 * 1920px / 1920);
   font-size: calc(20 * var(--width-multiplier));
   text-align: center;
 }
-.category__wrapper {
+.group__wrapper {
   position: absolute;
   padding: calc(30 * 1920px / 1920) calc(20 * 1920px / 1920) calc(30 * 1920px / 1920);
   padding: calc(30 * var(--width-multiplier)) calc(20 * var(--width-multiplier)) calc(30 * var(--width-multiplier));
@@ -1521,7 +1521,7 @@ h2,
   bottom: 0;
   left: 0;
 }
-.category__content {
+.group__content {
   display: flex;
   flex-direction: column;
   overflow-y: auto;
@@ -1532,21 +1532,21 @@ h2,
   gap: calc(14 * 1920px / 1920);
   gap: calc(14 * var(--width-multiplier));
 }
-.category__content::-webkit-scrollbar {
+.group__content::-webkit-scrollbar {
   width: calc(10 * 1920px / 1920);
   width: calc(10 * var(--width-multiplier));
 }
-.category__content::-webkit-scrollbar-track {
+.group__content::-webkit-scrollbar-track {
   border-radius: calc(90 * 1920px / 1920);
   border-radius: calc(90 * var(--width-multiplier));
   background: #fff;
 }
-.category__content::-webkit-scrollbar-thumb {
+.group__content::-webkit-scrollbar-thumb {
   border-radius: calc(90 * 1920px / 1920);
   border-radius: calc(90 * var(--width-multiplier));
   background-color: #f8991d;
 }
-.category__content a {
+.group__content a {
   font-weight: 500;
   font-size: calc(20 * 1920px / 1920);
   font-size: calc(20 * var(--width-multiplier));
@@ -1554,12 +1554,12 @@ h2,
   transition: color 0.35s ease;
 }
 @media (min-width: 1025px) {
-  .category__content a:hover, .category__content a.is-active {
+  .group__content a:hover, .group__content a.is-active {
     color: #f8991d;
   }
 }
 @media (min-width: 1025px) {
-  .category:hover .category__wrapper, .category.is-active .category__wrapper {
+  .group:hover .category__wrapper, .group.is-active .category__wrapper {
     opacity: 0.9;
     visibility: visible;
   }

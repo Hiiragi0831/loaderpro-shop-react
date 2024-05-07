@@ -1,15 +1,15 @@
-const PopCategory = () => {
+const Category = () => {
   return (
-    <a className="popCategory">
-      <div className="popCategory__bg">
+    <a className="category">
+      <div className="category__bg">
         <picture>
           <source srcSet="/assets/images/popCategory.png" />
           <img src="/assets/images/popCategory.png" alt="" decoding="async" />
         </picture>
       </div>
-      <div className="popCategory__info">
-        <div className="popCategory__title">Запчасти ведущего моста</div>
-        <div className="popCategory__button">
+      <div className="category__info">
+        <div className="category__title">Запчасти ведущего моста</div>
+        <div className="category__button">
           <span>В каталог</span>
           <svg>
             <use xlinkHref="/spritemap.svg#icon-right-arrow" />
@@ -20,4 +20,4 @@ const PopCategory = () => {
   );
 };
 
-export default PopCategory;
+export default Category;
