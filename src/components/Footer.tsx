@@ -8,11 +8,11 @@ const Footer = () => {
               <use xlinkHref="/spritemap.svg#icon-logo" />
             </svg>
           </div>
-          <div className="footer__city">
-            <svg>
-              <use xlinkHref="/spritemap.svg#icon-pin" />
-            </svg>
-            <p>Российская Федерация</p>
+          <div className="footer__ya">
+            <picture>
+              <source srcSet="/assets/images/ya.png" />
+              <img src="/assets/images/ya.png" alt="" decoding="async" />
+            </picture>
           </div>
           <div className="footer__phone">
             <svg>
@@ -82,12 +82,6 @@ const Footer = () => {
               <a className="footer__link" href="#">
                 Контакты
               </a>
-            </div>
-            <div className="footer__ya">
-              <picture>
-                <source srcset="/assets/images/ya.png" />
-                <img src="/assets/images/ya.png" alt="" decoding="async" />
-              </picture>
             </div>
           </div>
           <div className="footer__links footer__links--catalog">
