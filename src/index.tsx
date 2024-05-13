@@ -13,6 +13,7 @@ import "./assets/main.css";
 
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import Article from "./routes/Article";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,29 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+    ],
+  },
+  {
+    element: (
+      <div className="site">
+        <Header />
+        <Outlet />
+        <Footer />
+      </div>
+    ),
+    loader: async ({ request, params }) => {
+      return fetch(
+        `https://76fbb2aa70af7ba2.mokky.dev/news/${params.articleId}`,
+        {
+          signal: request.signal,
+        },
+      );
+    },
+    children: [
+      {
+        path: "articles/:articleId",
+        element: <Article />,
       },
     ],
   },

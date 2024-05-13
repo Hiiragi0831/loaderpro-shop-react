@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import { Article as Props } from "../common/types/Article";
 
 const Article = (props: Props) => {
@@ -23,7 +25,7 @@ const Article = (props: Props) => {
         <p>{description}</p>
       </div>
       <div className="article__link">
-        <a href="#">Подробнее</a>
+        <Link to={`/articles/${props.id}`}>Подробнее</Link>
       </div>
     </div>
   );
