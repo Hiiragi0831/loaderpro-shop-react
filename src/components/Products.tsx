@@ -1,14 +1,49 @@
+import { useLayoutEffect, useMemo, useState } from "preact/hooks";
 import { FC } from "react";
 
-import { Product as ProductItem } from "../common/types/Product";
 import Product from "../components/Product";
+import { api } from "../services/api";
 
 type Props = {
-  data: ProductItem[];
-  isLoading: boolean;
+  filter: string;
+  limit: number;
 };
 
-const Products: FC<Props> = ({ data, isLoading = true }) => {
+const Products: FC<Props> = ({ filter, limit }) => {
+  const [data, setData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  let filteredProducts = [];
+
+  const popularProducts = useMemo(() => data.slice(0, limit), [data, limit]);
+  const inStockProducts = useMemo(
+    () => data.filter((item) => item.status === 1).slice(0, limit),
+    [data, limit],
+  );
+
+  const loadProducts = async () => {
+    try {
+      const data = await api.getAllProducts();
+      setData(data);
+      setIsLoading(false);
+    } catch (error) {
+      console.error("Error fetching:", error.message);
+    }
+  };
+
+  switch (filter) {
+    case "popular":
+      filteredProducts = popularProducts;
+      break;
+    case "inStock":
+      filteredProducts = inStockProducts;
+      break;
+    default:
+      filteredProducts = data;
+      break;
+  }
+
+  useLayoutEffect(() => void loadProducts(), []);
+
   return (
     <section className="product__section">
       <div className="container">
@@ -19,7 +54,7 @@ const Products: FC<Props> = ({ data, isLoading = true }) => {
         <div className="row">
           {isLoading
             ? "Загрузка"
-            : data.map((post) => (
+            : filteredProducts.map((post) => (
                 <Product
                   key={post.id}
                   id={post.id}

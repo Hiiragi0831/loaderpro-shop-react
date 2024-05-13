@@ -1,14 +1,4 @@
-type Props = {
-  id: number;
-  title: string;
-  price: number;
-  description: string;
-  image: string;
-  article: number;
-  weight: number;
-  like: boolean;
-  status: number;
-};
+import { Product as Props } from "../common/types/Product";
 
 const Product = (props: Props) => {
   const price = props.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");

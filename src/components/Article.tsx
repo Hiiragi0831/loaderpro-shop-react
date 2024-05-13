@@ -1,26 +1,29 @@
-const Article = () => {
+import { Article as Props } from "../common/types/Article";
+
+const Article = (props: Props) => {
+  const current = new Date(props.date);
+  const date = `${current.getDate()}.${current.getMonth() + 1}.${current.getFullYear()}`;
+  const description = `${props.description.slice(0, 100)}...`;
+
   return (
     <div className="article">
       <div className="article__img">
         <picture>
-          <source srcSet="/assets/images/news.png" />
-          <img src="/assets/images/news.png" alt="" decoding="async" />
+          <source srcSet={props.image} />
+          <img src={props.image} alt={props.title} decoding="async" />
         </picture>
       </div>
       <div className="article__title">
-        <p>Как выбрать тележку для склада?</p>
+        <p>{props.title}</p>
       </div>
       <div className="article__date">
-        <p>15.02.2022</p>
+        <p>{date}</p>
       </div>
       <div className="article__description">
-        <p>
-          Если вам необходимо выбрать гидравлическую тележку для склада -
-          ознакомьтесь с рекоме...
-        </p>
+        <p>{description}</p>
       </div>
       <div className="article__link">
-        <p>Подробнее</p>
+        <a href="#">Подробнее</a>
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 import Category from "./Category";
 
-const Categorys = () => {
+const Categories = () => {
   return (
     <section className="category__section">
       <div className="container">
@@ -19,4 +19,4 @@ const Categorys = () => {
   );
 };
 
-export default Categorys;
+export default Categories;
