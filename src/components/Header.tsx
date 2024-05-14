@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Header = () => {
   return (
     <header class="header">
@@ -32,11 +34,11 @@ const Header = () => {
       <div class="header__main">
         <div class="container">
           <div class="row">
-            <div class="header__logo">
+            <Link class="header__logo" to="/">
               <svg>
                 <use xlinkHref="/spritemap.svg#icon-logo" />
               </svg>
-            </div>
+            </Link>
             <form class="header__search">
               <label>
                 <input type="text" name="search" placeholder="Поиск товара" />

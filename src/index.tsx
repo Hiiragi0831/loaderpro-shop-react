@@ -15,15 +15,19 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Article from "./routes/Article";
 
+const BaseTemplate = () => {
+  return (
+    <div className="site">
+      <Header />
+      <Outlet />
+      <Footer />
+    </div>
+  );
+};
+
 const router = createBrowserRouter([
   {
-    element: (
-      <div className="site">
-        <Header />
-        <Outlet />
-        <Footer />
-      </div>
-    ),
+    element: <BaseTemplate />,
     errorElement: <ErrorPage />,
     children: [
       {
@@ -33,24 +37,22 @@ const router = createBrowserRouter([
     ],
   },
   {
-    element: (
-      <div className="site">
-        <Header />
-        <Outlet />
-        <Footer />
-      </div>
-    ),
-    loader: async ({ request, params }) => {
-      return fetch(
+    element: <BaseTemplate />,
+    loader: async ({ params }) => {
+      const res = await fetch(
         `https://76fbb2aa70af7ba2.mokky.dev/news/${params.articleId}`,
-        {
-          signal: request.signal,
-        },
       );
+
+      if (res.status === 404) {
+        throw new Response("", { status: 404 });
+      }
+
+      return res.json();
     },
+    errorElement: <ErrorPage />,
     children: [
       {
-        path: "articles/:articleId",
+        path: "articles?/:articleId",
         element: <Article />,
       },
     ],

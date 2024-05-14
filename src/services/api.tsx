@@ -1,3 +1,4 @@
+import { Article } from "../common/types/Article";
 import { Product } from "../common/types/Product";
 
 class APIService {
@@ -9,9 +10,18 @@ class APIService {
       console.error("Error fetching:", error.message);
     }
   }
-  public async getArticles(): Promise<Product[]> {
+  public async getArticles(): Promise<Article[]> {
     try {
       const res = await fetch("https://76fbb2aa70af7ba2.mokky.dev/news");
+      return res.json();
+    } catch (error) {
+      console.error("Error fetching:", error.message);
+    }
+  }
+
+  public async getArticle(id: string): Promise<Article> {
+    try {
+      const res = await fetch(`https://76fbb2aa70af7ba2.mokky.dev/news/${id}`);
       return res.json();
     } catch (error) {
       console.error("Error fetching:", error.message);

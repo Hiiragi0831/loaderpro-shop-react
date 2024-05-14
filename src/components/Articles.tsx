@@ -42,6 +42,7 @@ const Articles: FC<Props> = ({ limit }) => {
                   description={post.description}
                   image={post.image}
                   date={post.date}
+                  content=""
                 />
               ))}
         </div>
