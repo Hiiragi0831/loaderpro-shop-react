@@ -1,8 +1,8 @@
 export type Article = {
   id: number;
   title: string;
-  description: string;
+  description?: string;
   image: string;
   date: Date;
-  content: string;
+  content?: string;
 };

@@ -14,6 +14,7 @@ import "./assets/main.css";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Article from "./routes/Article";
+import Product from "./routes/Product";
 
 const BaseTemplate = () => {
   return (
@@ -55,6 +56,10 @@ const router = createBrowserRouter([
       {
         path: "articles?/:id",
         element: <Article />,
+      },
+      {
+        path: "products?/:id",
+        element: <Product />,
       },
     ],
   },

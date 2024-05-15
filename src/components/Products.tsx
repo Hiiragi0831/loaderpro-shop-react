@@ -55,18 +55,7 @@ const Products: FC<Props> = ({ filter, limit }) => {
           {isLoading
             ? "Загрузка"
             : filteredProducts.map((post) => (
-                <Product
-                  key={post.id}
-                  id={post.id}
-                  article={post.article}
-                  description={post.description}
-                  image={post.image}
-                  price={post.price}
-                  title={post.title}
-                  weight={post.weight}
-                  like={post.like}
-                  status={post.status}
-                />
+                <Product key={post.id} {...post} />
               ))}
         </div>
       </div>
