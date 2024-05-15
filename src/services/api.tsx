@@ -12,7 +12,7 @@ class APIService {
   }
   public async getArticles(): Promise<Article[]> {
     try {
-      const res = await fetch("https://76fbb2aa70af7ba2.mokky.dev/news");
+      const res = await fetch("https://76fbb2aa70af7ba2.mokky.dev/articles");
       return res.json();
     } catch (error) {
       console.error("Error fetching:", error.message);
@@ -21,7 +21,9 @@ class APIService {
 
   public async getArticle(id: string): Promise<Article> {
     try {
-      const res = await fetch(`https://76fbb2aa70af7ba2.mokky.dev/news/${id}`);
+      const res = await fetch(
+        `https://76fbb2aa70af7ba2.mokky.dev/articles/${id}`,
+      );
       return res.json();
     } catch (error) {
       console.error("Error fetching:", error.message);

@@ -25,6 +25,17 @@ const BaseTemplate = () => {
   );
 };
 
+const loaderTemplate = async (loader) => {
+  const url = new URL(loader.request.url);
+  const res = await fetch(`https://76fbb2aa70af7ba2.mokky.dev/${url.pathname}`);
+
+  if (res.status === 404) {
+    throw new Response("", { status: 404 });
+  }
+
+  return res.json();
+};
+
 const router = createBrowserRouter([
   {
     element: <BaseTemplate />,
@@ -38,21 +49,11 @@ const router = createBrowserRouter([
   },
   {
     element: <BaseTemplate />,
-    loader: async ({ params }) => {
-      const res = await fetch(
-        `https://76fbb2aa70af7ba2.mokky.dev/news/${params.articleId}`,
-      );
-
-      if (res.status === 404) {
-        throw new Response("", { status: 404 });
-      }
-
-      return res.json();
-    },
+    loader: loaderTemplate,
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "articles?/:articleId",
+        path: "articles?/:id",
         element: <Article />,
       },
     ],

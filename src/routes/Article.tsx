@@ -5,7 +5,7 @@ import { Article as Props } from "../common/types/Article";
 import { api } from "../services/api";
 
 export default function Article() {
-  const { articleId } = useParams();
+  const { id } = useParams();
   const [data, setData] = useState<Props>({
     content: "",
     date: new Date(),
@@ -20,7 +20,7 @@ export default function Article() {
 
   const loadArticle = async () => {
     try {
-      const data = await api.getArticle(articleId);
+      const data = await api.getArticle(id);
       setData(data);
       setIsLoading(false);
     } catch (error) {
