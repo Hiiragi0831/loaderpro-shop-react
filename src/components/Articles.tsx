@@ -34,17 +34,7 @@ const Articles: FC<Props> = ({ limit }) => {
         <div className="row">
           {isLoading
             ? "Загрузка"
-            : dataArticles.map((post) => (
-                <Article
-                  key={post.id}
-                  id={post.id}
-                  title={post.title}
-                  description={post.description}
-                  image={post.image}
-                  date={post.date}
-                  content=""
-                />
-              ))}
+            : dataArticles.map((post) => <Article key={post.id} {...post} />)}
         </div>
       </div>
     </section>

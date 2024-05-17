@@ -1,23 +1,31 @@
 import { useLayoutEffect, useState } from "preact/hooks";
 import { useParams } from "react-router";
+import { FreeMode, Thumbs } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 
-import { Product as Props } from "../common/types/Product";
+import { Brand as BrandType } from "../common/types/Brand";
+import { Product as ProductType } from "../common/types/Product";
 import { api } from "../services/api";
 
 export default function Product() {
   const { id } = useParams();
-  const [data, setData] = useState<Props>({
+  const [data, setData] = useState<ProductType>({
     id: 0,
     title: "",
     price: 0,
-    description: "string",
-    image: "string",
+    description: "",
+    image: "",
     article: 0,
     weight: 0,
     like: false,
     status: 0,
     brand: 0,
   });
+  const [brand, setBrand] = useState<BrandType>({
+    id: 0,
+    name: "",
+  });
+  const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const price = data.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
   let status: string;
@@ -25,13 +33,28 @@ export default function Product() {
 
   const loadArticle = async () => {
     try {
-      const data = await api.getProduct(id);
-      setData(data);
+      const props = await api.getProduct(id);
+      setData(props);
       setIsLoading(false);
     } catch (error) {
       console.error("Error fetching:", error.message);
     }
   };
+
+  const loadBrands = async () => {
+    try {
+      const props = await api.getBrand(data.brand);
+      setBrand(props);
+    } catch (error) {
+      console.error("Error fetching:", error.message);
+    }
+  };
+
+  console.log(data.brand, brand);
+
+  useLayoutEffect(() => void loadArticle(), []);
+  useLayoutEffect(() => void loadBrands(), []);
+  // useState(() => loadBrands());
 
   switch (data.status) {
     case 1:
@@ -46,8 +69,6 @@ export default function Product() {
       status = "Нет в наличии";
       statusColor = "red";
   }
-
-  useLayoutEffect(() => void loadArticle(), []);
 
   return (
     <main>
@@ -65,176 +86,178 @@ export default function Product() {
               <div className="commodity__main">
                 <div className="commodity__gallery">
                   <div className="commodity__gallery-main">
-                    <div className="swiper">
-                      <div className="swiper-wrapper">
-                        <div className="swiper-slide">
-                          <picture>
-                            <source srcSet="/assets/images/image_1.png" />
-                            <img
-                              src="/assets/images/image_1.png"
-                              alt=""
-                              decoding="async"
-                            />
-                          </picture>
-                        </div>
-                        <div className="swiper-slide">
-                          <picture>
-                            <source srcSet="/assets/images/image_1.png" />
-                            <img
-                              src="/assets/images/image_1.png"
-                              alt=""
-                              decoding="async"
-                            />
-                          </picture>
-                        </div>
-                        <div className="swiper-slide">
-                          <picture>
-                            <source srcSet="/assets/images/image_1.png" />
-                            <img
-                              src="/assets/images/image_1.png"
-                              alt=""
-                              decoding="async"
-                            />
-                          </picture>
-                        </div>
-                        <div className="swiper-slide">
-                          <picture>
-                            <source srcSet="/assets/images/image_1.png" />
-                            <img
-                              src="/assets/images/image_1.png"
-                              alt=""
-                              decoding="async"
-                            />
-                          </picture>
-                        </div>
-                        <div className="swiper-slide">
-                          <picture>
-                            <source srcSet="/assets/images/image_1.png" />
-                            <img
-                              src="/assets/images/image_1.png"
-                              alt=""
-                              decoding="async"
-                            />
-                          </picture>
-                        </div>
-                        <div className="swiper-slide">
-                          <picture>
-                            <source srcSet="/assets/images/image_1.png" />
-                            <img
-                              src="/assets/images/image_1.png"
-                              alt=""
-                              decoding="async"
-                            />
-                          </picture>
-                        </div>
-                        <div className="swiper-slide">
-                          <picture>
-                            <source srcSet="/assets/images/image_1.png" />
-                            <img
-                              src="/assets/images/image_1.png"
-                              alt=""
-                              decoding="async"
-                            />
-                          </picture>
-                        </div>
-                        <div className="swiper-slide">
-                          <picture>
-                            <source srcSet="/assets/images/image_1.png" />
-                            <img
-                              src="/assets/images/image_1.png"
-                              alt=""
-                              decoding="async"
-                            />
-                          </picture>
-                        </div>
-                      </div>
-                    </div>
+                    <Swiper spaceBetween={10} thumbs={{ swiper: thumbsSwiper }}>
+                      <SwiperSlide>
+                        <picture>
+                          <source srcSet="/assets/images/image_1.png" />
+                          <img
+                            src="/assets/images/image_1.png"
+                            alt=""
+                            decoding="async"
+                          />
+                        </picture>
+                      </SwiperSlide>
+                      <SwiperSlide>
+                        <picture>
+                          <source srcSet="/assets/images/image_1.png" />
+                          <img
+                            src="/assets/images/image_1.png"
+                            alt=""
+                            decoding="async"
+                          />
+                        </picture>
+                      </SwiperSlide>
+                      <SwiperSlide>
+                        <picture>
+                          <source srcSet="/assets/images/image_1.png" />
+                          <img
+                            src="/assets/images/image_1.png"
+                            alt=""
+                            decoding="async"
+                          />
+                        </picture>
+                      </SwiperSlide>
+                      <SwiperSlide>
+                        <picture>
+                          <source srcSet="/assets/images/image_1.png" />
+                          <img
+                            src="/assets/images/image_1.png"
+                            alt=""
+                            decoding="async"
+                          />
+                        </picture>
+                      </SwiperSlide>
+                      <SwiperSlide>
+                        <picture>
+                          <source srcSet="/assets/images/image_1.png" />
+                          <img
+                            src="/assets/images/image_1.png"
+                            alt=""
+                            decoding="async"
+                          />
+                        </picture>
+                      </SwiperSlide>
+                      <SwiperSlide>
+                        <picture>
+                          <source srcSet="/assets/images/image_1.png" />
+                          <img
+                            src="/assets/images/image_1.png"
+                            alt=""
+                            decoding="async"
+                          />
+                        </picture>
+                      </SwiperSlide>
+                      <SwiperSlide>
+                        <picture>
+                          <source srcSet="/assets/images/image_1.png" />
+                          <img
+                            src="/assets/images/image_1.png"
+                            alt=""
+                            decoding="async"
+                          />
+                        </picture>
+                      </SwiperSlide>
+                      <SwiperSlide>
+                        <picture>
+                          <source srcSet="/assets/images/image_1.png" />
+                          <img
+                            src="/assets/images/image_1.png"
+                            alt=""
+                            decoding="async"
+                          />
+                        </picture>
+                      </SwiperSlide>
+                    </Swiper>
                   </div>
                   <div className="commodity__gallery-thumb">
-                    <div className="swiper">
-                      <div className="swiper-wrapper">
-                        <div className="swiper-slide">
-                          <picture>
-                            <source srcSet="/assets/images/image_1.png" />
-                            <img
-                              src="/assets/images/image_1.png"
-                              alt=""
-                              decoding="async"
-                            />
-                          </picture>
-                        </div>
-                        <div className="swiper-slide">
-                          <picture>
-                            <source srcSet="/assets/images/image_1.png" />
-                            <img
-                              src="/assets/images/image_1.png"
-                              alt=""
-                              decoding="async"
-                            />
-                          </picture>
-                        </div>
-                        <div className="swiper-slide">
-                          <picture>
-                            <source srcSet="/assets/images/image_1.png" />
-                            <img
-                              src="/assets/images/image_1.png"
-                              alt=""
-                              decoding="async"
-                            />
-                          </picture>
-                        </div>
-                        <div className="swiper-slide">
-                          <picture>
-                            <source srcSet="/assets/images/image_1.png" />
-                            <img
-                              src="/assets/images/image_1.png"
-                              alt=""
-                              decoding="async"
-                            />
-                          </picture>
-                        </div>
-                        <div className="swiper-slide">
-                          <picture>
-                            <source srcSet="/assets/images/image_1.png" />
-                            <img
-                              src="/assets/images/image_1.png"
-                              alt=""
-                              decoding="async"
-                            />
-                          </picture>
-                        </div>
-                        <div className="swiper-slide">
-                          <picture>
-                            <source srcSet="/assets/images/image_1.png" />
-                            <img
-                              src="/assets/images/image_1.png"
-                              alt=""
-                              decoding="async"
-                            />
-                          </picture>
-                        </div>
-                        <div className="swiper-slide">
-                          <picture>
-                            <source srcSet="/assets/images/image_1.png" />
-                            <img
-                              src="/assets/images/image_1.png"
-                              alt=""
-                              decoding="async"
-                            />
-                          </picture>
-                        </div>
-                        <div className="swiper-slide">
-                          <picture>
-                            <source srcSet="/assets/images/image_1.png" />
-                            <img
-                              src="/assets/images/image_1.png"
-                              alt=""
-                              decoding="async"
-                            />
-                          </picture>
-                        </div>
-                      </div>
-                    </div>
+                    <Swiper
+                      onSwiper={setThumbsSwiper}
+                      slidesPerView={4}
+                      freeMode={true}
+                      watchSlidesProgress={true}
+                      modules={[FreeMode, Thumbs]}
+                    >
+                      <SwiperSlide>
+                        <picture>
+                          <source srcSet="/assets/images/image_1.png" />
+                          <img
+                            src="/assets/images/image_1.png"
+                            alt=""
+                            decoding="async"
+                          />
+                        </picture>
+                      </SwiperSlide>
+                      <SwiperSlide>
+                        <picture>
+                          <source srcSet="/assets/images/image_1.png" />
+                          <img
+                            src="/assets/images/image_1.png"
+                            alt=""
+                            decoding="async"
+                          />
+                        </picture>
+                      </SwiperSlide>
+                      <SwiperSlide>
+                        <picture>
+                          <source srcSet="/assets/images/image_1.png" />
+                          <img
+                            src="/assets/images/image_1.png"
+                            alt=""
+                            decoding="async"
+                          />
+                        </picture>
+                      </SwiperSlide>
+                      <SwiperSlide>
+                        <picture>
+                          <source srcSet="/assets/images/image_1.png" />
+                          <img
+                            src="/assets/images/image_1.png"
+                            alt=""
+                            decoding="async"
+                          />
+                        </picture>
+                      </SwiperSlide>
+                      <SwiperSlide>
+                        <picture>
+                          <source srcSet="/assets/images/image_1.png" />
+                          <img
+                            src="/assets/images/image_1.png"
+                            alt=""
+                            decoding="async"
+                          />
+                        </picture>
+                      </SwiperSlide>
+                      <SwiperSlide>
+                        <picture>
+                          <source srcSet="/assets/images/image_1.png" />
+                          <img
+                            src="/assets/images/image_1.png"
+                            alt=""
+                            decoding="async"
+                          />
+                        </picture>
+                      </SwiperSlide>
+                      <SwiperSlide>
+                        <picture>
+                          <source srcSet="/assets/images/image_1.png" />
+                          <img
+                            src="/assets/images/image_1.png"
+                            alt=""
+                            decoding="async"
+                          />
+                        </picture>
+                      </SwiperSlide>
+                      <SwiperSlide>
+                        <picture>
+                          <source srcSet="/assets/images/image_1.png" />
+                          <img
+                            src="/assets/images/image_1.png"
+                            alt=""
+                            decoding="async"
+                          />
+                        </picture>
+                      </SwiperSlide>
+                    </Swiper>
                   </div>
                 </div>
                 <div className="commodity__info">
@@ -252,7 +275,7 @@ export default function Product() {
                       </div>
                       <div className="commodity__specification">
                         <p>Бренд</p>
-                        <span>{data.brand}</span>
+                        <span>{brand.name}</span>
                       </div>
                       <div className="commodity__specification">
                         <p>Бренд</p>

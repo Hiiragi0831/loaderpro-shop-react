@@ -1,5 +1,6 @@
 import { Article } from "../common/types/Article";
 import { Product } from "../common/types/Product";
+import {Brand} from "../common/types/Brand";
 
 class APIService {
   public async getAllProducts(): Promise<Product[]> {
@@ -34,6 +35,17 @@ class APIService {
     try {
       const res = await fetch(
         `https://76fbb2aa70af7ba2.mokky.dev/products/${id}`,
+      );
+      return res.json();
+    } catch (error) {
+      console.error("Error fetching:", error.message);
+    }
+  }
+
+  public async getBrand(id: number): Promise<Brand> {
+    try {
+      const res = await fetch(
+        `https://76fbb2aa70af7ba2.mokky.dev/brands/${id}`,
       );
       return res.json();
     } catch (error) {
