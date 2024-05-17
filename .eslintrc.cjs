@@ -5,6 +5,7 @@ module.exports = {
     'simple-import-sort/exports': 'error',
     'simple-import-sort/imports': 'error',
     'no-useless-constructor': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/no-useless-constructor': ['error'],
     '@typescript-eslint/no-unused-vars': ['error'],
     'no-console': ['error', { allow: ['warn', 'error'] }],

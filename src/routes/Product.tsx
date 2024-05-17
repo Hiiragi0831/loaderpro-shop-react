@@ -1,4 +1,5 @@
 import { useLayoutEffect, useState } from "preact/hooks";
+import { useEffect } from "react";
 import { useParams } from "react-router";
 import { FreeMode, Thumbs } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -19,10 +20,10 @@ export default function Product() {
     weight: 0,
     like: false,
     status: 0,
-    brand: 0,
+    brand: -1,
   });
   const [brand, setBrand] = useState<BrandType>({
-    id: 0,
+    id: -1,
     name: "",
   });
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
@@ -42,6 +43,9 @@ export default function Product() {
   };
 
   const loadBrands = async () => {
+    if (data.brand === -1) {
+      return;
+    }
     try {
       const props = await api.getBrand(data.brand);
       setBrand(props);
@@ -50,11 +54,8 @@ export default function Product() {
     }
   };
 
-  console.log(data.brand, brand);
-
-  useLayoutEffect(() => void loadArticle(), []);
-  useLayoutEffect(() => void loadBrands(), []);
-  // useState(() => loadBrands());
+  useLayoutEffect(() => void loadArticle());
+  useEffect(() => void loadBrands(), [data.brand]);
 
   switch (data.status) {
     case 1:
