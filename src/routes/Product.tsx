@@ -6,6 +6,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import { Brand as BrandType } from "../common/types/Brand";
 import { Product as ProductType } from "../common/types/Product";
+import Advantages from "../components/Advantages";
+import Articles from "../components/Articles";
 import { api } from "../services/api";
 
 export default function Product() {
@@ -312,6 +314,8 @@ export default function Product() {
           )}
         </div>
       </section>
+      <Advantages />
+      <Articles limit={4} />
     </main>
   );
 }

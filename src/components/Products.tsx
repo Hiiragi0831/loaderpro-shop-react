@@ -1,4 +1,4 @@
-import { useLayoutEffect, useMemo, useState } from "preact/hooks";
+import { useLayoutEffect, useState } from "preact/hooks";
 import { FC } from "react";
 
 import Product from "../components/Product";
@@ -14,12 +14,6 @@ const Products: FC<Props> = ({ filter, limit }) => {
   const [isLoading, setIsLoading] = useState(true);
   let filteredProducts = [];
 
-  const popularProducts = useMemo(() => data.slice(0, limit), [data, limit]);
-  const inStockProducts = useMemo(
-    () => data.filter((item) => item.status === 1).slice(0, limit),
-    [data, limit],
-  );
-
   const loadProducts = async () => {
     try {
       const data = await api.getAllProducts();
@@ -32,10 +26,12 @@ const Products: FC<Props> = ({ filter, limit }) => {
 
   switch (filter) {
     case "popular":
-      filteredProducts = popularProducts;
+      filteredProducts = data.slice(0, limit);
       break;
     case "inStock":
-      filteredProducts = inStockProducts;
+      filteredProducts = data
+        .filter((item) => item.status === 1)
+        .slice(0, limit);
       break;
     default:
       filteredProducts = data;

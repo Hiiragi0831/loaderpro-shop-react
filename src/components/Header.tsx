@@ -81,9 +81,9 @@ const Header = () => {
         <div class="container">
           <div class="row">
             <nav>
-              <a href="#" title="Спецтехника">
+              <Link to="/catalog" title="Спецтехника">
                 Спецтехника
-              </a>
+              </Link>
               <a href="#" title="Запасные части">
                 Запасные части
               </a>
