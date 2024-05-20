@@ -13,8 +13,8 @@ import "./assets/main.css";
 
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import Catalog from "./pages/Catalog";
 import Article from "./routes/Article";
-import Catalog from "./routes/Catalog";
 import Product from "./routes/Product";
 
 const BaseTemplate = () => {
