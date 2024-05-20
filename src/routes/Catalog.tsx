@@ -11,6 +11,8 @@ export default function Catalog() {
   const [isLoading, setIsLoading] = useState(true);
   const [filteredProducts, setFilteredProducts] = useState(data);
   const filterChange = useRef(null);
+  const sortWrapperRef = useRef(null);
+  const [sortKey, setSortKey] = useState("По умолчанию");
 
   const loadProducts = async () => {
     try {
@@ -31,11 +33,52 @@ export default function Catalog() {
       console.error("Error fetching:", error.message);
     }
   };
-  const filterBrandChange = (event) => {
+  const filterBrandChange = (event: { target: { value: any } }) => {
     const filtered =
       Number(event.target.value) !== -1 ? data.filter((item) => item.brand === Number(event.target.value)) : data;
     setFilteredProducts(filtered);
   };
+
+  const sortItemClick = (event) => {
+    if (!event.target.title) {
+      return;
+    }
+    sortWrapperRef.current.querySelectorAll(".catalog__sort-item").forEach((item) => {
+      if (item.classList.contains("is-active")) {
+        item.classList.remove("is-active");
+      }
+    });
+    event.target.classList.add("is-active");
+    setSortKey(event.target.title);
+  };
+
+  useEffect(() => {
+    if (!sortWrapperRef.current) {
+      return;
+    }
+    sortWrapperRef.current.addEventListener("click", sortItemClick);
+    return () => {
+      sortWrapperRef.current.removeEventListener("click", sortItemClick);
+    };
+  }, []);
+
+  useEffect(() => {
+    console.log(sortKey);
+    switch (sortKey) {
+      case "По умолчанию": {
+        filteredProducts.sort((item1, item2) => (item1["id"] > item2["id"] ? 1 : -1));
+        break;
+      }
+      case "Сначала дешевые": {
+        filteredProducts.sort((item1, item2) => (item1["price"] < item2["price"] ? 1 : -1));
+        break;
+      }
+      case "Сначала дорогие": {
+        filteredProducts.sort((item1, item2) => (item1["price"] > item2["price"] ? 1 : -1));
+        break;
+      }
+    }
+  }, [sortKey]);
 
   useLayoutEffect(() => void loadProducts(), []);
   useEffect(() => void loadBrands(), []);
@@ -86,9 +129,9 @@ export default function Catalog() {
             </div>
             <div className="catalog__products">
               <div className="catalog__sort">
-                <div className="catalog__sort-wrapper">
+                <div className="catalog__sort-wrapper" ref={sortWrapperRef}>
                   <p className="catalog__sort-title">Сортировка:</p>
-                  <button className="catalog__sort-item" title="По умолчанию">
+                  <button className="catalog__sort-item is-active" title="По умолчанию">
                     По умолчанию
                   </button>
                   <button className="catalog__sort-item" title="Сначала дешевые">
