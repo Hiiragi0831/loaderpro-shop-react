@@ -1,3 +1,4 @@
+import { cloneDeep } from "lodash-es/lodash";
 import { useEffect, useLayoutEffect, useRef, useState } from "preact/hooks";
 
 import { Brand as BrandType } from "../common/types/Brand";
@@ -17,9 +18,9 @@ export default function Catalog() {
   const loadProducts = async () => {
     try {
       const data = await api.getAllProducts();
-      setData(data);
+      setData(cloneDeep(data));
       setIsLoading(false);
-      setFilteredProducts(data);
+      setFilteredProducts(cloneDeep(data));
     } catch (error) {
       console.error("Error fetching:", error.message);
     }
@@ -64,21 +65,22 @@ export default function Catalog() {
 
   useEffect(() => {
     console.log(sortKey);
+    console.log(filteredProducts);
     switch (sortKey) {
       case "По умолчанию": {
-        filteredProducts.sort((item1, item2) => (item1["id"] > item2["id"] ? 1 : -1));
+        setFilteredProducts(filteredProducts.sort((item1, item2) => (item1["id"] > item2["id"] ? 1 : -1)));
         break;
       }
       case "Сначала дешевые": {
-        filteredProducts.sort((item1, item2) => (item1["price"] < item2["price"] ? 1 : -1));
+        setFilteredProducts(filteredProducts.sort((item1, item2) => (item1["price"] < item2["price"] ? 1 : -1)));
         break;
       }
       case "Сначала дорогие": {
-        filteredProducts.sort((item1, item2) => (item1["price"] > item2["price"] ? 1 : -1));
+        setFilteredProducts(filteredProducts.sort((item1, item2) => (item1["price"] > item2["price"] ? 1 : -1)));
         break;
       }
     }
-  }, [sortKey]);
+  }, [sortKey, filteredProducts]);
 
   useLayoutEffect(() => void loadProducts(), []);
   useEffect(() => void loadBrands(), []);
