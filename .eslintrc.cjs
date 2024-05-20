@@ -9,6 +9,8 @@ module.exports = {
     '@typescript-eslint/no-useless-constructor': ['error'],
     '@typescript-eslint/no-unused-vars': ['error'],
     'no-console': ['error', { allow: ['warn', 'error'] }],
+    'max-len': ["error", { "code": 120 }],
+    'prettier/prettier': ['error', { printWidth: 120 }],
     complexity: ['warn', 5],
   },
   plugins: ['@typescript-eslint', 'simple-import-sort'],

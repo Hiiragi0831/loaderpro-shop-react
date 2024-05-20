@@ -93,81 +93,49 @@ export default function Product() {
                       <SwiperSlide>
                         <picture>
                           <source srcSet="/assets/images/image_1.png" />
-                          <img
-                            src="/assets/images/image_1.png"
-                            alt=""
-                            decoding="async"
-                          />
+                          <img src="/assets/images/image_1.png" alt="" decoding="async" />
                         </picture>
                       </SwiperSlide>
                       <SwiperSlide>
                         <picture>
                           <source srcSet="/assets/images/image_1.png" />
-                          <img
-                            src="/assets/images/image_1.png"
-                            alt=""
-                            decoding="async"
-                          />
+                          <img src="/assets/images/image_1.png" alt="" decoding="async" />
                         </picture>
                       </SwiperSlide>
                       <SwiperSlide>
                         <picture>
                           <source srcSet="/assets/images/image_1.png" />
-                          <img
-                            src="/assets/images/image_1.png"
-                            alt=""
-                            decoding="async"
-                          />
+                          <img src="/assets/images/image_1.png" alt="" decoding="async" />
                         </picture>
                       </SwiperSlide>
                       <SwiperSlide>
                         <picture>
                           <source srcSet="/assets/images/image_1.png" />
-                          <img
-                            src="/assets/images/image_1.png"
-                            alt=""
-                            decoding="async"
-                          />
+                          <img src="/assets/images/image_1.png" alt="" decoding="async" />
                         </picture>
                       </SwiperSlide>
                       <SwiperSlide>
                         <picture>
                           <source srcSet="/assets/images/image_1.png" />
-                          <img
-                            src="/assets/images/image_1.png"
-                            alt=""
-                            decoding="async"
-                          />
+                          <img src="/assets/images/image_1.png" alt="" decoding="async" />
                         </picture>
                       </SwiperSlide>
                       <SwiperSlide>
                         <picture>
                           <source srcSet="/assets/images/image_1.png" />
-                          <img
-                            src="/assets/images/image_1.png"
-                            alt=""
-                            decoding="async"
-                          />
+                          <img src="/assets/images/image_1.png" alt="" decoding="async" />
                         </picture>
                       </SwiperSlide>
                       <SwiperSlide>
                         <picture>
                           <source srcSet="/assets/images/image_1.png" />
-                          <img
-                            src="/assets/images/image_1.png"
-                            alt=""
-                            decoding="async"
-                          />
+                          <img src="/assets/images/image_1.png" alt="" decoding="async" />
                         </picture>
                       </SwiperSlide>
                       <SwiperSlide>
                         <picture>
                           <source srcSet="/assets/images/image_1.png" />
-                          <img
-                            src="/assets/images/image_1.png"
-                            alt=""
-                            decoding="async"
-                          />
+                          <img src="/assets/images/image_1.png" alt="" decoding="async" />
                         </picture>
                       </SwiperSlide>
                     </Swiper>
@@ -183,81 +151,49 @@ export default function Product() {
                       <SwiperSlide>
                         <picture>
                           <source srcSet="/assets/images/image_1.png" />
-                          <img
-                            src="/assets/images/image_1.png"
-                            alt=""
-                            decoding="async"
-                          />
+                          <img src="/assets/images/image_1.png" alt="" decoding="async" />
                         </picture>
                       </SwiperSlide>
                       <SwiperSlide>
                         <picture>
                           <source srcSet="/assets/images/image_1.png" />
-                          <img
-                            src="/assets/images/image_1.png"
-                            alt=""
-                            decoding="async"
-                          />
+                          <img src="/assets/images/image_1.png" alt="" decoding="async" />
                         </picture>
                       </SwiperSlide>
                       <SwiperSlide>
                         <picture>
                           <source srcSet="/assets/images/image_1.png" />
-                          <img
-                            src="/assets/images/image_1.png"
-                            alt=""
-                            decoding="async"
-                          />
+                          <img src="/assets/images/image_1.png" alt="" decoding="async" />
                         </picture>
                       </SwiperSlide>
                       <SwiperSlide>
                         <picture>
                           <source srcSet="/assets/images/image_1.png" />
-                          <img
-                            src="/assets/images/image_1.png"
-                            alt=""
-                            decoding="async"
-                          />
+                          <img src="/assets/images/image_1.png" alt="" decoding="async" />
                         </picture>
                       </SwiperSlide>
                       <SwiperSlide>
                         <picture>
                           <source srcSet="/assets/images/image_1.png" />
-                          <img
-                            src="/assets/images/image_1.png"
-                            alt=""
-                            decoding="async"
-                          />
+                          <img src="/assets/images/image_1.png" alt="" decoding="async" />
                         </picture>
                       </SwiperSlide>
                       <SwiperSlide>
                         <picture>
                           <source srcSet="/assets/images/image_1.png" />
-                          <img
-                            src="/assets/images/image_1.png"
-                            alt=""
-                            decoding="async"
-                          />
+                          <img src="/assets/images/image_1.png" alt="" decoding="async" />
                         </picture>
                       </SwiperSlide>
                       <SwiperSlide>
                         <picture>
                           <source srcSet="/assets/images/image_1.png" />
-                          <img
-                            src="/assets/images/image_1.png"
-                            alt=""
-                            decoding="async"
-                          />
+                          <img src="/assets/images/image_1.png" alt="" decoding="async" />
                         </picture>
                       </SwiperSlide>
                       <SwiperSlide>
                         <picture>
                           <source srcSet="/assets/images/image_1.png" />
-                          <img
-                            src="/assets/images/image_1.png"
-                            alt=""
-                            decoding="async"
-                          />
+                          <img src="/assets/images/image_1.png" alt="" decoding="async" />
                         </picture>
                       </SwiperSlide>
                     </Swiper>
@@ -265,9 +201,7 @@ export default function Product() {
                 </div>
                 <div className="commodity__info">
                   <div className="commodity__info-box">
-                    <div
-                      className={`commodity__availability commodity__availability--${statusColor}`}
-                    >
+                    <div className={`commodity__availability commodity__availability--${statusColor}`}>
                       <span />
                       <p>{status}</p>
                     </div>
@@ -304,9 +238,7 @@ export default function Product() {
                       <input type="number" name="count" value="1" max="100" />
                       <button className="commodity__count-plus">+</button>
                     </div>
-                    <button className="button button__primary">
-                      В корзину
-                    </button>
+                    <button className="button button__primary">В корзину</button>
                   </div>
                 </div>
               </div>

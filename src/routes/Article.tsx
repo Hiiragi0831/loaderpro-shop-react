@@ -44,10 +44,7 @@ export default function Article() {
                 <source srcSet={data.image} />
                 <img src={data.image} alt={data.title} decoding="async" />
               </picture>
-              <div
-                className="row"
-                dangerouslySetInnerHTML={{ __html: data.content }}
-              />
+              <div className="row" dangerouslySetInnerHTML={{ __html: data.content }} />
             </div>
           )}
         </div>

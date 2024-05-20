@@ -29,9 +29,7 @@ const Products: FC<Props> = ({ filter, limit }) => {
       filteredProducts = data.slice(0, limit);
       break;
     case "inStock":
-      filteredProducts = data
-        .filter((item) => item.status === 1)
-        .slice(0, limit);
+      filteredProducts = data.filter((item) => item.status === 1).slice(0, limit);
       break;
     default:
       filteredProducts = data;
@@ -48,11 +46,7 @@ const Products: FC<Props> = ({ filter, limit }) => {
           <a href="#">Все товары</a>
         </div>
         <div className="row">
-          {isLoading
-            ? "Загрузка"
-            : filteredProducts.map((post) => (
-                <Product key={post.id} {...post} />
-              ))}
+          {isLoading ? "Загрузка" : filteredProducts.map((post) => <Product key={post.id} {...post} />)}
         </div>
       </div>
     </section>

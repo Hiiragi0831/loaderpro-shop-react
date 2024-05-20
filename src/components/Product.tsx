@@ -2,28 +2,12 @@ import { FC } from "react";
 import { Link } from "react-router-dom";
 
 import { Product as ProductType } from "../common/types/Product";
-import {
-  getProductStatus,
-  getProductStatusColor,
-} from "../utils/getProductStatus";
+import { getProductStatus, getProductStatusColor } from "../utils/getProductStatus";
 
-type Props = Pick<
-  ProductType,
-  "price" | "status" | "id" | "image" | "title" | "article" | "like"
->;
+type Props = Pick<ProductType, "price" | "status" | "id" | "image" | "title" | "article" | "like">;
 
-const Product: FC<Props> = ({
-  price,
-  status,
-  id,
-  image,
-  title,
-  article,
-  like,
-}) => {
-  const priceFormat = (price || 0)
-    .toString()
-    .replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+const Product: FC<Props> = ({ price, status, id, image, title, article, like }) => {
+  const priceFormat = (price || 0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 
   return (
     <form className="product">
@@ -48,9 +32,7 @@ const Product: FC<Props> = ({
         </div>
       </div>
       <div className="product__main">
-        <div
-          className={`product__status product__status--${getProductStatusColor(status)}`}
-        >
+        <div className={`product__status product__status--${getProductStatusColor(status)}`}>
           <span />
           <p>{getProductStatus(status)}</p>
         </div>
@@ -59,11 +41,7 @@ const Product: FC<Props> = ({
         </div>
       </div>
       <div className="product__buttons">
-        <button
-          className="button button__primary button__icon"
-          type="submit"
-          name="basket"
-        >
+        <button className="button button__primary button__icon" type="submit" name="basket">
           <svg>
             <use xlinkHref="/spritemap.svg#icon-shopping-cart" />
           </svg>

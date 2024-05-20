@@ -22,9 +22,7 @@ class APIService {
 
   public async getArticle(id: string): Promise<Article> {
     try {
-      const res = await fetch(
-        `https://76fbb2aa70af7ba2.mokky.dev/articles/${id}`,
-      );
+      const res = await fetch(`https://76fbb2aa70af7ba2.mokky.dev/articles/${id}`);
       return res.json();
     } catch (error) {
       console.error("Error fetching:", error.message);
@@ -33,9 +31,7 @@ class APIService {
 
   public async getProduct(id: string): Promise<Product> {
     try {
-      const res = await fetch(
-        `https://76fbb2aa70af7ba2.mokky.dev/products/${id}`,
-      );
+      const res = await fetch(`https://76fbb2aa70af7ba2.mokky.dev/products/${id}`);
       return res.json();
     } catch (error) {
       console.error("Error fetching:", error.message);
@@ -53,9 +49,7 @@ class APIService {
 
   public async getBrand(id: number): Promise<Brand> {
     try {
-      const res = await fetch(
-        `https://76fbb2aa70af7ba2.mokky.dev/brands/${id}`,
-      );
+      const res = await fetch(`https://76fbb2aa70af7ba2.mokky.dev/brands/${id}`);
       return res.json();
     } catch (error) {
       console.error("Error fetching:", error.message);

@@ -31,22 +31,17 @@ export default function Catalog() {
       console.error("Error fetching:", error.message);
     }
   };
-
-  const handleClick = (event) => {
+  const filterBrandChange = (event) => {
     const filtered =
-      Number(event.target.value) !== -1
-        ? data.filter((item) => item.brand === Number(event.target.value))
-        : data;
+      Number(event.target.value) !== -1 ? data.filter((item) => item.brand === Number(event.target.value)) : data;
     setFilteredProducts(filtered);
   };
 
   useLayoutEffect(() => void loadProducts(), []);
   useEffect(() => void loadBrands(), []);
   useEffect(() => {
-    filterChange.current.addEventListener("change", handleClick);
-    return () => {
-      filterChange.current.removeEventListener("change", handleClick);
-    };
+    filterChange.current.addEventListener("change", filterBrandChange);
+    return () => filterChange.current.removeEventListener("change", filterBrandChange);
   }, [filteredProducts]);
 
   return (
@@ -61,30 +56,28 @@ export default function Catalog() {
                 </fieldset>
                 <label className="form__select">
                   <select name="brand" ref={filterChange}>
-                    <option value="-1" label="Выберите бренд" />
+                    <option value="-1" label="Все бренды" />
                     {brands.map((option) => (
-                      <option
-                        value={option.id}
-                        label={option.name}
-                        key={option.id}
-                      />
+                      <option value={option.id} label={option.name} key={option.id} />
                     ))}
                   </select>
                   <span>Бренд</span>
                 </label>
                 <label className="form__select">
                   <select name="category">
-                    <option value="0" selected label="Категория 1">
-                      0
-                    </option>
-                    <option value="1" label="Категория 2">
-                      1
-                    </option>
-                    <option value="2" label="Категория 3">
-                      2
-                    </option>
+                    <option value="0" selected label="0" />
+                    <option value="1" label="1" />
+                    <option value="2" label="2" />
                   </select>
-                  <span>Категория</span>
+                  <span>Срок поставки</span>
+                </label>
+                <label className="form__select">
+                  <select name="category">
+                    <option value="-1" selected label="По умолчанию" />
+                    <option value="0" label="Оригинал" />
+                    <option value="1" label="Аналог" />
+                  </select>
+                  <span>Качество</span>
                 </label>
                 <button className="button button__primary" type="submit">
                   Применить
@@ -95,47 +88,19 @@ export default function Catalog() {
               <div className="catalog__sort">
                 <div className="catalog__sort-wrapper">
                   <p className="catalog__sort-title">Сортировка:</p>
-                  <button
-                    className="catalog__sort-item is-active"
-                    title="Популярные"
-                  >
-                    Популярные
+                  <button className="catalog__sort-item" title="По умолчанию">
+                    По умолчанию
                   </button>
-                  <button className="catalog__sort-item" title="Новинки">
-                    Новинки
-                  </button>
-                  <button
-                    className="catalog__sort-item"
-                    title="Сначала дешевые"
-                  >
+                  <button className="catalog__sort-item" title="Сначала дешевые">
                     Сначала дешевые
                   </button>
-                  <button
-                    className="catalog__sort-item"
-                    title="Сначала дорогие"
-                  >
+                  <button className="catalog__sort-item" title="Сначала дорогие">
                     Сначала дорогие
-                  </button>
-                  <button
-                    className="catalog__sort-item"
-                    title="Высокий рейтинг"
-                  >
-                    Высокий рейтинг
-                  </button>
-                  <button
-                    className="catalog__sort-item"
-                    title="По размеру скидки"
-                  >
-                    По размеру скидки
                   </button>
                 </div>
               </div>
               <div className="catalog__products-row">
-                {isLoading
-                  ? "Загрузка"
-                  : filteredProducts.map((post) => (
-                      <Product key={post.id} {...post} />
-                    ))}
+                {isLoading ? "Загрузка" : filteredProducts.map((post) => <Product key={post.id} {...post} />)}
               </div>
             </div>
           </div>

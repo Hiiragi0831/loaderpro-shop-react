@@ -32,9 +32,7 @@ const Articles: FC<Props> = ({ limit }) => {
           <p className="h1">Полезная информация</p>
         </div>
         <div className="row">
-          {isLoading
-            ? "Загрузка"
-            : dataArticles.map((post) => <Article key={post.id} {...post} />)}
+          {isLoading ? "Загрузка" : dataArticles.map((post) => <Article key={post.id} {...post} />)}
         </div>
       </div>
     </section>

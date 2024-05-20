@@ -2217,7 +2217,6 @@ h2,
 .catalog__sort-wrapper {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   width: 100%;
   font-size: calc(18 * 1920px / 1920);
   font-size: calc(18 * var(--width-multiplier));

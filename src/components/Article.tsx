@@ -3,10 +3,7 @@ import { Link } from "react-router-dom";
 
 import { Article as ArticleType } from "../common/types/Article";
 
-type Props = Pick<
-  ArticleType,
-  "id" | "title" | "description" | "image" | "date"
->;
+type Props = Pick<ArticleType, "id" | "title" | "description" | "image" | "date">;
 
 const Article: FC<Props> = ({ id, title, description, image, date }) => {
   const currentDate = new Date(date);
@@ -24,8 +21,7 @@ const Article: FC<Props> = ({ id, title, description, image, date }) => {
       </div>
       <div className="article__date">
         <p>
-          {currentDate.getDate()}.{currentDate.getMonth() + 1}.
-          {currentDate.getFullYear()}
+          {currentDate.getDate()}.{currentDate.getMonth() + 1}.{currentDate.getFullYear()}
         </p>
       </div>
       <div className="article__description">

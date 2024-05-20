@@ -24,19 +24,11 @@ const HomeSlider = () => {
                 <div className="slider__content">
                   <picture className="for-desktop">
                     <source srcSet={`/assets/images/slider/${slide}.jpeg`} />
-                    <img
-                      src={`/assets/images/slider/${slide}.jpeg`}
-                      alt=""
-                      decoding="async"
-                    />
+                    <img src={`/assets/images/slider/${slide}.jpeg`} alt="" decoding="async" />
                   </picture>
                   <picture className="for-devices">
                     <source srcSet={`/assets/images/slider/${slide}m.jpeg`} />
-                    <img
-                      src={`/assets/images/slider/${slide}m.jpeg`}
-                      alt=""
-                      decoding="async"
-                    />
+                    <img src={`/assets/images/slider/${slide}m.jpeg`} alt="" decoding="async" />
                   </picture>
                 </div>
               </SwiperSlide>
