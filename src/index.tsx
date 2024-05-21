@@ -1,20 +1,17 @@
 import { hydrate, prerender as ssr } from "preact-iso";
-import * as React from "react";
-import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
-// import function to register Swiper custom elements
+import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
+import { StaticRouter } from "react-router-dom/server";
 import { register } from "swiper/element/bundle";
-
-import ErrorPage from "./error-page";
-import Home from "./routes/Home";
-// register Swiper custom elements
 register();
 
 import "./assets/main.css";
 
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import ErrorPage from "./error-page";
 import Catalog from "./pages/Catalog";
 import Article from "./routes/Article";
+import Home from "./routes/Home";
 import Product from "./routes/Product";
 
 const BaseTemplate = () => {
@@ -38,50 +35,36 @@ const loaderTemplate = async (loader) => {
   return res.json();
 };
 
-const router = createBrowserRouter([
-  {
-    element: <BaseTemplate />,
-    errorElement: <ErrorPage />,
-    children: [
-      {
-        path: "/",
-        element: <Home />,
-      },
-      {
-        path: "/catalog",
-        element: <Catalog />,
-      },
-    ],
-  },
-  {
-    element: <BaseTemplate />,
-    loader: loaderTemplate,
-    errorElement: <ErrorPage />,
-    children: [
-      {
-        path: "articles?/:id",
-        element: <Article />,
-      },
-      {
-        path: "products?/:id",
-        element: <Product />,
-      },
-    ],
-  },
-]);
-
 export function App() {
   return (
-    <React.StrictMode>
-      <RouterProvider router={router} />
-    </React.StrictMode>
+    <Routes>
+      <Route element={<BaseTemplate />} errorElement={<ErrorPage />}>
+        <Route path="/" element={<Home />} />
+        <Route path="/catalog" element={<Catalog />} />
+      </Route>
+      <Route path="/articles" element={<BaseTemplate />} loader={loaderTemplate}>
+        <Route path=":id" element={<Article />} />
+      </Route>
+      <Route path="/products" element={<BaseTemplate />} loader={loaderTemplate}>
+        <Route path=":id" element={<Product />} />
+      </Route>
+    </Routes>
   );
 }
 
 if (typeof window !== "undefined") {
-  hydrate(<App />, document.getElementById("app"));
+  hydrate(
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>,
+    document.getElementById("app"),
+  );
 }
 
 export async function prerender(data) {
-  return await ssr(<App {...data} />);
+  return await ssr(
+    <StaticRouter location={data.url}>
+      <App />
+    </StaticRouter>,
+  );
 }
