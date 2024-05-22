@@ -41,12 +41,8 @@ export function App() {
       <Route element={<BaseTemplate />} errorElement={<ErrorPage />}>
         <Route path="/" element={<Home />} />
         <Route path="/catalog" element={<Catalog />} />
-      </Route>
-      <Route path="/articles" element={<BaseTemplate />} loader={loaderTemplate}>
-        <Route path=":id" element={<Article />} />
-      </Route>
-      <Route path="/products" element={<BaseTemplate />} loader={loaderTemplate}>
-        <Route path=":id" element={<Product />} />
+        <Route path="/products?/:id" element={<Product />} loader={loaderTemplate} />
+        <Route path="/articles?/:id" element={<Article />} loader={loaderTemplate} />
       </Route>
     </Routes>
   );
