@@ -9,10 +9,10 @@ import "./assets/main.css";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import ErrorPage from "./error-page";
+import Article from "./pages/Article";
 import Catalog from "./pages/Catalog";
-import Article from "./routes/Article";
-import Home from "./routes/Home";
-import Product from "./routes/Product";
+import Home from "./pages/Home";
+import Product from "./pages/Product";
 
 const BaseTemplate = () => {
   return (
