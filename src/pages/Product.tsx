@@ -33,6 +33,7 @@ export default function Product() {
   const price = data.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
   let status: string;
   let statusColor: string;
+  const [count, setCount] = useState(null);
 
   const loadArticle = async () => {
     try {
@@ -56,7 +57,7 @@ export default function Product() {
     }
   };
 
-  useLayoutEffect(() => void loadArticle());
+  useLayoutEffect(() => void loadArticle(), []);
   useEffect(() => void loadBrands(), [data.brand]);
 
   switch (data.status) {
@@ -238,9 +239,13 @@ export default function Product() {
                       <p>{price} ₽</p>
                     </div>
                     <div className="commodity__count">
-                      <button className="commodity__count-minus">-</button>
-                      <input type="number" name="count" value="1" max="100" />
-                      <button className="commodity__count-plus">+</button>
+                      <button className="commodity__count-minus" onClick={() => setCount(count - 1)}>
+                        -
+                      </button>
+                      <input type="number" name="count" value={count >= 1 ? count : setCount(1)} />
+                      <button className="commodity__count-plus" onClick={() => setCount(count + 1)}>
+                        +
+                      </button>
                     </div>
                     <button className="button button__primary">В корзину</button>
                   </div>
