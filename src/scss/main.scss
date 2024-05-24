@@ -1,0 +1,31 @@
+// stylelint-disable at-rule-empty-line-before
+
+// не трогать этот импорт, он нужен для работы svg-спрайтов
+// @import './sprites';
+
+@import 'reset';
+@import 'variables';
+@import 'functions';
+@import 'mixins';
+@import 'fonts';
+@import 'base';
+@import 'helpers';
+
+@import 'components/button';
+@import 'components/header';
+@import 'components/footer';
+@import 'components/product';
+@import 'components/category';
+@import 'components/slider';
+@import 'components/group';
+@import 'components/article';
+@import 'components/advantage';
+@import 'components/form';
+@import 'components/account';
+@import 'components/order';
+
+@import 'pages/home';
+@import 'pages/catalog';
+@import 'pages/commodity';
+@import 'pages/news';
+@import 'pages/basket';

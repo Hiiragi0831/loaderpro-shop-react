@@ -5,6 +5,7 @@ export type Product = {
   price: number;
   description?: string;
   image?: string;
+  count?: number;
   article?: number;
   weight?: number;
   like: boolean;

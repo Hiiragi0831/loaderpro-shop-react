@@ -9,6 +9,7 @@ import { Product as ProductType } from "../common/types/Product";
 import Advantages from "../components/Advantages";
 import Articles from "../components/Articles";
 import { api } from "../services/api";
+import { useBasket } from "../store/basket";
 
 export default function Product() {
   const { id } = useParams();
@@ -16,6 +17,7 @@ export default function Product() {
     id: 0,
     title: "",
     price: 0,
+    count: 0,
     description: "",
     image: "",
     article: 0,
@@ -33,7 +35,7 @@ export default function Product() {
   const price = data.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
   let status: string;
   let statusColor: string;
-  const [count, setCount] = useState(null);
+  const addToCart = useBasket((state) => state.addToBasket);
 
   const loadArticle = async () => {
     try {
@@ -55,6 +57,22 @@ export default function Product() {
     } catch (error) {
       console.error("Error fetching:", error.message);
     }
+  };
+
+  const counter = (method: string) => {
+    const dataCount = Object.assign({}, data);
+    switch (method) {
+      case "increment":
+        dataCount.count += 1;
+        break;
+      case "decrement":
+        if (dataCount.count <= 1) {
+          dataCount.count = 1;
+        } else {
+          dataCount.count -= 1;
+        }
+    }
+    setData(dataCount);
   };
 
   useLayoutEffect(() => void loadArticle(), []);
@@ -91,12 +109,6 @@ export default function Product() {
                 <div className="commodity__gallery">
                   <div className="commodity__gallery-main">
                     <Swiper spaceBetween={10} thumbs={{ swiper: thumbsSwiper }}>
-                      <SwiperSlide>
-                        <picture>
-                          <source srcSet="/assets/images/image_1.png" />
-                          <img src="/assets/images/image_1.png" alt="" decoding="async" />
-                        </picture>
-                      </SwiperSlide>
                       <SwiperSlide>
                         <picture>
                           <source srcSet="/assets/images/image_1.png" />
@@ -238,16 +250,29 @@ export default function Product() {
                       <span>Цена:</span>
                       <p>{price} ₽</p>
                     </div>
-                    <div className="commodity__count">
-                      <button className="commodity__count-minus" onClick={() => setCount(count - 1)}>
-                        -
-                      </button>
-                      <input type="number" name="count" value={count >= 1 ? count : setCount(1)} />
-                      <button className="commodity__count-plus" onClick={() => setCount(count + 1)}>
-                        +
-                      </button>
-                    </div>
-                    <button className="button button__primary">В корзину</button>
+                    {data.status === 0 ? (
+                      <>
+                        <label className="commodity__input">
+                          <input type="email" name="email" placeholder="Email" value="" />
+                        </label>
+                        <button className="button button__primary">Запросить</button>
+                      </>
+                    ) : (
+                      <>
+                        <div className="commodity__count">
+                          <button className="commodity__count-minus" onClick={() => counter("decrement")}>
+                            -
+                          </button>
+                          <input type="number" name="count" value={data.count} />
+                          <button className="commodity__count-plus" onClick={() => counter("increment")}>
+                            +
+                          </button>
+                        </div>
+                        <button className="button button__primary" onClick={() => addToCart(data)}>
+                          В корзину
+                        </button>
+                      </>
+                    )}
                   </div>
                 </div>
               </div>

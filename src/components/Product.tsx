@@ -37,7 +37,7 @@ const Product: FC<Props> = ({ price, status, id, image, title, article, like }) 
           <p>{getProductStatus(status)}</p>
         </div>
         <div className="product__title">
-          <Link to={`/products/${id}`}>{title}</Link>
+          <Link to={`/catalog/${id}`}>{title}</Link>
         </div>
       </div>
       <div className="product__buttons">

@@ -1,0 +1,56 @@
+.article {
+	&__section {
+		margin: vc(60) 0  vc(80);
+
+		.row {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+			gap: vc(40);
+
+			@include devices {
+				grid-template-columns: 100%;
+			}
+		}
+	}
+
+	&__img {
+		overflow: hidden;
+		margin-bottom: vc(14);
+		border-radius: vc(10);
+		box-shadow: $box-shadow;
+	}
+
+	&__title {
+		margin-bottom: vc(10);
+		font-weight: 500;
+		font-size: vc(22);
+	}
+
+	&__date {
+		margin-bottom: vc(14);
+		font-weight: 400;
+		font-size: vc(16);
+		color: $color-woodsmoke-400;
+	}
+
+	&__description {
+		margin-bottom: vc(10);
+		font-size: vc(16);
+	}
+
+	&__link {
+		font-weight: 400;
+		font-size: vc(16);
+		line-height: 1.4;
+		text-decoration-line: underline;
+		color: $color-tree-poppy-400;
+	}
+
+	&__more {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-top: vc(60);
+		width: 100%;
+	}
+}

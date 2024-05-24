@@ -1,10 +1,9 @@
-import { hydrate, prerender as ssr } from "preact-iso";
-import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
-import { StaticRouter } from "react-router-dom/server";
+import { render } from "preact";
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import { register } from "swiper/element/bundle";
 register();
 
-import "./assets/main.css";
+import "./scss/main.scss";
 
 import Footer from "./components/Footer";
 import Header from "./components/Header";
@@ -26,41 +25,53 @@ const BaseTemplate = () => {
 
 const loaderTemplate = async (loader) => {
   const url = new URL(loader.request.url);
-  const res = await fetch(`https://76fbb2aa70af7ba2.mokky.dev/${url.pathname}`);
+  const response = await fetch(`https://76fbb2aa70af7ba2.mokky.dev/${url.pathname}`);
 
-  if (res.status === 404) {
-    throw new Response("", { status: 404 });
+  if (response.status === 404) {
+    throw new Response("Not Found", { status: 404 });
   }
 
-  return res.json();
+  if (!response.ok) {
+    throw new Error("Could not fetch project");
+  }
+
+  return response.json();
 };
 
+const router = createBrowserRouter([
+  {
+    element: <BaseTemplate />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/catalog",
+        element: <Catalog />,
+      },
+    ],
+  },
+  {
+    element: <BaseTemplate />,
+    loader: loaderTemplate,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "articles?/:id",
+        element: <Article />,
+      },
+      {
+        path: "catalog?/:id",
+        element: <Product />,
+      },
+    ],
+  },
+]);
+
 export function App() {
-  return (
-    <Routes>
-      <Route element={<BaseTemplate />} errorElement={<ErrorPage />}>
-        <Route path="/" element={<Home />} />
-        <Route path="/catalog" element={<Catalog />} />
-        <Route path="/products?/:id" element={<Product />} loader={loaderTemplate} />
-        <Route path="/articles?/:id" element={<Article />} loader={loaderTemplate} />
-      </Route>
-    </Routes>
-  );
+  return <RouterProvider router={router} />;
 }
 
-if (typeof window !== "undefined") {
-  hydrate(
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>,
-    document.getElementById("app"),
-  );
-}
-
-export async function prerender(data) {
-  return await ssr(
-    <StaticRouter location={data.url}>
-      <App />
-    </StaticRouter>,
-  );
-}
+render(<App />, document.getElementById("app"));
