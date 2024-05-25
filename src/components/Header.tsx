@@ -62,12 +62,12 @@ const Header = () => {
                 </svg>
                 <span>Избранное</span>
               </a>
-              <a href="#">
+              <Link to="/basket">
                 <svg>
                   <use xlinkHref="/spritemap.svg#icon-cart-shopping" />
                 </svg>
                 <span>Корзина</span>
-              </a>
+              </Link>
             </div>
             <div class="header__burger">
               <span />

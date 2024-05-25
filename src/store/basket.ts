@@ -9,6 +9,8 @@ type Store = {
   loading: boolean;
   error: null;
   addToBasket: (product: Product) => void;
+  increment: (id: number) => void;
+  decrement: (id: number) => void;
 };
 
 export const useBasket = create<Store>()(
@@ -27,6 +29,33 @@ export const useBasket = create<Store>()(
         }
         set({ basket: [...products, product] });
       },
+      increment: (productId) => {
+        const products = CloneDeep(get().basket);
+        const index = products.findIndex(({ id }) => id === productId);
+        if (index !== -1) {
+          products[index].count = products[index].count + 1;
+          set({ basket: products });
+          return;
+        }
+        set({ basket: [...products, index] });
+      },
+      decrement: (productId) => {
+        const products = CloneDeep(get().basket);
+        const index = products.findIndex(({ id }) => id === productId);
+        if (index !== -1) {
+          products[index].count = products[index].count - 1;
+          set({ basket: products });
+          return;
+        }
+        set({ basket: [...products, index] });
+      },
+      // toggleTodo: (todoId) => set({
+      //   todos: get().todos.map(
+      //     todo => todoId === todo.id
+      //       ? { ...todo, completed: !todo.completed }
+      //       : todo
+      //   )
+      // }),
     }),
     { name: "basket" },
   ),

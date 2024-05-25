@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import ErrorPage from "./error-page";
 import Article from "./pages/Article";
+import Basket from "./pages/Basket";
 import Catalog from "./pages/Catalog";
 import Home from "./pages/Home";
 import Product from "./pages/Product";
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
       {
         path: "/catalog",
         element: <Catalog />,
+      },
+      {
+        path: "/basket",
+        element: <Basket />,
       },
     ],
   },

@@ -2,13 +2,12 @@ import { FC } from "react";
 import { Link } from "react-router-dom";
 
 import { Product as ProductType } from "../common/types/Product";
+import { getPriceFormat } from "../utils/getPriceFormat";
 import { getProductStatus, getProductStatusColor } from "../utils/getProductStatus";
 
 type Props = Pick<ProductType, "price" | "status" | "id" | "image" | "title" | "article" | "like">;
 
 const Product: FC<Props> = ({ price, status, id, image, title, article, like }) => {
-  const priceFormat = (price || 0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-
   return (
     <form className="product">
       <input type="hidden" name="id" value={id} />
@@ -25,7 +24,7 @@ const Product: FC<Props> = ({ price, status, id, image, title, article, like }) 
       </div>
       <div className="product__info">
         <div className="product__price">
-          <p>{priceFormat} ₽</p>
+          <p>{getPriceFormat(price)} ₽</p>
         </div>
         <div className="product__article">
           <p>Артикул: {article}</p>
