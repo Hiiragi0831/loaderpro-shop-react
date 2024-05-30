@@ -9,10 +9,9 @@ const Footer = () => {
             </svg>
           </div>
           <div className="footer__ya">
-            <picture>
-              <source srcSet="/assets/images/ya.png" />
-              <img src="/assets/images/ya.png" alt="" decoding="async" />
-            </picture>
+            <iframe
+              src="https://yandex.ru/sprav/widget/rating-badge/144706740321?type=rating&theme=dark"
+            />
           </div>
           <div className="footer__phone">
             <svg>

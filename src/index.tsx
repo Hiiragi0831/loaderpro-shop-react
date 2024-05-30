@@ -3,6 +3,7 @@ import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import { register } from "swiper/element/bundle";
 register();
 
+import "notyf/notyf.min.css";
 import "./scss/main.scss";
 
 import Footer from "./components/Footer";

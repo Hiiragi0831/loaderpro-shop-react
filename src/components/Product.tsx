@@ -2,52 +2,61 @@ import { FC } from "react";
 import { Link } from "react-router-dom";
 
 import { Product as ProductType } from "../common/types/Product";
+import { useBasket } from "../store/basket";
 import { getPriceFormat } from "../utils/getPriceFormat";
 import { getProductStatus, getProductStatusColor } from "../utils/getProductStatus";
 
 type Props = Pick<ProductType, "price" | "status" | "id" | "image" | "title" | "article" | "like">;
 
-const Product: FC<Props> = ({ price, status, id, image, title, article, like }) => {
+const Product: FC<Props> = (data) => {
+  const addToCart = useBasket((state) => state.addToBasket);
   return (
-    <form className="product">
-      <input type="hidden" name="id" value={id} />
-      <div className={`product__like ${like ? "is-active" : ""}`}>
+    <div className="product">
+      <div className={`product__like ${data.like ? "is-active" : ""}`}>
         <svg>
           <use xlinkHref="/spritemap.svg#icon-heart" />
         </svg>
       </div>
       <div className="product__img">
         <picture>
-          <source srcSet={image} />
-          <img src={image} alt="" decoding="async" />
+          <source srcSet={data.image} />
+          <img src={data.image} alt="" decoding="async" />
         </picture>
       </div>
       <div className="product__info">
         <div className="product__price">
-          <p>{getPriceFormat(price)} ₽</p>
+          <p>{getPriceFormat(data.price)} ₽</p>
         </div>
         <div className="product__article">
-          <p>Артикул: {article}</p>
+          <p>Артикул: {data.article}</p>
         </div>
       </div>
       <div className="product__main">
-        <div className={`product__status product__status--${getProductStatusColor(status)}`}>
+        <div className={`product__status product__status--${getProductStatusColor(data.status)}`}>
           <span />
-          <p>{getProductStatus(status)}</p>
+          <p>{getProductStatus(data.status)}</p>
         </div>
         <div className="product__title">
-          <Link to={`/catalog/${id}`}>{title}</Link>
+          <Link to={`/catalog/${data.id}`}>{data.title}</Link>
         </div>
       </div>
       <div className="product__buttons">
-        <button className="button button__primary button__icon" type="submit" name="basket">
-          <svg>
-            <use xlinkHref="/spritemap.svg#icon-shopping-cart" />
-          </svg>
-          В корзину
-        </button>
+        {data.status === 0 ? (
+          <>
+            <button className="button button__primary">Запросить</button>
+          </>
+        ) : (
+          <>
+            <button className="button button__primary button__icon" onClick={() => addToCart(data)}>
+              <svg>
+                <use xlinkHref="/spritemap.svg#icon-shopping-cart" />
+              </svg>
+              В корзину
+            </button>
+          </>
+        )}
       </div>
-    </form>
+    </div>
   );
 };
 

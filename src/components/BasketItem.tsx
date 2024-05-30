@@ -7,6 +7,7 @@ import { getPriceFormat } from "../utils/getPriceFormat";
 export const BasketItem: FC<ProductType> = ({ price, count, image, title, article, id }) => {
   const increment = useBasket((state) => state.increment);
   const decrement = useBasket((state) => state.decrement);
+  const deleteItem = useBasket((state) => state.deleteProduct);
 
   return (
     <div className="basket-item">
@@ -36,7 +37,11 @@ export const BasketItem: FC<ProductType> = ({ price, count, image, title, articl
         <p>{getPriceFormat(price * count)} ₽</p>
       </div>
       <div className="basket-item__del">
-        <button>
+        <button
+          onClick={() => {
+            deleteItem(id);
+          }}
+        >
           <svg>
             <use xlinkHref="/spritemap.svg#icon-trash-can" />
           </svg>
