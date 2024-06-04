@@ -22,6 +22,7 @@ const Catalog = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [sortKey, setSortKey] = useState<SORT_PRODUCTS>(() => SORT_PRODUCTS.DEFAULT);
   const [brand, setBrand] = useState<number>(() => -1);
+
   const filteredProducts = useMemo(() => {
     const sort = brand !== -1 ? data?.filter((item) => item?.brand === brand) : data;
     return getFilteredProducts(cloneDeep(sort), sortKey);

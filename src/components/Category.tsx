@@ -10,7 +10,7 @@ const Category = () => {
       <div className="category__info">
         <div className="category__title">Запчасти ведущего моста</div>
         <div className="category__button">
-          <span>В каталог</span>
+          <span>Перейти</span>
           <svg>
             <use xlinkHref="/spritemap.svg#icon-right-arrow" />
           </svg>

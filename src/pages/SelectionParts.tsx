@@ -28,15 +28,15 @@ export default function SelectionParts() {
               <div className="query__title">Ваш запрос</div>
               <div className="query__form">
                 <label className="form__input">
-                  <input type="text" name="brand" placeholder="Бренд" value="Loaderpro"/>
+                  <input type="text" name="brand" placeholder="Бренд" value="Loaderpro" />
                   <span>Бренд</span>
                 </label>
                 <label className="form__input">
-                  <input type="text" name="partnumber" placeholder="Номер запчасти" value="13243422"/>
+                  <input type="text" name="partnumber" placeholder="Номер запчасти" value="13243422" />
                   <span>Номер запчасти</span>
                 </label>
                 <label className="form__input">
-                  <input type="text" name="brand" placeholder="Количество" value="2"/>
+                  <input type="text" name="brand" placeholder="Количество" value="2" />
                   <span>Количество</span>
                 </label>
                 <div className="query__buttons">
@@ -45,15 +45,15 @@ export default function SelectionParts() {
               </div>
               <div className="query__form">
                 <label className="form__input">
-                  <input type="text" name="brand" placeholder="Бренд" value="Loaderpro"/>
+                  <input type="text" name="brand" placeholder="Бренд" value="Loaderpro" />
                   <span>Бренд</span>
                 </label>
                 <label className="form__input">
-                  <input type="text" name="partnumber" placeholder="Номер запчасти" value="13243422"/>
+                  <input type="text" name="partnumber" placeholder="Номер запчасти" value="13243422" />
                   <span>Номер запчасти</span>
                 </label>
                 <label className="form__input">
-                  <input type="text" name="brand" placeholder="Количество" value="2"/>
+                  <input type="text" name="brand" placeholder="Количество" value="2" />
                   <span>Количество</span>
                 </label>
                 <div className="query__buttons">

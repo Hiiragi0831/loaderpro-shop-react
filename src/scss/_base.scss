@@ -48,6 +48,11 @@ body {
 
 main {
 	flex: 1;
+	margin-top: vc(200);
+
+	@include devices {
+		margin-top: vc(64);
+	}
 }
 
 h1,
@@ -232,5 +237,11 @@ h2,
 			height: vc(5);
 			background: $color-woodsmoke-200;
 		}
+	}
+
+	@include devices {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: vc(20);
 	}
 }

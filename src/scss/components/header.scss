@@ -1,4 +1,9 @@
 .header {
+	position: fixed;
+	background: $color-white;
+	z-index: 10;
+	width: 100%;
+
 	&__logo {
 		width: vc(260);
 		height: vc(55);
@@ -127,7 +132,7 @@
 	}
 
 	&__top {
-		padding: vc(20) 0;
+		padding: vc(10) 0;
 		background: $color-woodsmoke-50;
 
 		.row {
@@ -169,7 +174,7 @@
 	}
 
 	&__main {
-		padding: vc(20) 0;
+		padding: vc(15) 0;
 
 		.row {
 			display: grid;
@@ -209,7 +214,7 @@
 				position: relative;
 				display: flex;
 				align-items: center;
-				padding: vc(28) vc(15);
+				padding: vc(20) vc(15);
 				height: 100%;
 				font-weight: 400;
 				font-size: vc(16);
