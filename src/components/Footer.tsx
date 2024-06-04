@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   return (
     <footer className="footer">
@@ -9,9 +11,7 @@ const Footer = () => {
             </svg>
           </div>
           <div className="footer__ya">
-            <iframe
-              src="https://yandex.ru/sprav/widget/rating-badge/144706740321?type=rating&theme=dark"
-            />
+            <iframe src="https://yandex.ru/sprav/widget/rating-badge/144706740321?type=rating&theme=dark" />
           </div>
           <div className="footer__phone">
             <svg>
@@ -57,30 +57,21 @@ const Footer = () => {
           <div className="footer__links footer__links--navigation">
             <p className="footer__links-head">Навигация</p>
             <div className="footer__links-row footer__links-row--2">
-              <a className="footer__link" href="#">
+              <Link className="footer__link" to="/">
                 Главная
-              </a>
-              <a className="footer__link" href="#">
-                Поставщикам
-              </a>
-              <a className="footer__link" href="#">
-                О компании
-              </a>
-              <a className="footer__link" href="#">
-                Дилерам
-              </a>
-              <a className="footer__link" href="#">
-                Условия доставки
-              </a>
-              <a className="footer__link" href="#">
-                Конфиденциальность
-              </a>
-              <a className="footer__link" href="#">
-                Способы оплаты
-              </a>
-              <a className="footer__link" href="#">
-                Контакты
-              </a>
+              </Link>
+              <Link className="footer__link" to="/catalog">
+                Каталог
+              </Link>
+              <Link className="footer__link" to="/basket">
+                Корзина
+              </Link>
+              <Link className="footer__link" to="/selectionparts">
+                Подбор ЗП
+              </Link>
+              <Link className="footer__link" to="/requestparts">
+                Запрос ЗП
+              </Link>
             </div>
           </div>
           <div className="footer__links footer__links--catalog">

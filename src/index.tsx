@@ -14,6 +14,8 @@ import Basket from "./pages/Basket";
 import Catalog from "./pages/Catalog";
 import Home from "./pages/Home";
 import Product from "./pages/Product";
+import RequestParts from "./pages/RequestParts";
+import SelectionParts from "./pages/SelectionParts";
 
 const BaseTemplate = () => {
   return (
@@ -56,6 +58,14 @@ const router = createBrowserRouter([
       {
         path: "/basket",
         element: <Basket />,
+      },
+      {
+        path: "/requestparts",
+        element: <RequestParts />,
+      },
+      {
+        path: "/selectionparts",
+        element: <SelectionParts />,
       },
     ],
   },
