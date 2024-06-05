@@ -58,76 +58,78 @@ const Footer = () => {
           </div>
         </div>
         <div className="footer__main">
-          <div className="footer__links footer__links--navigation">
-            <p className="footer__links-head">Навигация</p>
-            <div className="footer__links-row footer__links-row--2">
+          <div className="footer__links">
+            <p className="footer__links-head">Партнёрам</p>
+            <div className="footer__links-row">
               <Link className="footer__link" to="/">
                 Главная
               </Link>
               <Link className="footer__link" to="/catalog">
-                Каталог
+                Поставщикам
               </Link>
               <Link className="footer__link" to="/basket">
-                Корзина
+                О компании
               </Link>
               <Link className="footer__link" to="/selectionparts">
-                Подбор ЗП
+                Дилерам
               </Link>
               <Link className="footer__link" to="/requestparts">
-                Запрос ЗП
+                Условия доставки
+              </Link>
+              <Link className="footer__link" to="/">
+                Конфиденциальность
+              </Link>
+              <Link className="footer__link" to="/">
+                Способы оплаты
+              </Link>
+              <Link className="footer__link" to="/">
+                Контакты
               </Link>
             </div>
           </div>
-          <div className="footer__links footer__links--catalog">
-            <p className="footer__links-head">Каталог</p>
+          <div className="footer__links">
+            <p className="footer__links-head">Товары</p>
             <div className="footer__links-row">
               <a className="footer__link" href="#">
-                Запчасти JUNGHEINRICH
+                Спецтехника
               </a>
               <a className="footer__link" href="#">
-                Запчасти CLARK
+                Запасные части
               </a>
               <a className="footer__link" href="#">
-                Запчасти OM PIMESPO
+                Навесное оборудование
               </a>
               <a className="footer__link" href="#">
-                Запчасти STILL
+                Шины и диски
               </a>
               <a className="footer__link" href="#">
-                Запчасти MERLO
+                Тяговые аккумуляторы
               </a>
               <a className="footer__link" href="#">
-                Запчасти NOBLELIFT
+                Полиуретановые колеса
               </a>
               <a className="footer__link" href="#">
-                Запчасти LINDE
+                Фильтры
               </a>
               <a className="footer__link" href="#">
-                Запчасти HYSTER
+                Масла и смазки
+              </a>
+            </div>
+          </div>
+          <div className="footer__links">
+            <p className="footer__links-head">Услуги</p>
+            <div className="footer__links-row footer__links-row--1">
+              <a className="footer__link" href="#">
+                Подбор запасных частей
               </a>
               <a className="footer__link" href="#">
-                Запчасти BOBCAT
+                Шиномонтаж
               </a>
               <a className="footer__link" href="#">
-                Запчасти COMBILIFT
+                Восстановление колес
               </a>
               <a className="footer__link" href="#">
-                Запчасти CROWN
-              </a>
-              <a className="footer__link" href="#">
-                Запчасти TERBERG
-              </a>
-              <a className="footer__link" href="#">
-                Запчасти KALMAR
-              </a>
-              <a className="footer__link" href="#">
-                Запчасти BT
-              </a>
-              <a className="footer__link" href="#">
-                Запчасти YALE
-              </a>
-              <a className="footer__link" href="#">
-                Весь каталог
+                Ремонт и обслуживание
               </a>
             </div>
           </div>

@@ -96,17 +96,21 @@
 
 		&-row {
 			display: grid;
-			grid-template-columns: repeat(3, 1fr);
+			grid-template-columns: repeat(2, 1fr);
 			gap: vc(30) vc(124);
 
-			&--2 {
-				grid-template-columns: repeat(2, 1fr);
+			&--1 {
+				grid-template-columns: repeat(1, 1fr);
 			}
 
 			@include devices {
 				grid-template-columns: repeat(1, 1fr);
 				gap: vc(14);
 			}
+		}
+
+		&--navigation {
+
 		}
 	}
 

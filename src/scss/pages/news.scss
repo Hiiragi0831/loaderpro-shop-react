@@ -21,12 +21,12 @@
 		position: relative;
 		overflow: hidden;
 		border-radius: vc(20);
-		height: vc(500);
+		height: vc(700);
 
 		img {
 			height: 100%;
 			object-fit: cover;
-			object-position: bottom;
+			object-position: center;
 		}
 	}
 
@@ -61,7 +61,7 @@
 
 	p,
 	li {
-		font-size: vc(16);
+		font-size: vc(18);
 		line-height: vc(26);
 	}
 
@@ -73,11 +73,23 @@
 
 		li {
 			display: list-item;
-			list-style: initial;
+			list-style: auto;
 
 			&::marker {
 				color: $color-tree-poppy-400;
 			}
+		}
+	}
+
+	ol {
+		display: flex;
+		flex-direction: column;
+		margin-left: vc(20);
+		gap: vc(20);
+
+		li {
+			display: list-item;
+			list-style: auto;
 		}
 	}
 

@@ -1,5 +1,6 @@
 import { Article } from "../common/types/Article";
 import { Brand } from "../common/types/Brand";
+import { Category } from "../common/types/Category";
 import { Product } from "../common/types/Product";
 
 class APIService {
@@ -50,6 +51,15 @@ class APIService {
   public async getBrand(id: number): Promise<Brand> {
     try {
       const res = await fetch(`https://76fbb2aa70af7ba2.mokky.dev/brands/${id}`);
+      return res.json();
+    } catch (error) {
+      console.error("Error fetching:", error.message);
+    }
+  }
+
+  public async getAllCategory(): Promise<Category[]> {
+    try {
+      const res = await fetch(`https://76fbb2aa70af7ba2.mokky.dev/category/`);
       return res.json();
     } catch (error) {
       console.error("Error fetching:", error.message);

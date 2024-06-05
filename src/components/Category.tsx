@@ -1,14 +1,20 @@
-const Category = () => {
+import { FC } from "react";
+
+import { Category as CategoryType } from "../common/types/Category";
+
+type Props = Pick<CategoryType, "id" | "title" | "image" | "popular">;
+
+const Category: FC<Props> = (data) => {
   return (
     <a className="category">
       <div className="category__bg">
         <picture>
-          <source srcSet="/assets/images/popCategory.png" />
-          <img src="/assets/images/popCategory.png" alt="" decoding="async" />
+          <source srcSet={data.image} />
+          <img src={data.image} alt={data.title} decoding="async" />
         </picture>
       </div>
       <div className="category__info">
-        <div className="category__title">Запчасти ведущего моста</div>
+        <div className="category__title">{data.title}</div>
         <div className="category__button">
           <span>Перейти</span>
           <svg>
