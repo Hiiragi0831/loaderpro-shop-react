@@ -1,6 +1,6 @@
 .footer {
 	color: $color-white;
-	background: #181818;
+	background: #242528;
 
 	&__top {
 		display: flex;
@@ -115,13 +115,14 @@
 	}
 
 	&__ya {
-		margin-top: vc(42);
-		width: vc(217);
-		height: vc(72);
+		width: 149px;
+		height: 49px;
+		border-radius: 5px;
+		overflow: hidden;
+		background: #242528;
 
 		iframe {
-			width: 100%;
-			height: 100%;
+			background: #242528;
 		}
 
 		@include devices {

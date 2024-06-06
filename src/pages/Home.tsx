@@ -5,6 +5,7 @@ import HomeSlider from "../components/HomeSlider";
 import { MapSending } from "../components/MapSending";
 import Products from "../components/Products";
 import { Reviews } from "../components/Reviews";
+import { Team } from "../components/Team";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Advantages />
       <Reviews />
       <MapSending />
+      <Team />
       <Articles limit={4} />
     </main>
   );

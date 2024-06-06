@@ -10,6 +10,7 @@ import Advantages from "../components/Advantages";
 import Articles from "../components/Articles";
 import { api } from "../services/api";
 import { useBasket } from "../store/basket";
+import {Reviews} from "../components/Reviews";
 
 export default function Product() {
   const { id } = useParams();
@@ -240,10 +241,6 @@ export default function Product() {
                   <div className="commodity__description">
                     <h5>Описание</h5>
                     <p>{data.description}</p>
-                    {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-                    {/*// @ts-expect-error */}
-                    <review-lab data-widgetid="615460382f94086a47cb9ca9" />
-                    <script src="https://app.reviewlab.ru/widget/index-es2015.js" defer />
                   </div>
                   <div className="commodity__basket">
                     <div className="commodity__price">
@@ -280,6 +277,7 @@ export default function Product() {
           )}
         </div>
       </section>
+      <Reviews />
       <Advantages />
       <Articles limit={4} />
     </main>

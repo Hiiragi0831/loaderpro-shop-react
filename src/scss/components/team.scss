@@ -1,0 +1,26 @@
+.team {
+    &__slider {
+        margin-right: vc(-40) !important;
+    }
+    &__slide {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding-right: vc(40);
+        gap: vc(15);
+
+        picture {
+            height: vc(424);
+
+            img {
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+    }
+
+    b {
+        font-weight: 500;
+    }
+}

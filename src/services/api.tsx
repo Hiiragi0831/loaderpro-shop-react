@@ -65,6 +65,14 @@ class APIService {
       console.error("Error fetching:", error.message);
     }
   }
+  public async getTeams(): Promise<Category[]> {
+    try {
+      const res = await fetch(`https://76fbb2aa70af7ba2.mokky.dev/teams/`);
+      return res.json();
+    } catch (error) {
+      console.error("Error fetching:", error.message);
+    }
+  }
 }
 
 export const api: APIService = new APIService();

@@ -13,8 +13,9 @@ const Footer = () => {
           <div className="footer__ya">
             <iframe
               src="https://yandex.ru/sprav/widget/rating-badge/144706740321?type=rating&theme=dark"
-              width="100%"
-              height="100%"
+              width="150"
+              height="50"
+              frameborder="0"
             />
           </div>
           <div className="footer__phone">
