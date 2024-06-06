@@ -6,7 +6,7 @@ import { Article as ArticleType } from "../common/types/Article";
 type Props = Pick<ArticleType, "id" | "title" | "description" | "image" | "date">;
 
 const Article: FC<Props> = ({ id, title, description, image, date }) => {
-  const currentDate = new Date(date);
+  const currentDate = new Date(date).toISOString().slice(0, 10).split("-").reverse().join(".");
 
   return (
     <div className="article">
@@ -20,9 +20,7 @@ const Article: FC<Props> = ({ id, title, description, image, date }) => {
         <p>{title}</p>
       </div>
       <div className="article__date">
-        <p>
-          {currentDate.getDate()}.{currentDate.getMonth() + 1}.{currentDate.getFullYear()}
-        </p>
+        <p>{currentDate}</p>
       </div>
       <div className="article__description">
         <p>{description.slice(0, 100)}...</p>

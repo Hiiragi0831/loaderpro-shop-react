@@ -25,7 +25,7 @@
 			align-items: center;
 			border: 1px solid $color-woodsmoke-300;
 			border-radius: vc(5);
-			padding: vc(20);
+			padding: vc(14) vc(20);
 
 			input {
 				width: 100%;
@@ -56,7 +56,7 @@
 			justify-content: center;
 			width: max-content;
 			min-width: vc(40);
-			gap: vc(18);
+			gap: vc(12);
 
 			span {
 				font-size: vc(16);

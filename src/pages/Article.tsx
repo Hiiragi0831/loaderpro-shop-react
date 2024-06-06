@@ -15,8 +15,7 @@ export default function Article() {
     title: "Загрузка новости",
   });
   const [isLoading, setIsLoading] = useState(true);
-  const current = new Date(data.date);
-  const date = `${current.getDate()}.${current.getMonth() + 1}.${current.getFullYear()}`;
+  const date = new Date(data.date).toISOString().slice(0, 10).split("-").reverse().join(".");
 
   const loadArticle = async () => {
     try {
