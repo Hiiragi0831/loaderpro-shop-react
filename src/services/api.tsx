@@ -73,6 +73,20 @@ class APIService {
       console.error("Error fetching:", error.message);
     }
   }
+  public async getYoutubeVideos(): Promise<any> {
+    const YOUTUBE_API = "https://www.googleapis.com/youtube/v3/playlistItems";
+    const YOUTUBE_KEY = "AIzaSyA2UEjRCI--QCtdYoA_jeN5s84htgXNyF0";
+    const YOUTUBE_PLAYLIST = "PLoWS47MwXvIF7M3aL9PborMU-72zBf1jV";
+
+    try {
+      const res = await fetch(
+        `${YOUTUBE_API}?part=snippet&maxResults=50&playlistId=${YOUTUBE_PLAYLIST}&key=${YOUTUBE_KEY}`,
+      );
+      return res.json();
+    } catch (error) {
+      console.error("Error fetching:", error.message);
+    }
+  }
 }
 
 export const api: APIService = new APIService();

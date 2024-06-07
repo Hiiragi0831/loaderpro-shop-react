@@ -6,6 +6,7 @@ import { MapSending } from "../components/MapSending";
 import Products from "../components/Products";
 import { Reviews } from "../components/Reviews";
 import { Team } from "../components/Team";
+import { VideoGallery } from "../components/VideoGallery";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <Reviews />
       <MapSending />
       <Team />
+      <VideoGallery />
       <Articles limit={4} />
     </main>
   );
