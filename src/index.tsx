@@ -3,6 +3,7 @@ import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import { register } from "swiper/element/bundle";
 register();
 
+import "swiper/swiper-bundle.css";
 import "notyf/notyf.min.css";
 import "./scss/main.scss";
 

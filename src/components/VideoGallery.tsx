@@ -1,5 +1,7 @@
 import FsLightbox from "fslightbox-react";
+import delay from "lodash-es/delay";
 import { useMemo, useState } from "preact/hooks";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 import { useVideos } from "../utils/hooks/useVideos";
 
@@ -11,25 +13,44 @@ export const VideoGallery = () => {
   const sources = useMemo(() => videos.map((video) => video.link), [videos]);
 
   return (
-    <ul>
-      <button onClick={() => setToggler(!toggler)}>Open the lightbox.</button>
-      <button onClick={() => setProductIndex(1)}>Load the second product.</button>
+    <section className="videoGallery">
+      <div className="container">
+        <div className="title">
+          <h1>Мы на YOUTUBE</h1>
+        </div>
+        <Swiper
+          className="videoGallery__slider"
+          slidesPerView={1}
+          breakpoints={{
+            1024: {
+              slidesPerView: 4,
+            },
+          }}
+        >
+          {isLoading
+            ? "Загрузка"
+            : videos.map((item, index) => {
+                return (
+                  <SwiperSlide key={index}>
+                    <button
+                      className="videoGallery__slide"
+                      onClick={() => {
+                        setProductIndex(index);
+                        delay(() => setToggler(!toggler), 100);
+                      }}
+                    >
+                      <picture>
+                        <source srcSet={item.image} />
+                        <img src={item.image} alt={item.title} decoding="async" />
+                      </picture>
+                      <p className="h4">{item.title}</p>
+                    </button>
+                  </SwiperSlide>
+                );
+              })}
+        </Swiper>
+      </div>
       <FsLightbox toggler={toggler} sources={[sources[productIndex]]} key={productIndex} />
-
-      {isLoading
-        ? "Загрузка"
-        : videos.map((item, index) => {
-            return (
-              <li key={index}>
-                <a href={item.link}>
-                  <p>
-                    <img src={item.image} alt="" />
-                  </p>
-                  <h3>{item.title}</h3>
-                </a>
-              </li>
-            );
-          })}
-    </ul>
+    </section>
   );
 };

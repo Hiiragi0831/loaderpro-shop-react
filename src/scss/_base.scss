@@ -55,6 +55,10 @@ main {
 	}
 }
 
+section {
+	margin: vc(60) 0;
+}
+
 h1,
 h2,
 h3,
@@ -181,6 +185,12 @@ h2,
 .h2 {
 	font-weight: 500;
 	font-size: vc(30);
+}
+
+h4,
+.h4 {
+	font-weight: 500;
+	font-size: vc(20);
 }
 
 .title {

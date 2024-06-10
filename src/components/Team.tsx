@@ -25,7 +25,15 @@ export const Team = () => {
         <div className="title">
           <h1>Знай наших в лицо</h1>
         </div>
-        <Swiper slidesPerView={5} className="team__slider">
+        <Swiper
+          slidesPerView={1}
+          className="team__slider"
+          breakpoints={{
+            1024: {
+              slidesPerView: 5,
+            },
+          }}
+        >
           {isLoading
             ? "Загрузка"
             : data.map((post) => {

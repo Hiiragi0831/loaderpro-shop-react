@@ -7,8 +7,6 @@
 	color: $color-white;
 
 	&__section {
-		margin: vc(60) 0;
-
 		.row {
 			display: grid;
 			grid-template-columns: 1.2fr 0.8fr;

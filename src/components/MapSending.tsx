@@ -1,6 +1,6 @@
 export const MapSending = () => {
   return (
-    <section>
+    <section className="map">
       <div className="container">
         <div className="title">
           <h1>Ежедневные отправки</h1>

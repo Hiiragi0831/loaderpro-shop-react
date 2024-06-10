@@ -8,9 +8,9 @@ import { Brand as BrandType } from "../common/types/Brand";
 import { Product as ProductType } from "../common/types/Product";
 import Advantages from "../components/Advantages";
 import Articles from "../components/Articles";
+import { Reviews } from "../components/Reviews";
 import { api } from "../services/api";
 import { useBasket } from "../store/basket";
-import {Reviews} from "../components/Reviews";
 
 export default function Product() {
   const { id } = useParams();
