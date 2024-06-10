@@ -1,4 +1,5 @@
 import { useLayoutEffect, useState } from "preact/hooks";
+import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import { api } from "../services/api";
@@ -27,12 +28,15 @@ export const Team = () => {
         </div>
         <Swiper
           slidesPerView={1}
-          className="team__slider"
           breakpoints={{
             1024: {
               slidesPerView: 5,
             },
           }}
+          pagination={{
+            clickable: true,
+          }}
+          modules={[Pagination]}
         >
           {isLoading
             ? "Загрузка"

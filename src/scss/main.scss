@@ -10,6 +10,7 @@
 @import 'fonts';
 @import 'base';
 @import 'helpers';
+@import 'vendor';
 
 @import 'components/button';
 @import 'components/header';
@@ -28,6 +29,7 @@
 @import 'components/team';
 @import 'components/map';
 @import 'components/videoGallery';
+@import 'components/swiper';
 
 @import 'pages/home';
 @import 'pages/catalog';

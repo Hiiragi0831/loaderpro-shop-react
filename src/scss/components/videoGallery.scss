@@ -1,6 +1,11 @@
 .videoGallery {
-    &__slider {
-        margin-right: vc(-40) !important;
+    .swiper {
+        margin-right: vc(-40);
+        padding-bottom: vc(40);
+
+        &-pagination {
+            bottom: vc(3);
+        }
     }
 
     &__slide {

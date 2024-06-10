@@ -1,6 +1,7 @@
 import FsLightbox from "fslightbox-react";
 import delay from "lodash-es/delay";
 import { useMemo, useState } from "preact/hooks";
+import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import { useVideos } from "../utils/hooks/useVideos";
@@ -19,8 +20,11 @@ export const VideoGallery = () => {
           <h1>Мы на YOUTUBE</h1>
         </div>
         <Swiper
-          className="videoGallery__slider"
           slidesPerView={1}
+          pagination={{
+            clickable: true,
+          }}
+          modules={[Pagination]}
           breakpoints={{
             1024: {
               slidesPerView: 4,
