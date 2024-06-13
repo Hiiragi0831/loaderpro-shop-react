@@ -3,4 +3,5 @@ export type Category = {
   title: string;
   image: string;
   popular: boolean;
+  link: string;
 };

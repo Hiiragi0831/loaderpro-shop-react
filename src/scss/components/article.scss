@@ -18,6 +18,12 @@
 		margin-bottom: vc(14);
 		border-radius: vc(10);
 		box-shadow: $box-shadow;
+		height: vc(240);
+
+		picture,
+		img {
+			height: 100%;
+		}
 	}
 
 	&__title {

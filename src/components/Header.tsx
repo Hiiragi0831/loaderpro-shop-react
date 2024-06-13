@@ -56,7 +56,7 @@ const Header = () => {
                 </svg>
                 <span>Войти</span>
               </a>
-              <a href="#">
+              <a href="/favorites">
                 <svg>
                   <use xlinkHref="/spritemap.svg#icon-heart" />
                 </svg>
@@ -93,7 +93,7 @@ const Header = () => {
               <a href="#" title="Навесное оборудование">
                 Навесное оборудование
               </a>
-              <a href="#" title="Тяговые аккумуляторы">
+              <a href="/battery" title="Тяговые аккумуляторы">
                 Тяговые аккумуляторы
               </a>
               <a href="#" title="Полиуретановые колеса">

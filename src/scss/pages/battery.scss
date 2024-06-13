@@ -1,0 +1,33 @@
+.battery {
+    &__hero {
+        picture {
+            height: vc(490);
+            border-radius: vc(10);
+            overflow: hidden;
+
+            img {
+                height: 100%;
+            }
+
+            @include devices {
+                height: auto;
+            }
+        }
+    }
+
+    &__category {
+        .row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: vc(14);
+
+            @include devices {
+                grid-template-columns: 100%;
+            }
+        }
+
+        .category {
+            height: vc(280);
+        }
+    }
+}

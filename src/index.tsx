@@ -3,7 +3,6 @@ import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import { register } from "swiper/element/bundle";
 register();
 
-import "notyf/notyf.min.css";
 import "./scss/main.scss";
 
 import Footer from "./components/Footer";
@@ -11,7 +10,9 @@ import Header from "./components/Header";
 import ErrorPage from "./error-page";
 import Article from "./pages/Article";
 import Basket from "./pages/Basket";
+import { Battery } from "./pages/Battery";
 import Catalog from "./pages/Catalog";
+import { Favorites } from "./pages/Favorites";
 import Home from "./pages/Home";
 import Product from "./pages/Product";
 import RequestParts from "./pages/RequestParts";
@@ -66,6 +67,14 @@ const router = createBrowserRouter([
       {
         path: "/selectionparts",
         element: <SelectionParts />,
+      },
+      {
+        path: "/favorites",
+        element: <Favorites />,
+      },
+      {
+        path: "/battery",
+        element: <Battery />,
       },
     ],
   },

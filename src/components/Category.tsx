@@ -2,11 +2,11 @@ import { FC } from "react";
 
 import { Category as CategoryType } from "../common/types/Category";
 
-type Props = Pick<CategoryType, "id" | "title" | "image" | "popular">;
+type Props = Pick<CategoryType, "title" | "image">;
 
 const Category: FC<Props> = (data) => {
   return (
-    <a className="category">
+    <a className="category" href="#">
       <div className="category__bg">
         <picture>
           <source srcSet={data.image} />
