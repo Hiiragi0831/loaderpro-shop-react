@@ -43,10 +43,15 @@
 			gap: vc(40);
 
 			p {
+				margin-bottom: vc(26);
 				font-weight: 300;
 				font-style: normal;
 				font-size: vc(22);
 				line-height: vc(26);
+
+				&:last-of-type {
+					margin-bottom: 0;
+				}
 			}
 
 			@include devices {
@@ -81,6 +86,13 @@
 				font-size: vc(26);
 				text-align: center;
 			}
+		}
+	}
+
+	&__which {
+		picture {
+			margin: vc(50) auto 0;
+			width: vc(1496);
 		}
 	}
 }
