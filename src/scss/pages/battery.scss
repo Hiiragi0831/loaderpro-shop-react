@@ -1,33 +1,86 @@
 .battery {
-    &__hero {
-        picture {
-            height: vc(490);
-            border-radius: vc(10);
-            overflow: hidden;
+	&__hero {
+		picture {
+			overflow: hidden;
+			border-radius: vc(10);
+			height: vc(490);
 
-            img {
-                height: 100%;
-            }
+			img {
+				height: 100%;
+			}
 
-            @include devices {
-                height: auto;
-            }
-        }
-    }
+			@include devices {
+				height: auto;
+			}
+		}
+	}
 
-    &__category {
-        .row {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: vc(14);
+	&__category {
+		.row {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			gap: vc(14);
 
-            @include devices {
-                grid-template-columns: 100%;
-            }
-        }
+			@include devices {
+				grid-template-columns: 100%;
+			}
+		}
 
-        .category {
-            height: vc(280);
-        }
-    }
+		.category {
+			height: vc(280);
+		}
+	}
+
+	&__type {
+		h1 {
+			text-align: center;
+		}
+
+		&-intro {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			margin: vc(20) 0 vc(40);
+			gap: vc(40);
+
+			p {
+				font-weight: 300;
+				font-style: normal;
+				font-size: vc(22);
+				line-height: vc(26);
+			}
+
+			@include devices {
+				grid-template-columns: repeat(1, 1fr);
+				gap: vc(10);
+			}
+		}
+
+		.row {
+			display: grid;
+			grid-template-columns: repeat(5, 1fr);
+			gap: vc(80);
+		}
+
+		&-item {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: vc(14);
+
+			picture {
+				height: vc(200);
+
+				img {
+					height: 100%;
+					object-fit: contain;
+				}
+			}
+
+			p {
+				font-weight: 500;
+				font-size: vc(26);
+				text-align: center;
+			}
+		}
+	}
 }

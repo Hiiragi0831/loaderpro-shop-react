@@ -35,7 +35,12 @@
 		"sass": "^1.77.2",
 		"sass-loader": "^10.5.2",
 		"typescript": "^5.4.5",
-		"vite": "^5.2.2"
+		"vite": "^5.2.2",
+		"stylelint": "14.16.1",
+		"stylelint-declaration-block-no-ignored-properties": "2.6.0",
+		"stylelint-order": "6.0.1",
+		"stylelint-scss": "4.3.0",
+		"postcss-scss": "^4.0.9"
 	},
 	"eslintConfig": {
 		"extends": "preact"

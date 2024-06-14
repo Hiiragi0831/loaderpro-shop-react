@@ -1,0 +1,4 @@
+dist
+public
+src/scss/_sprites.scss
+src/scss/mixins/libs/**
