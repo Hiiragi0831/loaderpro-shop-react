@@ -10,10 +10,11 @@ import Header from "./components/Header";
 import ErrorPage from "./error-page";
 import Article from "./pages/Article";
 import Basket from "./pages/Basket";
-import { Battery } from "./pages/Battery";
+import Battery from "./pages/Battery";
 import Catalog from "./pages/Catalog";
 import { Favorites } from "./pages/Favorites";
 import Home from "./pages/Home";
+import { PrivacyPolicy } from "./pages/PrivacyPolicy";
 import Product from "./pages/Product";
 import RequestParts from "./pages/RequestParts";
 import SelectionParts from "./pages/SelectionParts";
@@ -75,6 +76,10 @@ const router = createBrowserRouter([
       {
         path: "/battery",
         element: <Battery />,
+      },
+      {
+        path: "/privacy-policy",
+        element: <PrivacyPolicy />,
       },
     ],
   },

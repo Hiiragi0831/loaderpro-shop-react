@@ -88,4 +88,8 @@
 	@include hover {
 		opacity: 0.8;
 	}
+
+	@include devices {
+		height: vc(180);
+	}
 }

@@ -1,0 +1,12 @@
+.page-text {
+	h1,
+	h2,
+	h3,
+	p {
+		margin-bottom: vc(10);
+	}
+
+	p + h3 {
+		margin-top: vc(30);
+	}
+}

@@ -70,21 +70,28 @@
 
 			@include devices {
 				grid-template-columns: repeat(1, 1fr);
-				margin: vc(10) 0 vc(0);
+				margin: vc(10) 0 vc(20);
 				gap: vc(10);
 			}
 		}
 
 		.row {
-			display: grid;
-			grid-template-columns: repeat(5, 1fr);
-			gap: vc(80);
+			display: flex;
+		}
+
+		.swiper {
+			width: 100%;
+
+			&-slide {
+				width: auto;
+			}
 		}
 
 		&-item {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
+			padding-right: vc(86);
 			gap: vc(14);
 
 			picture {
@@ -94,12 +101,25 @@
 					height: 100%;
 					object-fit: contain;
 				}
+
+				@include devices {
+					height: vc(100);
+				}
 			}
 
 			p {
 				font-weight: 500;
 				font-size: vc(26);
 				text-align: center;
+
+				@include devices {
+					font-size: vc(14);
+				}
+			}
+
+			@include devices {
+				padding-right: vc(30);
+				width: vc(185);
 			}
 		}
 	}

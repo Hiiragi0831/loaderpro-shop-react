@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import {PrivacyPolicy} from "../pages/PrivacyPolicy";
 
 const Footer = () => {
   return (
@@ -77,7 +78,7 @@ const Footer = () => {
               <Link className="footer__link" to="/requestparts">
                 Условия доставки
               </Link>
-              <Link className="footer__link" to="/">
+              <Link className="footer__link" to="/privacy-policy">
                 Конфиденциальность
               </Link>
               <Link className="footer__link" to="/">

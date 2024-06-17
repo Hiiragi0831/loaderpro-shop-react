@@ -9,6 +9,7 @@
 
 			@include devices {
 				grid-template-columns: 100%;
+				gap: vc(20);
 			}
 		}
 	}
@@ -17,12 +18,16 @@
 		overflow: hidden;
 		margin-bottom: vc(14);
 		border-radius: vc(10);
-		box-shadow: $box-shadow;
 		height: vc(240);
+		box-shadow: $box-shadow;
 
 		picture,
 		img {
 			height: 100%;
+		}
+
+		@include devices {
+			height: vc(200);
 		}
 	}
 
@@ -30,6 +35,10 @@
 		margin-bottom: vc(10);
 		font-weight: 500;
 		font-size: vc(22);
+
+		@include devices {
+			font-size: vc(18);
+		}
 	}
 
 	&__date {
@@ -37,11 +46,20 @@
 		font-weight: 400;
 		font-size: vc(16);
 		color: $color-woodsmoke-400;
+
+		@include devices {
+			margin-bottom: vc(10);
+			font-size: vc(14);
+		}
 	}
 
 	&__description {
 		margin-bottom: vc(10);
 		font-size: vc(16);
+
+		@include devices {
+			font-size: vc(14);
+		}
 	}
 
 	&__link {
@@ -50,6 +68,10 @@
 		line-height: 1.4;
 		text-decoration-line: underline;
 		color: $color-tree-poppy-400;
+
+		@include devices {
+			font-size: vc(14);
+		}
 	}
 
 	&__more {
