@@ -10,7 +10,7 @@
 	}
 
 	@include devices {
-		--width-base: 375;
+		--width-base: 320;
 		--width-current: 100vmin;
 	}
 }
@@ -58,6 +58,10 @@ main {
 
 section {
 	margin: vc(60) 0;
+
+	@include devices {
+		margin: vc(30) 0;
+	}
 }
 
 h1,
@@ -180,6 +184,11 @@ h1,
 .h1 {
 	font-weight: 700;
 	font-size: vc(40);
+
+	@include devices {
+		font-size: vc(20);
+		line-height: vc(24);
+	}
 }
 
 h2,
@@ -238,16 +247,6 @@ h4,
 	.h3 {
 		position: relative;
 		display: inline-flex;
-
-		&::before {
-			content: "";
-			position: absolute;
-			bottom: 0;
-			border-radius: vc(5);
-			width: 100%;
-			height: vc(5);
-			background: $color-woodsmoke-200;
-		}
 	}
 
 	@include devices {

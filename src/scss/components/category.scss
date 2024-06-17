@@ -52,6 +52,10 @@
 		font-weight: 600;
 		font-size: vc(20);
 		color: $color-white;
+
+		@include devices {
+			font-size: vc(14);
+		}
 	}
 
 	&__button {
@@ -68,6 +72,16 @@
 			height: vc(22);
 			fill: $color-white;
 			background: $color-tree-poppy-400;
+
+			@include devices {
+				padding: vc(3);
+				width: vc(14);
+				height: vc(14);
+			}
+		}
+
+		@include devices {
+			font-size: vc(10);
 		}
 	}
 

@@ -5,4 +5,5 @@ export type Article = {
   image: string;
   date: Date;
   content?: string;
+  link?: string;
 };

@@ -1,0 +1,89 @@
+.cta {
+	.row {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		border-radius: vc(10);
+		padding: vc(20);
+		color: $color-white;
+		background: $color-tree-poppy-400;
+		gap: vc(100);
+
+		@include devices {
+			grid-template-columns: 1fr;
+			border-radius: vc(5);
+			padding: vc(8);
+			gap: vc(10);
+		}
+	}
+
+	&__info {
+		display: flex;
+		flex-direction: column;
+		gap: vc(20);
+
+		p {
+			font-size: vc(22);
+			line-height: vc(26);
+
+			@include devices {
+				font-size: vc(12);
+				line-height: 1;
+			}
+		}
+
+		@include devices {
+			gap: vc(5);
+
+			h1 {
+				font-size: vc(14);
+				line-height: 1;
+			}
+		}
+	}
+
+	&__form {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		input {
+			border-radius: vc(10);
+			padding: vc(20);
+			width: vc(350);
+			height: vc(60);
+			font-weight: 500;
+			font-size: vc(22);
+			color: $color-black;
+			background: $color-white;
+
+			&::placeholder {
+				color: $color-woodsmoke-300;
+			}
+
+			@include devices {
+				border-radius: vc(5);
+				padding: vc(6);
+				width: vc(135);
+				height: vc(22);
+				font-size: vc(8);
+			}
+		}
+
+		button {
+			border: 2px solid $color-white;
+			width: 100%;
+			font-size: vc(22);
+
+			@include devices {
+				padding: vc(6);
+				height: vc(22);
+				font-size: vc(8);
+				line-height: vc(8);
+			}
+		}
+
+		@include devices {
+			gap: vc(4);
+		}
+	}
+}

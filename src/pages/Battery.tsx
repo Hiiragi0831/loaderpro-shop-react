@@ -1,6 +1,25 @@
+import { Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import Articles from "../components/Articles";
 import Category from "../components/Category";
+import { Cta } from "../components/Cta";
+import { Direction } from "../components/Direction";
 
 export const Battery = () => {
+  const sliders = [];
+
+  for (let i = 1; i < 10; i++) {
+    sliders.push(
+      <SwiperSlide>
+        <picture>
+          <source srcSet={`/assets/images/battery/slider/${i}.jpg`} />
+          <img src={`/assets/images/battery/slider/${i}.jpg`} alt="" decoding="async" />
+        </picture>
+      </SwiperSlide>,
+    );
+  }
+
   return (
     <main>
       <section className="battery__hero">
@@ -114,6 +133,21 @@ export const Battery = () => {
           </picture>
         </div>
       </section>
+      <Direction />
+      <Cta />
+      <section className="battery__slider">
+        <div className="container">
+          <Swiper
+            pagination={{
+              clickable: true,
+            }}
+            modules={[Pagination]}
+          >
+            {sliders}
+          </Swiper>
+        </div>
+      </section>
+      <Articles limit={4} />
     </main>
   );
 };

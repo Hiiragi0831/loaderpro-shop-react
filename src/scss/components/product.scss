@@ -98,6 +98,10 @@
 	&__article {
 		font-size: vc(12);
 		color: $color-woodsmoke-500;
+
+		@include devices {
+			font-size: vc(10);
+		}
 	}
 
 	&__price {
@@ -146,6 +150,11 @@
 			width: vc(14);
 			height: vc(14);
 			background: $color-black;
+
+			@include devices {
+				width: vc(10);
+				height: vc(10);
+			}
 		}
 
 		&--green {
@@ -165,6 +174,10 @@
 				background: $red-orange-500;
 			}
 		}
+
+		@include devices {
+			font-size: vc(10);
+		}
 	}
 
 	&__title {
@@ -172,7 +185,7 @@
 		font-size: vc(16);
 
 		@include devices {
-			font-size: vc(14);
+			font-size: vc(11);
 		}
 	}
 
@@ -182,7 +195,11 @@
 
 		> * {
 			width: 100%;
-			font-size: vc(13);
+			font-size: vc(14);
+
+			@include devices {
+				font-size: vc(11);
+			}
 		}
 	}
 

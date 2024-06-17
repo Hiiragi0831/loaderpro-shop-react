@@ -28,12 +28,20 @@
 
 		.category {
 			height: vc(280);
+
+			@include devices {
+				height: vc(140);
+			}
 		}
 	}
 
 	&__type {
 		h1 {
 			text-align: center;
+
+			@include devices {
+				text-align: left;
+			}
 		}
 
 		&-intro {
@@ -52,10 +60,17 @@
 				&:last-of-type {
 					margin-bottom: 0;
 				}
+
+				@include devices {
+					margin-bottom: vc(14);
+					font-size: vc(14);
+					line-height: vc(14);
+				}
 			}
 
 			@include devices {
 				grid-template-columns: repeat(1, 1fr);
+				margin: vc(10) 0 vc(0);
 				gap: vc(10);
 			}
 		}
@@ -93,6 +108,26 @@
 		picture {
 			margin: vc(50) auto 0;
 			width: vc(1496);
+
+			@include devices {
+				display: none;
+			}
+		}
+	}
+
+	&__slider {
+		picture {
+			overflow: hidden;
+			border-radius: vc(10);
+			height: vc(700);
+
+			img {
+				height: 100%;
+			}
+
+			@include devices {
+				height: vc(200);
+			}
 		}
 	}
 }
