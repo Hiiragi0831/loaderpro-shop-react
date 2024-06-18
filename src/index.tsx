@@ -11,6 +11,8 @@ import ErrorPage from "./error-page";
 import Article from "./pages/Article";
 import Basket from "./pages/Basket";
 import Battery from "./pages/Battery";
+import { LeadAcid } from "./pages/Battery/LeadAcid";
+import { LithiumIon } from "./pages/Battery/LithiumIon";
 import Catalog from "./pages/Catalog";
 import { Favorites } from "./pages/Favorites";
 import Home from "./pages/Home";
@@ -74,12 +76,26 @@ const router = createBrowserRouter([
         element: <Favorites />,
       },
       {
+        path: "/privacy-policy",
+        element: <PrivacyPolicy />,
+      },
+    ],
+  },
+  {
+    element: <BaseTemplate />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
         path: "/battery",
         element: <Battery />,
       },
       {
-        path: "/privacy-policy",
-        element: <PrivacyPolicy />,
+        path: "/battery/lead-acid",
+        element: <LeadAcid />,
+      },
+      {
+        path: "/battery/lithium-ion",
+        element: <LithiumIon />,
       },
     ],
   },

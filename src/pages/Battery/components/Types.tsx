@@ -4,17 +4,6 @@ export const Types = () => {
   return (
     <section className="battery__type">
       <div className="container">
-        <h1>Тяговые аккумуляторы LOADERPRO</h1>
-        <div className="battery__type-intro">
-          <p>
-            Тяговые аккумуляторы <b>LOADERPRO</b> используются в транспортных средствах с электрическим приводом, таких
-            как электрические погрузчики, ричтраки, штабелей, электрические тележки, подъемные платформы и другой
-            промышленной технике.
-          </p>
-          <p>
-            Тяговые аккумуляторные батареи <b>LOADERPRO</b> соответствуют стандартам BS и DIN.
-          </p>
-        </div>
         <div className="row">
           <Swiper slidesPerView={"auto"}>
             <SwiperSlide>

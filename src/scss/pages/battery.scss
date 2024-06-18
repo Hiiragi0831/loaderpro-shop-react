@@ -35,16 +35,8 @@
 		}
 	}
 
-	&__type {
-		h1 {
-			text-align: center;
-
-			@include devices {
-				text-align: left;
-			}
-		}
-
-		&-intro {
+	&__intro {
+		&-box {
 			display: grid;
 			grid-template-columns: repeat(2, 1fr);
 			margin: vc(20) 0 vc(40);
@@ -72,6 +64,16 @@
 				grid-template-columns: repeat(1, 1fr);
 				margin: vc(10) 0 vc(20);
 				gap: vc(10);
+			}
+		}
+	}
+
+	&__type {
+		h1 {
+			text-align: center;
+
+			@include devices {
+				text-align: left;
 			}
 		}
 
@@ -147,6 +149,114 @@
 
 			@include devices {
 				height: vc(200);
+			}
+		}
+	}
+
+	&__leadacid {
+		&-title {
+			display: grid;
+			align-items: center;
+			grid-template-columns: vc(970) 1fr;
+			margin-bottom: vc(30);
+
+			a {
+				display: block;
+				margin-left: auto;
+				width: vc(465);
+			}
+		}
+
+		blockquote {
+			margin: 0 auto;
+			width: vc(1140);
+
+			p {
+				font-size: vc(22);
+				line-height: vc(26);
+			}
+		}
+
+		ul {
+			display: flex;
+			flex-direction: column;
+			margin-left: vc(20);
+			gap: vc(20);
+
+			li {
+				display: list-item;
+				list-style: disc;
+				font-weight: 300;
+				font-size: vc(22);
+				line-height: vc(26);
+
+				&::marker {
+					color: $color-tree-poppy-400;
+				}
+			}
+		}
+
+		&-specifications {
+			display: grid;
+			align-items: center;
+			grid-template-columns: 1fr 1fr;
+			margin: vc(50) 0 vc(70);
+			gap: vc(150);
+		}
+
+		&-attention {
+			picture {
+				margin: 0 auto;
+				width: vc(812);
+			}
+
+			h2 {
+				text-align: center;
+			}
+
+			.row {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: vc(16);
+			}
+
+			article {
+				border-radius: vc(10);
+				padding: vc(20);
+				background: #f1f5f8;
+
+				span {
+					display: flex;
+					align-items: center;
+					margin-bottom: vc(30);
+					font-weight: 500;
+					font-size: vc(40);
+					gap: vc(30);
+
+					i {
+						display: flex;
+						flex-shrink: 0;
+						align-items: center;
+						justify-content: center;
+						border-radius: 100%;
+						width: vc(120);
+						height: vc(120);
+						background: $color-white;
+
+						b {
+							position: relative;
+							right: vc(6);
+							font-weight: 900;
+							font-size: vc(96);
+							color: $color-tree-poppy-400;
+						}
+					}
+				}
+
+				p {
+					font-size: vc(22);
+					line-height: vc(26);
+				}
 			}
 		}
 	}

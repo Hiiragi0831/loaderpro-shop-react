@@ -1,5 +1,5 @@
 import { useLayoutEffect, useState } from "preact/hooks";
-import { useParams } from "react-router";
+import { useLoaderData, useParams } from "react-router";
 
 import { Article as Props } from "../common/types/Article";
 import { api } from "../services/api";
@@ -16,6 +16,8 @@ export default function Article() {
   });
   const [isLoading, setIsLoading] = useState(true);
   const date = new Date(data.date).toISOString().slice(0, 10).split("-").reverse().join(".");
+
+  console.log(useParams());
 
   const loadArticle = async () => {
     try {

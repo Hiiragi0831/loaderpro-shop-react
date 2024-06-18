@@ -1,7 +1,8 @@
+import { Link } from "react-router-dom";
+
 import Articles from "../../components/Articles";
-import Category from "../../components/Category";
 import { Cta } from "../../components/Cta";
-import { Direction } from "../../components/Direction";
+import { Categories } from "./components/Categories";
 import { Hero } from "./components/Hero";
 import { Slider } from "./components/Slider";
 import { Types } from "./components/Types";
@@ -10,22 +11,21 @@ const Battery = () => {
   return (
     <main>
       <Hero />
-      <section className="battery__category">
+      <Categories />
+      <section className="battery__intro">
         <div className="container">
           <div className="row">
-            <Category
-              title="Свинцово-кислотные аккумуляторы"
-              image={`/assets/images/battery/lead-acid_batteries.png`}
-            />
-            <Category title="Литий-ионные аккумуляторы" image={`/assets/images/battery/lithium-ion_batteries.png`} />
-            <Category
-              title="Зарядное устройство тяговых аккумуляторов"
-              image={`/assets/images/battery/traction_battery_charger.png`}
-            />
-            <Category
-              title="Разъемы для тяговых аккумуляторов"
-              image={`/assets/images/battery/connectors_for_traction_batteries.png`}
-            />
+            <h1>Тяговые аккумуляторы LOADERPRO</h1>
+            <div className="battery__intro-box">
+              <p>
+                Тяговые аккумуляторы <b>LOADERPRO</b> используются в транспортных средствах с электрическим приводом,
+                таких как электрические погрузчики, ричтраки, штабелей, электрические тележки, подъемные платформы и
+                другой промышленной технике.
+              </p>
+              <p>
+                Тяговые аккумуляторные батареи <b>LOADERPRO</b> соответствуют стандартам BS и DIN.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -58,7 +58,32 @@ const Battery = () => {
           </picture>
         </div>
       </section>
-      <Direction />
+      <section className="direction">
+        <div className="container">
+          <div className="row">
+            <div className="direction__item">
+              <picture>
+                <source srcSet="/assets/images/battery/lead-acid_traction_batteries.png" />
+                <img src="/assets/images/battery/lead-acid_traction_batteries.png" alt="" decoding="async" />
+              </picture>
+              <p>Свинцово-кислотные тяговые аккумуляторы </p>
+              <Link to="lead-acid" className="button button__primary">
+                Перейти
+              </Link>
+            </div>
+            <div className="direction__item">
+              <picture>
+                <source srcSet="/assets/images/battery/lithium-ion_traction_batteries.png" />
+                <img src="/assets/images/battery/lithium-ion_traction_batteries.png" alt="" decoding="async" />
+              </picture>
+              <p>Литий-ионные тяговые аккумуляторы</p>
+              <Link to="lithium-ion" className="button button__primary">
+                Перейти
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
       <Cta />
       <Slider />
       <Articles limit={4} />

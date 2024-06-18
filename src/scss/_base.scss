@@ -263,3 +263,51 @@ h4,
 		gap: vc(20);
 	}
 }
+
+blockquote {
+	position: relative;
+	border-radius: vc(10);
+	padding: vc(40) vc(100);
+	background: #f1f5f8;
+
+	&::after,
+	&::before {
+		position: absolute;
+		height: vc(44);
+		font-weight: 900;
+		font-size: vc(100);
+		line-height: 1;
+		color: $color-tree-poppy-400;
+
+		@include devices {
+			height: vc(26);
+			font-size: vc(60);
+		}
+	}
+
+	&::before {
+		content: '\201C';
+		left: vc(20);
+		top: vc(28);
+
+		@include devices {
+			left: vc(15);
+			top: vc(15);
+		}
+	}
+
+	&::after {
+		content: '\201D';
+		right: vc(20);
+		bottom: vc(28);
+
+		@include devices {
+			right: vc(15);
+			bottom: vc(15);
+		}
+	}
+
+	@include devices {
+		padding: vc(40) vc(45);
+	}
+}
