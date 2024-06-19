@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import {PrivacyPolicy} from "../pages/PrivacyPolicy";
+import {Contact} from "../pages/Contact";
 
 const Footer = () => {
   return (
@@ -84,7 +85,7 @@ const Footer = () => {
               <Link className="footer__link" to="/">
                 Способы оплаты
               </Link>
-              <Link className="footer__link" to="/">
+              <Link className="footer__link" to="/contact">
                 Контакты
               </Link>
             </div>

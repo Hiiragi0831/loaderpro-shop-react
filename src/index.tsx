@@ -14,6 +14,7 @@ import Battery from "./pages/Battery";
 import { LeadAcid } from "./pages/Battery/LeadAcid";
 import { LithiumIon } from "./pages/Battery/LithiumIon";
 import Catalog from "./pages/Catalog";
+import { Contact } from "./pages/Contact";
 import { Favorites } from "./pages/Favorites";
 import Home from "./pages/Home";
 import { PrivacyPolicy } from "./pages/PrivacyPolicy";
@@ -79,6 +80,10 @@ const router = createBrowserRouter([
       {
         path: "/privacy-policy",
         element: <PrivacyPolicy />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
       },
     ],
   },
