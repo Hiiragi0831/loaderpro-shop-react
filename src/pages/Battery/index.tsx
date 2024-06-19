@@ -33,11 +33,11 @@ const Battery = () => {
       <section className="battery__which">
         <div className="container">
           <h1>Какой аккумулятор используется в вилочном погрузчике?</h1>
-          <div className="battery__type-intro">
+          <div className="battery__which-intro">
             <div>
               <p>
                 В сфере складирования преобладающий выбор аккумуляторов для вилочных погрузчиков часто сводится к двум
-                вариантам: литий-ионные (Li-Ion) аккумуляторы и свинцово-кислотные аккумуляторы.
+                вариантам: <b>литий-ионные (Li-Ion) аккумуляторы и свинцово-кислотные аккумуляторы</b>.
               </p>
               <p>
                 Эти два типа аккумуляторов являются краеугольным камнем для питания огромного количества вилочных
@@ -49,7 +49,7 @@ const Battery = () => {
                 Их отличительные характеристики и характеристики производительности делают их идеальным выбором для
                 удовлетворения жестких требований задач по погрузочно-разгрузочным работам на складах.
               </p>
-              <button className="button button__primary w-100 mt-34">Перейти в каталог</button>
+              <button className="button button__primary">Перейти в каталог</button>
             </div>
           </div>
           <picture>
@@ -67,7 +67,7 @@ const Battery = () => {
                 <img src="/assets/images/battery/lead-acid_traction_batteries.png" alt="" decoding="async" />
               </picture>
               <p>Свинцово-кислотные тяговые аккумуляторы </p>
-              <Link to="lead-acid" className="button button__primary">
+              <Link to="/battery/lead-acid" className="button button__primary">
                 Перейти
               </Link>
             </div>
@@ -77,7 +77,7 @@ const Battery = () => {
                 <img src="/assets/images/battery/lithium-ion_traction_batteries.png" alt="" decoding="async" />
               </picture>
               <p>Литий-ионные тяговые аккумуляторы</p>
-              <Link to="lithium-ion" className="button button__primary">
+              <Link to="/battery/lithium-ion" className="button button__primary">
                 Перейти
               </Link>
             </div>

@@ -49,6 +49,10 @@
 				font-size: vc(22);
 				line-height: vc(26);
 
+				b {
+					font-weight: 500;
+				}
+
 				&:last-of-type {
 					margin-bottom: 0;
 				}
@@ -127,6 +131,47 @@
 	}
 
 	&__which {
+		&-intro {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			margin-top: vc(20);
+			gap: vc(40);
+
+			p {
+				margin-bottom: vc(26);
+				font-size: vc(22);
+				line-height: vc(26);
+
+				b {
+					font-weight: 400;
+				}
+
+				&:last-of-type {
+					margin:0;
+				}
+
+				@include devices {
+					margin-bottom: vc(14);
+					font-size: vc(14);
+					line-height: vc(14);
+				}
+			}
+
+			button {
+				margin-top: vc(34);
+				width: 100%;
+
+				@include devices {
+					margin-top: vc(10);
+				}
+			}
+
+			@include devices {
+				grid-template-columns: 100%;
+				gap: vc(14);
+			}
+		}
+
 		picture {
 			margin: vc(50) auto 0;
 			width: vc(1496);
@@ -164,6 +209,15 @@
 				display: block;
 				margin-left: auto;
 				width: vc(465);
+
+				@include devices {
+					width: 100%;
+				}
+			}
+
+			@include devices {
+				grid-template-columns: 100%;
+				gap: vc(30);
 			}
 		}
 
@@ -174,6 +228,15 @@
 			p {
 				font-size: vc(22);
 				line-height: vc(26);
+
+				@include devices {
+					font-size: vc(14);
+					line-height: vc(14);
+				}
+			}
+
+			@include devices {
+				width: 100%;
 			}
 		}
 
@@ -193,6 +256,11 @@
 				&::marker {
 					color: $color-tree-poppy-400;
 				}
+
+				@include devices {
+					font-size: vc(14);
+					line-height: vc(14);
+				}
 			}
 		}
 
@@ -202,6 +270,19 @@
 			grid-template-columns: 1fr 1fr;
 			margin: vc(50) 0 vc(70);
 			gap: vc(150);
+
+			@include devices {
+				grid-template-columns: 100%;
+				gap: vc(20);
+
+				picture {
+					order: 0;
+				}
+
+				ul {
+					order: 1;
+				}
+			}
 		}
 
 		&-attention {
@@ -211,13 +292,22 @@
 			}
 
 			h2 {
+				margin-bottom: vc(20);
 				text-align: center;
+
+				@include devices {
+					margin-bottom: vc(10);
+				}
 			}
 
 			.row {
 				display: grid;
 				grid-template-columns: repeat(3, 1fr);
 				gap: vc(16);
+
+				@include devices {
+					grid-template-columns: 100%;
+				}
 			}
 
 			article {
@@ -250,13 +340,137 @@
 							font-size: vc(96);
 							color: $color-tree-poppy-400;
 						}
+
+						@include devices {
+							width: vc(68);
+							height: vc(67);
+
+							b {
+								font-size: vc(54);
+							}
+						}
+					}
+
+					@include devices {
+						font-size: vc(20);
+						gap: vc(16);
 					}
 				}
 
 				p {
 					font-size: vc(22);
 					line-height: vc(26);
+
+					@include devices {
+						font-size: vc(14);
+						line-height: vc(14);
+					}
 				}
+			}
+		}
+	}
+
+	&__lithiumion {
+		&-info {
+			display: grid;
+			grid-template-columns: 1fr vc(612);
+			gap: vc(238);
+
+			q {
+				display: flex;
+				flex-direction: column;
+				margin: vc(30) 0 vc(16);
+				border-left: 2px solid $color-tree-poppy-400;
+				padding-left: vc(20);
+				gap: vc(26);
+
+				&::before,
+				&::after {
+					content: "";
+					display: none;
+				}
+			}
+
+			p {
+				font-size: vc(22);
+				line-height: vc(26);
+
+				@include devices {
+					font-size: vc(14);
+					line-height: vc(14);
+				}
+			}
+
+			a {
+				display: block;
+				width: 100%;
+			}
+
+			@include devices {
+				grid-template-columns: 100%;
+				gap: vc(20);
+			}
+		}
+
+		&-advantages {
+			margin: vc(80) 0;
+
+			.h1 {
+				text-align: center;
+			}
+
+			.row {
+				columns: 2;
+				margin-top: vc(30);
+				gap: vc(40);
+
+				@include devices {
+					columns: 1;
+					gap: vc(20);
+				}
+			}
+
+			@include devices {
+				margin: vc(40) 0;
+			}
+		}
+
+		&-advantage {
+			display: flex;
+			flex-direction: column;
+			margin-bottom: vc(40);
+			border-radius: vc(10);
+			padding: vc(20);
+			width: vc(768);
+			background: #f1f5f8;
+			gap: vc(20);
+
+			.h1 {
+				text-align: left;
+			}
+
+			p,
+			mark {
+				font-size: vc(22);
+				line-height: vc(26);
+
+				@include devices {
+					font-size: vc(14);
+					line-height: vc(14);
+				}
+			}
+
+			mark {
+				padding: vc(35) 0;
+				font-weight: 500;
+				text-align: center;
+				color: $color-tree-poppy-400;
+				background: none;
+			}
+
+			@include devices {
+				margin-bottom: vc(20);
+				width: 100%;
 			}
 		}
 	}

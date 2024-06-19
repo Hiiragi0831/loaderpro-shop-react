@@ -1,5 +1,5 @@
 import { render } from "preact";
-import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, Outlet, RouterProvider, ScrollRestoration } from "react-router-dom";
 import { register } from "swiper/element/bundle";
 register();
 
@@ -24,6 +24,7 @@ import SelectionParts from "./pages/SelectionParts";
 const BaseTemplate = () => {
   return (
     <div className="site">
+      <ScrollRestoration />
       <Header />
       <Outlet />
       <Footer />

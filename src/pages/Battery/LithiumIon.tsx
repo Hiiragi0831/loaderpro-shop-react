@@ -11,15 +11,69 @@ export const LithiumIon = () => {
     <main>
       <Hero />
       <Types />
-      <section className="battery__leadacid">
+      <section className="battery__lithiumion">
         <div className="container">
-          <div className="battery__leadacid-title">
-            <h1>Литий-ионные тяговые аккумуляторы</h1>
+          <div className="battery__lithiumion-info">
             <div>
-              <a className="button button__primary"> Перейти в каталог</a>
+              <h1>Литий-ионные тяговые аккумуляторы</h1>
+              <q>
+                <p>
+                  LOADERPRO TRACTION BATTERY, преобразованные из свинцово-кислотных в литий-ионные, представляют собой
+                  экономичное решение, повышающее производительность.
+                </p>
+                <p>
+                  Переходя от традиционных свинцово-кислотных аккумуляторов к литий-ионным, предприятия могут получить
+                  выгоду от повышения эффективности, увеличения срока службы и снижения затрат на техническое
+                  обслуживание.
+                </p>
+                <p>
+                  Эти аккумуляторы позволяют увеличить время безотказной работы и повысить производительность техники на
+                  электрической тяге, что в конечном итоге приводит к повышению производительности и эксплуатационной
+                  эффективности.
+                </p>
+              </q>
+              <a className="button button__primary">Перейти в каталог</a>
+            </div>
+            <picture>
+              <source srcSet="/assets/images/battery/87f3a6404c391a24d4b1dfac012a6d01.png" />
+              <img src="/assets/images/battery/87f3a6404c391a24d4b1dfac012a6d01.png" alt="" decoding="async" />
+            </picture>
+          </div>
+          <div className="battery__lithiumion-advantages">
+            <p className="h1">Индивидуальные преимущества</p>
+            <div className="row">
+              <div className="battery__lithiumion-advantage">
+                <span className="h1">Доступна индивидуальная настройка</span>
+                <p>
+                  Для особых нужд мы предлагаем варианты индивидуальной настройки, включая решения высокой емкости,
+                  такие как 48 В, 500 Ач и выше.
+                </p>
+              </div>
+              <div className="battery__lithiumion-advantage">
+                <span className="h1">Защита окружающей среды</span>
+                <p>
+                  В наших батареях используется технология LiFePO4, известная своей экологичностью. Они нетоксичны, не
+                  загрязняют окружающую среду и не содержат редкоземельных металлов, что соответствует современным
+                  тенденциям обеспечения более чистой окружающей среды.
+                </p>
+              </div>
+              <div className="battery__lithiumion-advantage">
+                <span className="h1">Комплексные преимущества</span>
+                <p>
+                  Ощутите многочисленные преимущества, включая экономию средств, увеличенный срок службы, повышенную
+                  безопасность и экологическую устойчивость. Наши аккумуляторы отличаются высокой плотностью энергии и
+                  превосходной эффективностью системы, что обеспечивает быструю зарядку и снижение затрат на техническое
+                  обслуживание.
+                </p>
+              </div>
+
+              <div className="battery__lithiumion-advantage">
+                <mark>
+                  Кроме того, попрощайтесь с хлопотами долива электролита, типичными для свинцово-кислотных альтернатив.
+                </mark>
+              </div>
             </div>
           </div>
-
         </div>
       </section>
       <section className="direction">
@@ -37,11 +91,11 @@ export const LithiumIon = () => {
             </div>
             <div className="direction__item">
               <picture>
-                <source srcSet="/assets/images/battery/lithium-ion_traction_batteries.png" />
-                <img src="/assets/images/battery/lithium-ion_traction_batteries.png" alt="" decoding="async" />
+                <source srcSet="/assets/images/battery/lead-acid_traction_batteries.png" />
+                <img src="/assets/images/battery/lead-acid_traction_batteries.png" alt="" decoding="async" />
               </picture>
-              <p>Литий-ионные тяговые аккумуляторы</p>
-              <Link to="/battery/lithium-ion" className="button button__primary">
+              <p>Свинцово-кислотные тяговые аккумуляторы </p>
+              <Link to="/battery/lead-acid" className="button button__primary">
                 Перейти
               </Link>
             </div>

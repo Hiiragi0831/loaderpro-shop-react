@@ -33,6 +33,10 @@
 		p {
 			font-weight: 400;
 			font-size: vc(16);
+
+			@include devices {
+				font-size: vc(14);
+			}
 		}
 
 		a {
@@ -115,10 +119,10 @@
 	}
 
 	&__ya {
+		overflow: hidden;
+		border-radius: 5px;
 		width: 149px;
 		height: 49px;
-		border-radius: 5px;
-		overflow: hidden;
 		background: #242528;
 
 		iframe {
@@ -134,6 +138,10 @@
 		display: block;
 		font-size: vc(18);
 		color: $color-white;
+
+		@include devices {
+			font-size: vc(14);
+		}
 	}
 
 	&__bottom {
