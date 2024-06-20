@@ -265,8 +265,9 @@ h4,
 	}
 }
 
-blockquote {
+q {
 	position: relative;
+	display: block;
 	border-radius: vc(10);
 	padding: vc(40) vc(100);
 	background: #f1f5f8;
@@ -310,5 +311,19 @@ blockquote {
 
 	@include devices {
 		padding: vc(40) vc(45);
+	}
+}
+
+blockquote {
+	display: flex;
+	flex-direction: column;
+	margin: vc(30) 0 vc(16);
+	border-left: 2px solid $color-tree-poppy-400;
+	padding-left: vc(20);
+	gap: vc(26);
+
+	&::before,
+	&::after {
+		display: none;
 	}
 }

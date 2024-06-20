@@ -21,6 +21,8 @@ import { PrivacyPolicy } from "./pages/PrivacyPolicy";
 import Product from "./pages/Product";
 import RequestParts from "./pages/RequestParts";
 import SelectionParts from "./pages/SelectionParts";
+import { Vacancy } from "./pages/Vacancy";
+import { VacancyManager } from "./pages/Vacancy/VacancyManager";
 
 const BaseTemplate = () => {
   return (
@@ -84,6 +86,14 @@ const router = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact />,
+      },
+      {
+        path: "/vacancy",
+        element: <Vacancy />,
+      },
+      {
+        path: "/vacancy/manager",
+        element: <VacancyManager />,
       },
     ],
   },

@@ -67,23 +67,23 @@ const Footer = () => {
               <Link className="footer__link" to="/">
                 Главная
               </Link>
-              <Link className="footer__link" to="/catalog">
+              <Link className="footer__link" to="#">
                 Поставщикам
               </Link>
-              <Link className="footer__link" to="/basket">
+              <Link className="footer__link" to="#">
                 О компании
               </Link>
-              <Link className="footer__link" to="/selectionparts">
+              <Link className="footer__link" to="#">
                 Дилерам
               </Link>
-              <Link className="footer__link" to="/requestparts">
-                Условия доставки
+              <Link className="footer__link" to="#">
+                Оплата и доставка
               </Link>
               <Link className="footer__link" to="/privacy-policy">
                 Конфиденциальность
               </Link>
-              <Link className="footer__link" to="/">
-                Способы оплаты
+              <Link className="footer__link" to="/vacancy">
+                Вакансии
               </Link>
               <Link className="footer__link" to="/contact">
                 Контакты

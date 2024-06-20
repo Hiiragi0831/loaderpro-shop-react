@@ -221,7 +221,7 @@
 			}
 		}
 
-		blockquote {
+		q {
 			margin: 0 auto;
 			width: vc(1140);
 
@@ -375,21 +375,6 @@
 			display: grid;
 			grid-template-columns: 1fr vc(612);
 			gap: vc(238);
-
-			q {
-				display: flex;
-				flex-direction: column;
-				margin: vc(30) 0 vc(16);
-				border-left: 2px solid $color-tree-poppy-400;
-				padding-left: vc(20);
-				gap: vc(26);
-
-				&::before,
-				&::after {
-					content: "";
-					display: none;
-				}
-			}
 
 			p {
 				font-size: vc(22);

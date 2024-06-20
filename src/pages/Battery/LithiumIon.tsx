@@ -16,7 +16,7 @@ export const LithiumIon = () => {
           <div className="battery__lithiumion-info">
             <div>
               <h1>Литий-ионные тяговые аккумуляторы</h1>
-              <q>
+              <blockquote>
                 <p>
                   LOADERPRO TRACTION BATTERY, преобразованные из свинцово-кислотных в литий-ионные, представляют собой
                   экономичное решение, повышающее производительность.
@@ -31,7 +31,7 @@ export const LithiumIon = () => {
                   электрической тяге, что в конечном итоге приводит к повышению производительности и эксплуатационной
                   эффективности.
                 </p>
-              </q>
+              </blockquote>
               <a className="button button__primary">Перейти в каталог</a>
             </div>
             <picture>

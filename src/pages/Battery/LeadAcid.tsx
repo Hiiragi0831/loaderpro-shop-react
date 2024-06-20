@@ -19,14 +19,14 @@ export const LeadAcid = () => {
               <a className="button button__primary"> Перейти в каталог</a>
             </div>
           </div>
-          <blockquote>
+          <q>
             <p>
               Вместе с батареями будет предоставлено профессиональное руководство по эксплуатации. Доступны как{" "}
               <b>сухие</b>, так и <b>залитые батареи</b>, выбор зависит от вас. В сухие батареи необходимо будет залить
               кислоту при получении батарей, для залитых батарей необходимо просто зарядить батареи перед
               использованием.
             </p>
-          </blockquote>
+          </q>
           <div class="battery__leadacid-specifications">
             <ul>
               <li>Высококачественная свинцово-кислотная батарея;</li>
@@ -43,12 +43,12 @@ export const LeadAcid = () => {
               <img src="/assets/images/battery/ce0c309ef31bf939a9ca4d068ca5c4f2.png" alt="" decoding="async" />
             </picture>
           </div>
-          <blockquote>
+          <q>
             <p>
               Чтобы лучше обеспечить безопасность батерей при транспортировке, мы упаковываем их{" "}
               <b>в экологически чистые, удобные и эффективные деревянные ящики.</b>
             </p>
-          </blockquote>
+          </q>
           <div className="battery__leadacid-attention">
             <picture>
               <source srcSet="/assets/images/battery/5d43bba877eb0f188daa01a07ff8a2ba.png" />
