@@ -76,7 +76,7 @@ const Footer = () => {
               <Link className="footer__link" to="#">
                 Дилерам
               </Link>
-              <Link className="footer__link" to="#">
+              <Link className="footer__link" to="/delivery-payment">
                 Оплата и доставка
               </Link>
               <Link className="footer__link" to="/privacy-policy">

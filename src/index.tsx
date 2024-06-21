@@ -15,6 +15,7 @@ import { LeadAcid } from "./pages/Battery/LeadAcid";
 import { LithiumIon } from "./pages/Battery/LithiumIon";
 import Catalog from "./pages/Catalog";
 import { Contact } from "./pages/Contact";
+import { DeliveryPayment } from "./pages/DeliveryPayment";
 import { Favorites } from "./pages/Favorites";
 import Home from "./pages/Home";
 import { PrivacyPolicy } from "./pages/PrivacyPolicy";
@@ -112,6 +113,10 @@ const router = createBrowserRouter([
       {
         path: "/battery/lithium-ion",
         element: <LithiumIon />,
+      },
+      {
+        path: "/delivery-payment",
+        element: <DeliveryPayment />,
       },
     ],
   },

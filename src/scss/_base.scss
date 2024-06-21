@@ -196,12 +196,22 @@ h2,
 .h2 {
 	font-weight: 500;
 	font-size: vc(30);
+
+	@include devices {
+		font-size: vc(18);
+		line-height: vc(20);
+	}
 }
 
 h3,
 .h3 {
 	font-weight: 500;
 	font-size: vc(26);
+
+	@include devices {
+		font-size: vc(16);
+		line-height: vc(18);
+	}
 }
 
 h4,
