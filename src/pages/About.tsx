@@ -1,8 +1,8 @@
 import Articles from "../components/Articles";
+import { Clients } from "../components/Clients";
 import { Cta } from "../components/Cta";
 import { Preference } from "../components/Preference";
 import { Team } from "../components/Team";
-import {Clients} from "../components/Clients";
 
 export const About = () => {
   return (
@@ -47,6 +47,71 @@ export const About = () => {
       </section>
       <Team />
       <Clients />
+      <section className="about-requisite">
+        <div className="container">
+          <div className="title">
+            <span className="h1">Реквизиты ООО «СПЕЦМАШИНА»</span>
+          </div>
+          <div className="table">
+            <div className="table__item">
+              <p>Наименование контрагента</p>
+              <p>ООО «СПЕЦМАШИНА»</p>
+            </div>
+            <div className="table__item">
+              <p>Юридический, фактический и почтовый адрес</p>
+              <p>196240, г. Санкт-Петербург, ул. Кубинская, д. 75 к. 1 литера А, помещ. 3-Н, ком. 25 (Офис 216)</p>
+            </div>
+            <div className="table__item">
+              <p>Телефон</p>
+              <p>8 (800) 55-11-996</p>
+            </div>
+            <div className="table__item">
+              <p>e-mail</p>
+              <p>buh@loaderpro.ru</p>
+            </div>
+            <div className="table__item">
+              <p>ИНН/КПП</p>
+              <p>7810959038 / 781001001</p>
+            </div>
+            <div className="table__item">
+              <p>ОГРН</p>
+              <p>1227800152590</p>
+            </div>
+            <div className="table__item">
+              <p>ОКВЭД</p>
+              <p>45.32</p>
+            </div>
+            <div className="table__item">
+              <p>ОКПО</p>
+              <p>54144451</p>
+            </div>
+            <div className="table__item">
+              <p>ОКАТО</p>
+              <p>40284000</p>
+            </div>
+            <div className="table__item">
+              <p>БАНК</p>
+              <p>в АО «Тинькофф Банк»</p>
+            </div>
+            <div className="table__item">
+              <p>Р/С</p>
+              <p>40702810710001237184</p>
+            </div>
+            <div className="table__item">
+              <p>БИК</p>
+              <p>044525974</p>
+            </div>
+            <div className="table__item">
+              <p>К/С</p>
+              <p>30101810145250000974</p>
+            </div>
+            <div className="table__item">
+              <p>Генеральный директор</p>
+              <p>Сокирка Юлия Виталиевна - действующий на основании Устава</p>
+            </div>
+          </div>
+        </div>
+      </section>
       <Cta />
       <Articles limit={4} />
     </main>

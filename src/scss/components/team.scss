@@ -1,8 +1,8 @@
 .team {
 	.swiper {
-		margin-right: vc(-40);
+		margin: 0 vc(-15);
 		padding: vc(16) 0 vc(40);
-		width: 100%;
+		width: calc(100% + #{vc(30)});
 
 		&-slide {
 			display: flex;
@@ -16,6 +16,7 @@
 
 		@include devices {
 			margin: 0;
+			width: 100%;
 		}
 	}
 
@@ -35,7 +36,7 @@
 		picture {
 			position: relative;
 			margin-bottom: vc(5);
-			height: vc(394);
+			height: vc(384);
 
 			&::before {
 				content: "";

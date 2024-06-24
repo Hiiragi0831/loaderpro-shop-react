@@ -240,6 +240,12 @@ h4,
 		font-size: vc(22);
 		line-height: vc(26);
 		text-align: right;
+
+		@include devices {
+			font-size: vc(14);
+			line-height: vc(14);
+			text-align: left;
+		}
 	}
 
 	a {
