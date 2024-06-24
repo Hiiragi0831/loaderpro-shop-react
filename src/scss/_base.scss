@@ -223,14 +223,29 @@ h4,
 .title {
 	position: relative;
 	display: flex;
-	align-items: flex-end;
+	align-items: center;
 	justify-content: space-between;
 	margin-bottom: vc(30);
 	padding-bottom: vc(10);
 
+	> *:nth-child(2) {
+		width: 48%;
+
+		@include devices {
+			width: 100%;
+		}
+	}
+
+	p {
+		font-size: vc(22);
+		line-height: vc(26);
+		text-align: right;
+	}
+
 	a {
 		font-weight: 400;
 		font-size: vc(20);
+		text-align: right;
 		color: $color-tree-poppy-400;
 
 		&::after {

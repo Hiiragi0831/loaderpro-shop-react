@@ -42,7 +42,7 @@ const Products: FC<Props> = ({ filter, limit }) => {
     <section className="product__section">
       <div className="container">
         <div className="title">
-          <p className="h1">Часто ищут</p>
+          <span className="h1">Часто ищут</span>
           <a href="#">Все товары</a>
         </div>
         <div className="row">

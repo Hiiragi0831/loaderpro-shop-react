@@ -17,8 +17,6 @@ export default function Article() {
   const [isLoading, setIsLoading] = useState(true);
   const date = new Date(data.date).toISOString().slice(0, 10).split("-").reverse().join(".");
 
-  console.log(useParams());
-
   const loadArticle = async () => {
     try {
       const data = await api.getArticle(id);

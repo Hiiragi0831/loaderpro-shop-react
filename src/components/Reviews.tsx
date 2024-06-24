@@ -3,7 +3,7 @@ export const Reviews = () => {
     <section className="reviews">
       <div className="container">
         <div className="title">
-          <h1>Что говорят о нас</h1>
+          <span className="h1">Что говорят о нас</span>
         </div>
         {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
         {/*// @ts-expect-error */}

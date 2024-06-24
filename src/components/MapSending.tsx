@@ -3,7 +3,7 @@ export const MapSending = () => {
     <section className="map">
       <div className="container">
         <div className="title">
-          <h1>Ежедневные отправки</h1>
+          <span className="h1">Ежедневные отправки</span>
         </div>
         <picture>
           <source srcSet="/assets/images/map.gif" />

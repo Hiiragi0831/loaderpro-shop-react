@@ -17,7 +17,7 @@ export const VideoGallery = () => {
     <section className="videoGallery">
       <div className="container">
         <div className="title">
-          <h1>Мы на YOUTUBE</h1>
+          <span className="h1">Мы на YOUTUBE</span>
         </div>
         <Swiper
           slidesPerView={1}

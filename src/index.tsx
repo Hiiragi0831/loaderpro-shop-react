@@ -8,6 +8,7 @@ import "./scss/main.scss";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import ErrorPage from "./error-page";
+import { About } from "./pages/About";
 import Article from "./pages/Article";
 import Basket from "./pages/Basket";
 import Battery from "./pages/Battery";
@@ -117,6 +118,10 @@ const router = createBrowserRouter([
       {
         path: "/delivery-payment",
         element: <DeliveryPayment />,
+      },
+      {
+        path: "/about",
+        element: <About />,
       },
     ],
   },

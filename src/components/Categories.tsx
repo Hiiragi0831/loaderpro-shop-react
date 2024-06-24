@@ -23,7 +23,7 @@ const Categories = () => {
     <section className="category__section">
       <div className="container">
         <div className="title">
-          <h1>Популярные категории</h1>
+          <span className="h1">Популярные категории</span>
         </div>
         <div className="row">{isLoading ? "Загрузка" : data.map((item) => <Category key={item.id} {...item} />)}</div>
       </div>

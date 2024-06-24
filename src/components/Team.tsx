@@ -24,7 +24,11 @@ export const Team = () => {
     <section className="team">
       <div className="container">
         <div className="title">
-          <h1>Знай наших в лицо</h1>
+          <span className="h1">Наша команда - знай наших в лицо:</span>
+          <p>
+            Каждый человек в нашей команде имеет большую ценность и является важной частью единого механизма нашей
+            компании.
+          </p>
         </div>
         <Swiper
           slidesPerView={1}
@@ -48,10 +52,10 @@ export const Team = () => {
                         <source srcSet={post.image} />
                         <img src={post.image} alt={post.title} decoding="async" />
                       </picture>
-                      <p>{post.position}</p>
                       <p>
                         <b>{post.title}</b>
                       </p>
+                      <p>{post.position}</p>
                     </div>
                   </SwiperSlide>
                 );
