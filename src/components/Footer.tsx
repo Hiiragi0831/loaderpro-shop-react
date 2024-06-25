@@ -1,6 +1,4 @@
 import { Link } from "react-router-dom";
-import {PrivacyPolicy} from "../pages/PrivacyPolicy";
-import {Contact} from "../pages/Contact";
 
 const Footer = () => {
   return (
@@ -70,10 +68,10 @@ const Footer = () => {
               <Link className="footer__link" to="#">
                 Поставщикам
               </Link>
-              <Link className="footer__link" to="#">
+              <Link className="footer__link" to="/about">
                 О компании
               </Link>
-              <Link className="footer__link" to="#">
+              <Link className="footer__link" to="/dealer">
                 Дилерам
               </Link>
               <Link className="footer__link" to="/delivery-payment">
