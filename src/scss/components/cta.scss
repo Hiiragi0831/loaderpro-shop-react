@@ -22,9 +22,6 @@
 		gap: vc(20);
 
 		p {
-			font-size: vc(22);
-			line-height: vc(26);
-
 			@include devices {
 				font-size: vc(12);
 				line-height: 1;

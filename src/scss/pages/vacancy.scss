@@ -11,11 +11,7 @@
 
 	&__info {
 		p {
-			font-size: vc(22);
-
-			@include devices {
-				font-size: vc(14);
-			}
+			line-height: 1;
 		}
 	}
 
@@ -67,11 +63,7 @@
 		}
 
 		p {
-			font-size: vc(22);
-
-			@include devices {
-				font-size: vc(14);
-			}
+			line-height: 1;
 		}
 	}
 
@@ -135,11 +127,7 @@
 		border-bottom: 3px solid $color-tree-poppy-400;
 
 		span {
-			font-size: vc(22);
-
-			@include devices {
-				font-size: vc(14);
-			}
+			line-height: 1;
 		}
 
 		@include devices {

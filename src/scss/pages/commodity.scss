@@ -203,6 +203,7 @@
 		grid-column: span 2 / span 1;
 
 		span {
+			font-size: vc(16);
 			color: $color-woodsmoke-400;
 		}
 
@@ -219,6 +220,7 @@
 			border-radius: vc(5);
 			padding: vc(20);
 			height: 100%;
+			font-size: vc(16);
 		}
 	}
 

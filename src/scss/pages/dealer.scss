@@ -210,4 +210,51 @@
 			}
 		}
 	}
+
+	&__agent {
+		.row {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: vc(40);
+
+			@include devices {
+				grid-template-columns: 100%;
+			}
+		}
+
+		article {
+		}
+
+		picture {
+			overflow: hidden;
+			border-radius: vc(10);
+			height: vc(236);
+
+			img {
+				height: 100%;
+			}
+		}
+	}
+
+	&__what,
+	&__steps {
+		.row {
+			display: flex;
+		}
+
+		.swiper {
+			margin: 0 vc(-15);
+			padding: vc(15);
+			width: calc(100% + #{vc(30)});
+
+			&-slide {
+				padding-right: vc(20);
+				width: vc(318);
+
+				@include devices {
+					width: vc(200);
+				}
+			}
+		}
+	}
 }

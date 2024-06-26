@@ -60,22 +60,25 @@
 			}
 		}
 
+		b {
+			font-weight: 500;
+
+			@include devices {
+				font-size: vc(14);
+			}
+		}
+
+		p {
+			font-size: vc(14);
+			line-height: 1;
+
+			@include devices {
+				font-size: vc(12);
+			}
+		}
+
 		@include devices {
 			gap: vc(10);
-		}
-	}
-
-	b {
-		font-weight: 500;
-
-		@include devices {
-			font-size: vc(14);
-		}
-	}
-
-	p {
-		@include devices {
-			font-size: vc(12);
 		}
 	}
 }

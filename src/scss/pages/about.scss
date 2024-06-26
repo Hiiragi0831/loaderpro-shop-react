@@ -18,13 +18,6 @@
 
 		p {
 			margin-bottom: vc(20);
-			font-size: vc(22);
-			line-height: vc(26);
-
-			@include devices {
-				font-size: vc(14);
-				line-height: 1;
-			}
 		}
 
 		mark {

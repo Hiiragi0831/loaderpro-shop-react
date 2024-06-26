@@ -1,8 +1,25 @@
+import { Swiper, SwiperSlide } from "swiper/react";
+
 import Articles from "../components/Articles";
 import { Cta } from "../components/Cta";
 import { Preference } from "../components/Preference";
+import { Step } from "../components/Step";
 
 export const Dealer = () => {
+  const steps = [
+    "Вбиваете запрос в\u00A0систему",
+    "Получаете лучшее предложение в России",
+    "Выгружаете КП",
+    "Согласовываете с\u00A0клиентом покупку",
+    "Оформляете заказ и присылаете реквизиты клиента!",
+  ];
+  const whats = [
+    "Бухгалтерия сформирует договор и\u00A0счет",
+    "Отправит его вашему клиенту",
+    "Проконтролирует получение денег",
+    "Отдел закупок запустит заказ в\u00A0работу",
+    "Отдел логистики осуществит отгрузку товара",
+  ];
   return (
     <main>
       <section>
@@ -74,20 +91,9 @@ export const Dealer = () => {
           </div>
         </div>
       </section>
-      <section className="dealer__qa">
-        <div className="container">
-          <article>
-            <span className="h1">
-              Под торговой маркой LOADERPRO реализуется только проверенная пользователями продукция, мы верифицируем
-              каждого производителя и поставщика! Присоединяйтесь к нашей дилерской системе и зарабатывайте легче -
-              вместе с нами!
-            </span>
-          </article>
-        </div>
-      </section>
       <section className="dealer__who">
         <div className="container">
-          <div class="dealer__who-title">
+          <div className="dealer__who-title">
             <span className="h1">Кто может стать дилером нашей платформы?</span>
             <picture className="for-desktop">
               <source srcSet={`/assets/images/who-arrows.png`} />
@@ -113,13 +119,74 @@ export const Dealer = () => {
                 компании
               </span>
             </div>
-            <div class="dealer__who-item">
+            <div className="dealer__who-item">
               <svg>
                 <use xlinkHref="/spritemap.svg#icon-tools" />
               </svg>
               <span className="h1">Сотрудники крупных компаний</span>
             </div>
           </div>
+        </div>
+      </section>
+      <section className="dealer__agent">
+        <div className="container">
+          <div className="row">
+            <article>
+              <span className="h1">Также мы ищем частных агентов во всех регионах России:</span>
+              <p>
+                Вам больше не нужно содержать своё юр лицо или работать на «дядю» в этой сфере, достаточно просто иметь
+                базу лояльных клиентов. Вы можете подключиться к нашей платформе и зарабатывать на ней из любой точки
+                мира продавая запчасти своим клиентам за комиссионное вознаграждение.
+              </p>
+            </article>
+            <picture>
+              <source srcSet={`/assets/images/39cb5a85e98971fa10132bc4929b5b14.jpg`} />
+              <img src={`/assets/images/39cb5a85e98971fa10132bc4929b5b14.jpg`} alt="" decoding="async" />
+            </picture>
+          </div>
+        </div>
+      </section>
+      <section className="dealer__steps">
+        <div className="container">
+          <span className="h1">Все это происходит по схеме, где вы делаете 5 простых шагов:</span>
+          <div className="row">
+            <Swiper slidesPerView={"auto"}>
+              {steps.map((item, id) => {
+                return (
+                  <SwiperSlide key={id}>
+                    <Step count={id + 1} text={item} />
+                  </SwiperSlide>
+                );
+              })}
+            </Swiper>
+          </div>
+        </div>
+      </section>
+      <section className="dealer__what">
+        <div className="container">
+          <span className="h1">Что делаем мы:</span>
+          <div className="row">
+            <Swiper slidesPerView={"auto"}>
+              {whats.map((item, id) => {
+                return (
+                  <SwiperSlide key={id}>
+                    <Step count={id + 1} text={item} />
+                  </SwiperSlide>
+                );
+              })}
+            </Swiper>
+          </div>
+        </div>
+      </section>
+      <section className="dealer__qa">
+        <div className="container">
+          <article>
+            <span className="h1">
+              Под торговой маркой LOADERPRO реализуется только проверенная пользователями продукция, мы верифицируем
+              каждого производителя и поставщика! Присоединяйтесь к нашей дилерской системе и зарабатывайте легче -
+              вместе с нами!
+            </span>
+          </article>
         </div>
       </section>
       <Cta />

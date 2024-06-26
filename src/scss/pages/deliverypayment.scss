@@ -1,14 +1,4 @@
 .deliverypayment {
-	p {
-		font-size: vc(22);
-		line-height: vc(26);
-
-		@include devices {
-			font-size: vc(14);
-			line-height: vc(14);
-		}
-	}
-
 	&__head {
 		display: grid;
 		justify-content: space-between;
