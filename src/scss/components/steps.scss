@@ -1,0 +1,16 @@
+.steps {
+	.swiper {
+		margin: 0 vc(-15);
+		padding: vc(15);
+		width: calc(100% + #{vc(30)});
+
+		&-slide {
+			padding-right: vc(20);
+			width: vc(318);
+
+			@include devices {
+				width: vc(200);
+			}
+		}
+	}
+}

@@ -4,6 +4,7 @@ import Articles from "../components/Articles";
 import { Cta } from "../components/Cta";
 import { Preference } from "../components/Preference";
 import { Step } from "../components/Step";
+import { Steps } from "../components/Steps";
 
 export const Dealer = () => {
   const steps = [
@@ -146,38 +147,8 @@ export const Dealer = () => {
           </div>
         </div>
       </section>
-      <section className="dealer__steps">
-        <div className="container">
-          <span className="h1">Все это происходит по схеме, где вы делаете 5 простых шагов:</span>
-          <div className="row">
-            <Swiper slidesPerView={"auto"}>
-              {steps.map((item, id) => {
-                return (
-                  <SwiperSlide key={id}>
-                    <Step count={id + 1} text={item} />
-                  </SwiperSlide>
-                );
-              })}
-            </Swiper>
-          </div>
-        </div>
-      </section>
-      <section className="dealer__what">
-        <div className="container">
-          <span className="h1">Что делаем мы:</span>
-          <div className="row">
-            <Swiper slidesPerView={"auto"}>
-              {whats.map((item, id) => {
-                return (
-                  <SwiperSlide key={id}>
-                    <Step count={id + 1} text={item} />
-                  </SwiperSlide>
-                );
-              })}
-            </Swiper>
-          </div>
-        </div>
-      </section>
+      <Steps data={steps} title={"Все это происходит по схеме, где вы делаете 5 простых шагов:"} />
+      <Steps data={whats} title={"Что делаем мы:"} />
       <section className="dealer__qa">
         <div className="container">
           <article>
