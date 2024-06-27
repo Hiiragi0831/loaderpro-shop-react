@@ -28,16 +28,6 @@
 			display: flex;
 			flex-direction: column;
 			gap: vc(10);
-
-			p {
-				font-size: 22px;
-				line-height: 26px;
-
-				@include devices {
-					font-size: vc(14);
-					line-height: 1;
-				}
-			}
 		}
 
 		iframe {
