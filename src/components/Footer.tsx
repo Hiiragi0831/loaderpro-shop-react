@@ -65,7 +65,7 @@ const Footer = () => {
               <Link className="footer__link" to="/">
                 Главная
               </Link>
-              <Link className="footer__link" to="#">
+              <Link className="footer__link" to="/suppliers">
                 Поставщикам
               </Link>
               <Link className="footer__link" to="/about">

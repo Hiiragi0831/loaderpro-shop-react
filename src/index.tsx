@@ -24,6 +24,7 @@ import { PrivacyPolicy } from "./pages/PrivacyPolicy";
 import Product from "./pages/Product";
 import RequestParts from "./pages/RequestParts";
 import SelectionParts from "./pages/SelectionParts";
+import { Suppliers } from "./pages/Suppliers";
 import { Vacancy } from "./pages/Vacancy";
 import { VacancyManager } from "./pages/Vacancy/VacancyManager";
 
@@ -98,6 +99,22 @@ const router = createBrowserRouter([
         path: "/vacancy/manager",
         element: <VacancyManager />,
       },
+      {
+        path: "/delivery-payment",
+        element: <DeliveryPayment />,
+      },
+      {
+        path: "/about",
+        element: <About />,
+      },
+      {
+        path: "/dealer",
+        element: <Dealer />,
+      },
+      {
+        path: "/suppliers",
+        element: <Suppliers />,
+      },
     ],
   },
   {
@@ -115,18 +132,6 @@ const router = createBrowserRouter([
       {
         path: "/battery/lithium-ion",
         element: <LithiumIon />,
-      },
-      {
-        path: "/delivery-payment",
-        element: <DeliveryPayment />,
-      },
-      {
-        path: "/about",
-        element: <About />,
-      },
-      {
-        path: "/dealer",
-        element: <Dealer />,
       },
     ],
   },

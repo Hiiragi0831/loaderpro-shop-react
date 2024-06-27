@@ -8,7 +8,7 @@ const Header = () => {
           <div class="row">
             <div class="header__top-links">
               <a href="#">Дилерам</a>
-              <a href="#">Поставщикам</a>
+              <a href="/suppliers">Поставщикам</a>
             </div>
             <div class="header__top-contacts">
               <a href="mailto:zakaz@loaderpro.ru">
