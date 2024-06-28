@@ -20,6 +20,7 @@ import { Dealer } from "./pages/Dealer";
 import { DeliveryPayment } from "./pages/DeliveryPayment";
 import { Favorites } from "./pages/Favorites";
 import Home from "./pages/Home";
+import { PolyurethaneWheels } from "./pages/PolyurethaneWheels";
 import { PrivacyPolicy } from "./pages/PrivacyPolicy";
 import Product from "./pages/Product";
 import RequestParts from "./pages/RequestParts";
@@ -114,6 +115,10 @@ const router = createBrowserRouter([
       {
         path: "/suppliers",
         element: <Suppliers />,
+      },
+      {
+        path: "/polyurethane-wheels",
+        element: <PolyurethaneWheels />,
       },
     ],
   },

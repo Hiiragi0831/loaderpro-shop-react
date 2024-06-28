@@ -7,8 +7,8 @@ const Header = () => {
         <div class="container">
           <div class="row">
             <div class="header__top-links">
-              <a href="#">Дилерам</a>
-              <a href="/suppliers">Поставщикам</a>
+              <Link to="/dealer">Дилерам</Link>
+              <Link to="/suppliers">Поставщикам</Link>
             </div>
             <div class="header__top-contacts">
               <a href="mailto:zakaz@loaderpro.ru">
@@ -56,12 +56,12 @@ const Header = () => {
                 </svg>
                 <span>Войти</span>
               </a>
-              <a href="/favorites">
+              <Link to="/favorites">
                 <svg>
                   <use xlinkHref="/spritemap.svg#icon-heart" />
                 </svg>
                 <span>Избранное</span>
-              </a>
+              </Link>
               <Link to="/basket">
                 <svg>
                   <use xlinkHref="/spritemap.svg#icon-cart-shopping" />
@@ -84,24 +84,24 @@ const Header = () => {
               <Link to="/catalog" title="Спецтехника">
                 Спецтехника
               </Link>
-              <a href="#" title="Запасные части">
+              <Link to="#" title="Запасные части">
                 Запасные части
-              </a>
-              <a href="#" title="Шины и диски">
+              </Link>
+              <Link to="#" title="Шины и диски">
                 Шины и диски
-              </a>
-              <a href="#" title="Навесное оборудование">
+              </Link>
+              <Link to="#" title="Навесное оборудование">
                 Навесное оборудование
-              </a>
-              <a href="/battery" title="Тяговые аккумуляторы">
+              </Link>
+              <Link to="/battery" title="Тяговые аккумуляторы">
                 Тяговые аккумуляторы
-              </a>
-              <a href="#" title="Полиуретановые колеса">
+              </Link>
+              <Link to="/polyurethane-wheels" title="Полиуретановые колеса">
                 Полиуретановые колеса
-              </a>
-              <a href="#" title="Ремонт и обслуживание">
+              </Link>
+              <Link to="#" title="Ремонт и обслуживание">
                 Ремонт и обслуживание
-              </a>
+              </Link>
             </nav>
           </div>
         </div>
