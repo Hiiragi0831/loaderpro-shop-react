@@ -30,4 +30,31 @@
 			}
 		}
 	}
+
+	&__category {
+		.row {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+			gap: vc(10);
+		}
+	}
+
+	&__cat {
+		padding: vc(20);
+		display: flex;
+		border-radius: vc(10);
+		align-items: center;
+		box-shadow: $box-shadow;
+		gap: vc(20);
+
+		p {
+			font-size: vc(25);
+			font-weight: 500;
+			line-height: 1;
+		}
+
+		picture {
+			max-width: vc(120);
+		}
+	}
 }

@@ -27,6 +27,23 @@ export const PolyurethaneWheels = () => {
           </div>
         </div>
       </section>
+      <section className="polyurethane-wheels__category">
+        <div className="container">
+          <div className="row">
+            <div className="polyurethane-wheels__cat">
+              <picture>
+                <source srcSet={`/assets/images/polyurethanewheels/4f9814da9fb1224c2ef51c71fef88874.png`} />
+                <img
+                  src={`/assets/images/polyurethanewheels/4f9814da9fb1224c2ef51c71fef88874.png`}
+                  alt=""
+                  decoding="async"
+                />
+              </picture>
+              <p>Колеса для ричтраков</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   );
 };
