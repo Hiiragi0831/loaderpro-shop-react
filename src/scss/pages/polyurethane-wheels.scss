@@ -1,5 +1,33 @@
 .polyurethane-wheels {
 	&__hero {
+		.row {
+			display: grid;
+			justify-content: space-between;
+			align-items: center;
+			grid-template-columns: vc(788) vc(556);
+			gap: vc(150);
 
+			@include devices {
+				grid-template-columns: 100%;
+				gap: vc(20);
+			}
+		}
+
+		h1 {
+			@include desktop {
+				font-size: vc(70);
+				line-height: 1.1;
+			}
+		}
+
+		&-info {
+			picture {
+				margin-top: vc(30);
+
+				@include devices {
+					margin-top: vc(10);
+				}
+			}
+		}
 	}
 }
