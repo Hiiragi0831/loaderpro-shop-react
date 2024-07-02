@@ -44,6 +44,14 @@ export const PolyurethaneWheels = () => {
           </div>
         </div>
       </section>
+      <section className="polyurethane-wheels__advantages">
+        <div className="container">
+          <picture>
+            <source srcSet={`/assets/images/polyurethanewheels/01.png`} />
+            <img src={`/assets/images/polyurethanewheels/01.png`} alt="" decoding="async" />
+          </picture>
+        </div>
+      </section>
     </main>
   );
 };
