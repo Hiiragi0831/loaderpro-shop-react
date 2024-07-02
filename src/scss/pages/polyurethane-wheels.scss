@@ -2,8 +2,8 @@
 	&__hero {
 		.row {
 			display: grid;
-			justify-content: space-between;
 			align-items: center;
+			justify-content: space-between;
 			grid-template-columns: vc(788) vc(556);
 			gap: vc(150);
 
@@ -40,16 +40,16 @@
 	}
 
 	&__cat {
-		padding: vc(20);
 		display: flex;
-		border-radius: vc(10);
 		align-items: center;
+		border-radius: vc(10);
+		padding: vc(20);
 		box-shadow: $box-shadow;
 		gap: vc(20);
 
 		p {
-			font-size: vc(25);
 			font-weight: 500;
+			font-size: vc(25);
 			line-height: 1;
 		}
 
