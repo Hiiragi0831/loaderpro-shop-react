@@ -34,6 +34,7 @@
 		}
 
 		@include hover {
+			border-color: $color-white;
 			color: $color-white;
 			background: $color-tree-poppy-400;
 
