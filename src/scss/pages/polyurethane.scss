@@ -1,4 +1,4 @@
-.polyurethane-wheels {
+.polyurethane {
 	&__hero {
 		.row {
 			display: grid;
@@ -13,19 +13,37 @@
 			}
 		}
 
-		h1 {
-			@include desktop {
-				font-size: vc(70);
-				line-height: 1.1;
+		&-info {
+			h1 {
+				@include desktop {
+					font-size: vc(70);
+					line-height: 1.1;
+				}
 			}
 		}
 
-		&-info {
-			picture {
-				margin-top: vc(30);
+		&-img {
+			display: flex;
+			flex-direction: column;
+			margin-top: vc(30);
+			gap: vc(60);
 
-				@include devices {
-					margin-top: vc(10);
+			@include devices {
+				margin-top: vc(10);
+			}
+		}
+
+		&-surfacing {
+			.cta {
+				margin-top: vc(30);
+				margin-bottom: vc(105);
+			}
+
+			p {
+				margin-bottom: vc(10);
+
+				&:last-of-type {
+					margin-bottom: 0;
 				}
 			}
 		}

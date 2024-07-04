@@ -1,23 +1,18 @@
 import { Link } from "react-router-dom";
 
-import Articles from "../components/Articles";
-import { Cta } from "../components/Cta";
-import { InfoBox } from "../components/InfoBox";
+import Articles from "../../components/Articles";
+import { Cta } from "../../components/Cta";
+import { InfoBox } from "../../components/InfoBox";
+import { Category } from "./components/Category";
 
 export const PolyurethaneWheels = () => {
-  const cat = [
-    "Колеса для ричтраков",
-    "Колеса и\u00A0ролики для штабелеров",
-    "Колеса и ролики\u00A0для электротележек",
-    "Колеса и\u00A0ролики для штабелеров",
-  ];
   const assortment = ["Ведущие колеса", "Грузовые колеса", "Грузовые ролики", "Опорные колеса"];
   return (
     <main>
-      <section className="polyurethane-wheels__hero">
+      <section className="polyurethane__hero">
         <div className="container">
           <div className="row">
-            <div className="polyurethane-wheels__hero-info">
+            <div className="polyurethane__hero-info">
               <h1>Полиуретановые колеса и ролики для складской техники</h1>
               <p>
                 Чтобы купить полиуретановые колеса для складской техники вы можете обратиться в наш специализированный
@@ -25,53 +20,41 @@ export const PolyurethaneWheels = () => {
                 размеров и конфигураций.
               </p>
               <picture className="for-desktop">
-                <source srcSet={`/assets/images/polyurethanewheels/logos.png`} />
-                <img src={`/assets/images/polyurethanewheels/logos.png`} alt="" decoding="async" />
+                <source srcSet={`/assets/images/polyurethane/logos.png`} />
+                <img src={`/assets/images/polyurethane/logos.png`} alt="" decoding="async" />
               </picture>
               <picture className="for-devices">
-                <source srcSet={`/assets/images/polyurethanewheels/logos-m.png`} />
-                <img src={`/assets/images/polyurethanewheels/logos-m.png`} alt="" decoding="async" />
+                <source srcSet={`/assets/images/polyurethane/logos-m.png`} />
+                <img src={`/assets/images/polyurethane/logos-m.png`} alt="" decoding="async" />
               </picture>
             </div>
-            <picture>
-              <source srcSet={`/assets/images/polyurethanewheels/wheels-1.png`} />
-              <img src={`/assets/images/polyurethanewheels/wheels-1.png`} alt="" decoding="async" />
-            </picture>
+            <div class="polyurethane__hero-img">
+              <picture>
+                <source srcSet={`/assets/images/polyurethane/wheels-1.png`} />
+                <img src={`/assets/images/polyurethane/wheels-1.png`} alt="" decoding="async" />
+              </picture>
+            </div>
           </div>
         </div>
       </section>
-      <section className="polyurethane-wheels__category">
-        <div className="container">
-          <div className="row">
-            {cat.map((cat, key) => (
-              <div className="polyurethane-wheels__cat" key={key}>
-                <picture>
-                  <source srcSet={`/assets/images/polyurethanewheels/c-0${key + 1}.png`} />
-                  <img src={`/assets/images/polyurethanewheels/c-0${key + 1}.png`} alt="" decoding="async" />
-                </picture>
-                <p>{cat}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      <section className="polyurethane-wheels__advantages">
+      <Category />
+      <section className="polyurethane__advantages">
         <div className="container">
           <picture>
-            <source srcSet={`/assets/images/polyurethanewheels/01.png`} />
-            <img src={`/assets/images/polyurethanewheels/01.png`} alt="" decoding="async" />
+            <source srcSet={`/assets/images/polyurethane/01.png`} />
+            <img src={`/assets/images/polyurethane/01.png`} alt="" decoding="async" />
           </picture>
         </div>
       </section>
-      <section className="polyurethane-wheels__assortment">
+      <section className="polyurethane__assortment">
         <div className="container">
           <span className="h1">В нашем ассортименте вы найдёте:</span>
           <div class="row">
             {assortment.map((cat, key) => (
-              <div className="polyurethane-wheels__cat" key={key}>
+              <div className="polyurethane__cat" key={key}>
                 <picture>
-                  <source srcSet={`/assets/images/polyurethanewheels/assortment-0${key + 1}.png`} />
-                  <img src={`/assets/images/polyurethanewheels/assortment-0${key + 1}.png`} alt="" decoding="async" />
+                  <source srcSet={`/assets/images/polyurethane/assortment-0${key + 1}.png`} />
+                  <img src={`/assets/images/polyurethane/assortment-0${key + 1}.png`} alt="" decoding="async" />
                 </picture>
                 <p>{cat}</p>
               </div>
@@ -82,13 +65,13 @@ export const PolyurethaneWheels = () => {
       <InfoBox
         title="Совместимость"
         text="Наши колеса и ролики подходят для брендов"
-        img="/assets/images/polyurethanewheels/still.png"
+        img="/assets/images/polyurethane/still.png"
         class="reverse"
       />
-      <section className="polyurethane-wheels__about">
+      <section className="polyurethane__about">
         <div className="container">
           <div class="row">
-            <div className="polyurethane-wheels__about-text">
+            <div className="polyurethane__about-text">
               <span class="h1">Наш интернет-магазин</span>
               <p>
                 Вы можете использовать наш интернет-магазин, чтобы осуществить выбор полиуретановых колес
@@ -106,7 +89,7 @@ export const PolyurethaneWheels = () => {
                 Перейти в каталог
               </Link>
             </div>
-            <div class="polyurethane-wheels__about-logo">
+            <div class="polyurethane__about-logo">
               <svg>
                 <use xlinkHref="/spritemap.svg#icon-logo" />
               </svg>
@@ -114,10 +97,10 @@ export const PolyurethaneWheels = () => {
           </div>
         </div>
       </section>
-      <section className="polyurethane-wheels__cta">
+      <section className="polyurethane__cta">
         <div className="container">
           <div class="row">
-            <div className="polyurethane-wheels__cta-text">
+            <div className="polyurethane__cta-text">
               <span className="h1">
                 <p>Зачем покупать новые?</p>
                 <p>Восстановите старые!</p>
@@ -133,16 +116,16 @@ export const PolyurethaneWheels = () => {
                 разнообразной складской техники – ричтраки, самоходные тележки, штабелёры, палетоперевозчики, роклы,
                 комплектовщики заказов, узкопроходные штабелёры с высокой грузоподъемностью.
               </p>
-              <Link to="#" className="button button__outline for-devices">
+              <Link to="/polyurethane-surfacing" className="button button__outline for-devices">
                 Перейти
               </Link>
             </div>
-            <div class="polyurethane-wheels__cta-img">
+            <div class="polyurethane__cta-img">
               <picture>
-                <source srcSet={`/assets/images/polyurethanewheels/cta.png`} />
-                <img src={`/assets/images/polyurethanewheels/cta.png`} alt="" decoding="async" />
+                <source srcSet={`/assets/images/polyurethane/cta.png`} />
+                <img src={`/assets/images/polyurethane/cta.png`} alt="" decoding="async" />
               </picture>
-              <Link to="#" className="button button__outline for-desktop">
+              <Link to="/polyurethane-surfacing" className="button button__outline for-desktop">
                 Перейти
               </Link>
             </div>

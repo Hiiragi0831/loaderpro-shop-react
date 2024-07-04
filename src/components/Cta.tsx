@@ -1,11 +1,22 @@
-export const Cta = () => {
+import { FC } from "react";
+
+type CtaType = {
+  title?: any;
+  text?: string;
+  class?: string;
+};
+
+export const Cta: FC<CtaType> = (data) => {
+  const title = data.title ? data.title : "Оставьте заявку и наш менеджер свяжется с вами в течении 15 минут!";
+  const text = data.text ? data.text : "Получите полную консультацию по всем видам аккумуляторов!";
+
   return (
-    <section className="cta">
+    <section className={`cta ${data.class ? data.class : ""}`}>
       <div className="container">
         <div className="row">
           <div class="cta__info">
-            <h1>Оставьте заявку и наш менеджер свяжется с вами в течении 15 минут!</h1>
-            <p>Получите полную консультацию по всем видам аккумуляторов!</p>
+            <h1>{title}</h1>
+            <p>{text}</p>
           </div>
           <div class="cta__form">
             <input type="text" placeholder="Имя" name="name" />
