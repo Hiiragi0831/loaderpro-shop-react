@@ -37,6 +37,11 @@
 			.cta {
 				margin-top: vc(30);
 				margin-bottom: vc(105);
+
+				@include devices {
+					margin-top: vc(10);
+					margin-bottom: vc(30);
+				}
 			}
 
 			p {
@@ -254,6 +259,36 @@
 			@include devices {
 				margin-top: vc(15);
 				height: auto;
+			}
+		}
+	}
+
+	&__achievement {
+		.row {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+			gap: vc(20);
+
+			@include devices {
+				grid-template-columns: 100%;
+			}
+		}
+
+		.cta {
+			@include desktop {
+				grid-column: 2 / 4;
+			}
+		}
+	}
+
+	&__text {
+		.row {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: vc(40);
+
+			@include devices {
+				grid-template-columns: 100%;
 			}
 		}
 	}

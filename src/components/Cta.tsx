@@ -16,7 +16,7 @@ export const Cta: FC<CtaType> = (data) => {
         <div className="row">
           <div class="cta__info">
             <h1>{title}</h1>
-            <p>{text}</p>
+            {data.text === null ? "" : <p>{text}</p>}
           </div>
           <div class="cta__form">
             <input type="text" placeholder="Имя" name="name" />
