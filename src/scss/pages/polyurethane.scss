@@ -281,7 +281,7 @@
 		}
 	}
 
-	&__text {
+	&__col {
 		.row {
 			display: grid;
 			grid-template-columns: 1fr 1fr;
@@ -289,6 +289,50 @@
 
 			@include devices {
 				grid-template-columns: 100%;
+			}
+		}
+
+		.h1 {
+			width: 100%;
+			display: block;
+			margin-bottom: vc(10);
+		}
+
+		.lead {
+			ul {
+				gap: vc(22);
+			}
+
+			li {
+				font-size: vc(25);
+				line-height: 1;
+
+				@include devices {
+					font-size: vc(12);
+				}
+			}
+		}
+	}
+
+	&__text {
+		display: flex;
+		flex-direction: column;
+		gap: vc(10);
+	}
+
+	&__image {
+		picture {
+			overflow: hidden;
+			border-radius: vc(10);
+			height: vc(200);
+
+			img {
+				height: 100%;
+				object-position: 0 63%;
+			}
+
+			@include devices {
+				height: vc(100);
 			}
 		}
 	}

@@ -78,7 +78,7 @@ export const Dealer = () => {
               <Preference title="1 616" text="брендов в портфеле" bg="2" />
               <Preference title="3" text="надежных канала поставок" bg="3" />
             </div>
-            <div className="dealer__preference-lead">
+            <div className="lead">
               <ul>
                 <li>Запросы на подбор по каталогу или номеру детали</li>
                 <li>Собственный гараж</li>
