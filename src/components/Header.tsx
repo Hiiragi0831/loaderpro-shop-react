@@ -81,10 +81,10 @@ const Header = () => {
         <div class="container">
           <div class="row">
             <nav>
-              <Link to="/catalog" title="Спецтехника">
+              <Link to="#" title="Спецтехника">
                 Спецтехника
               </Link>
-              <Link to="#" title="Запасные части">
+              <Link to="/catalog" title="Запасные части">
                 Запасные части
               </Link>
               <Link to="#" title="Шины и диски">
@@ -99,7 +99,7 @@ const Header = () => {
               <Link to="/polyurethane-wheels" title="Полиуретановые колеса">
                 Полиуретановые колеса
               </Link>
-              <Link to="#" title="Ремонт и обслуживание">
+              <Link to="/repair-maintenance" title="Ремонт и обслуживание">
                 Ремонт и обслуживание
               </Link>
             </nav>

@@ -5,6 +5,22 @@
 	padding: vc(25) vc(30);
 	background: $color-tree-poppy-400;
 
+	span,
+	p {
+		color: $color-white;
+	}
+
+	p {
+		display: flex;
+		justify-content: space-between;
+		font-weight: 500;
+		gap: vc(15);
+
+		> span:last-child {
+			flex-shrink: 0;
+		}
+	}
+
 	ul {
 		display: flex;
 		flex-direction: column;

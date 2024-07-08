@@ -24,6 +24,7 @@ import { PolyurethaneSurfacing } from "./pages/Polyurethane/PolyurethaneSurfacin
 import { PolyurethaneWheels } from "./pages/Polyurethane/PolyurethaneWheels";
 import { PrivacyPolicy } from "./pages/PrivacyPolicy";
 import Product from "./pages/Product";
+import { RepairMaintenance } from "./pages/RepairMaintenance";
 import RequestParts from "./pages/RequestParts";
 import SelectionParts from "./pages/SelectionParts";
 import { Suppliers } from "./pages/Suppliers";
@@ -124,6 +125,10 @@ const router = createBrowserRouter([
       {
         path: "/polyurethane-surfacing",
         element: <PolyurethaneSurfacing />,
+      },
+      {
+        path: "/repair-maintenance",
+        element: <RepairMaintenance />,
       },
     ],
   },

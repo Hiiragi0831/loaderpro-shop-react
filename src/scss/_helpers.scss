@@ -70,3 +70,17 @@
 .w-100 {
 	width: 100%;
 }
+
+.col-2 {
+	display: grid;
+	align-items: center;
+	justify-content: center;
+	grid-template-columns: 1fr 1fr;
+	width: 100%;
+	gap: vc(40);
+
+	@include devices {
+		grid-template-columns: 100%;
+		gap: vc(20);
+	}
+}

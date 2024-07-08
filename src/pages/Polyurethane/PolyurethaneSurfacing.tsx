@@ -45,7 +45,7 @@ export const PolyurethaneSurfacing = () => {
           </div>
         </div>
       </section>
-      <section className="polyurethane__achievement">
+      <section className="achievements">
         <div className="container">
           <div className="title">
             <span className="h1">
