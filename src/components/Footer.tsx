@@ -123,9 +123,9 @@ const Footer = () => {
               <a className="footer__link" href="#">
                 Подбор запасных частей
               </a>
-              <a className="footer__link" href="#">
+              <Link className="footer__link" to="/tire-service">
                 Шиномонтаж
-              </a>
+              </Link>
               <a className="footer__link" href="#">
                 Восстановление колес
               </a>

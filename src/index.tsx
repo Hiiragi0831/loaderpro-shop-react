@@ -30,6 +30,7 @@ import SelectionParts from "./pages/SelectionParts";
 import { Suppliers } from "./pages/Suppliers";
 import { Vacancy } from "./pages/Vacancy";
 import { VacancyManager } from "./pages/Vacancy/VacancyManager";
+import {TireService} from "./pages/TireService";
 
 const BaseTemplate = () => {
   return (
@@ -129,6 +130,10 @@ const router = createBrowserRouter([
       {
         path: "/repair-maintenance",
         element: <RepairMaintenance />,
+      },
+      {
+        path: "/tire-service",
+        element: <TireService />,
       },
     ],
   },
