@@ -43,7 +43,7 @@ export const BasketItem: FC<ProductType> = ({ price, count, image, title, articl
           }}
         >
           <svg>
-            <use xlinkHref="/spritemap.svg#icon-trash-can" />
+            <use xlinkHref="/__spritemap#sprite-trash-can" />
           </svg>
         </button>
       </div>

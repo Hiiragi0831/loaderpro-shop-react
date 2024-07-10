@@ -14,7 +14,7 @@ const Product: FC<Props> = (data) => {
     <div className="product">
       <div className={`product__like ${data.like ? "is-active" : ""}`}>
         <svg>
-          <use xlinkHref="/spritemap.svg#icon-heart" />
+          <use xlinkHref="/__spritemap#sprite-heart" />
         </svg>
       </div>
       <div className="product__img">
@@ -49,7 +49,7 @@ const Product: FC<Props> = (data) => {
           <>
             <button className="button button__primary button__icon" onClick={() => addToCart(data)}>
               <svg>
-                <use xlinkHref="/spritemap.svg#icon-shopping-cart" />
+                <use xlinkHref="/__spritemap#sprite-shopping-cart" />
               </svg>
               В корзину
             </button>

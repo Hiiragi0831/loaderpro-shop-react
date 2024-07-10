@@ -91,7 +91,7 @@ export const PolyurethaneWheels = () => {
             </div>
             <div class="polyurethane__about-logo">
               <svg>
-                <use xlinkHref="/spritemap.svg#icon-logo" />
+                <use xlinkHref="/__spritemap#sprite-logo" />
               </svg>
             </div>
           </div>

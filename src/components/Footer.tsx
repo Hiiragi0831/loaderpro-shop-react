@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="footer__top">
           <div className="footer__logo">
             <svg>
-              <use xlinkHref="/spritemap.svg#icon-logo" />
+              <use xlinkHref="/__spritemap#sprite-logo" />
             </svg>
           </div>
           <div className="footer__ya">
@@ -20,7 +20,7 @@ const Footer = () => {
           </div>
           <div className="footer__phone">
             <svg>
-              <use xlinkHref="/spritemap.svg#icon-phone" />
+              <use xlinkHref="/__spritemap#sprite-phone" />
             </svg>
             <p>
               <a href="tel:8 (800) 551-19-96">8 (800) 551-19-96</a> |{" "}
@@ -29,7 +29,7 @@ const Footer = () => {
           </div>
           <div className="footer__mail">
             <svg>
-              <use xlinkHref="/spritemap.svg#icon-mail" />
+              <use xlinkHref="/__spritemap#sprite-mail" />
             </svg>
             <p>
               <a href="mailto:zakaz@loaderpro.ru">zakaz@loaderpro.ru</a>
@@ -38,22 +38,22 @@ const Footer = () => {
           <div className="footer__socials">
             <a className="footer__social" href="#">
               <svg>
-                <use xlinkHref="/spritemap.svg#icon-vk" />
+                <use xlinkHref="/__spritemap#sprite-vk" />
               </svg>
             </a>
             <a className="footer__social" href="#">
               <svg>
-                <use xlinkHref="/spritemap.svg#icon-tg" />
+                <use xlinkHref="/__spritemap#sprite-tg" />
               </svg>
             </a>
             <a className="footer__social" href="#">
               <svg>
-                <use xlinkHref="/spritemap.svg#icon-wt" />
+                <use xlinkHref="/__spritemap#sprite-wt" />
               </svg>
             </a>
             <a className="footer__social" href="#">
               <svg>
-                <use xlinkHref="/spritemap.svg#icon-youtube" />
+                <use xlinkHref="/__spritemap#sprite-youtube" />
               </svg>
             </a>
           </div>

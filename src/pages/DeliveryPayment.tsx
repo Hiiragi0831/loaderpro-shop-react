@@ -15,7 +15,7 @@ export const DeliveryPayment = () => {
             </blockquote>
             <div class="deliverypayment__logo">
               <svg>
-                <use xlinkHref="/spritemap.svg#icon-logo" />
+                <use xlinkHref="/__spritemap#sprite-logo" />
               </svg>
             </div>
           </div>

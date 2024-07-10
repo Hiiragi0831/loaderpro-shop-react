@@ -152,4 +152,8 @@
 			font-size: vc(14);
 		}
 	}
+
+	@include devices {
+		padding-bottom: vc(80);
+	}
 }

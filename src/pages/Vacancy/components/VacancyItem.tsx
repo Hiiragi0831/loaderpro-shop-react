@@ -10,7 +10,7 @@ export const VacancyItem = () => {
         </div>
         <div className="vacancy-item__logo">
           <svg>
-            <use xlinkHref="/spritemap.svg#icon-logo" />
+            <use xlinkHref="/__spritemap#sprite-logo" />
           </svg>
         </div>
       </div>

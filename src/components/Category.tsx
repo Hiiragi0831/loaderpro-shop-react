@@ -19,7 +19,7 @@ const Category: FC<Props> = (data) => {
         <button className="category__button">
           <span>Перейти</span>
           <svg>
-            <use xlinkHref="/spritemap.svg#icon-right-arrow" />
+            <use xlinkHref="/__spritemap#sprite-right-arrow" />
           </svg>
         </button>
       </div>

@@ -14,7 +14,7 @@ const Header = () => {
               <a href="mailto:zakaz@loaderpro.ru">
                 <div class="svg">
                   <svg>
-                    <use xlinkHref="/spritemap.svg#icon-mail" />
+                    <use xlinkHref="/__spritemap#sprite-mail" />
                   </svg>
                 </div>
                 zakaz@loaderpro.ru
@@ -22,7 +22,7 @@ const Header = () => {
               <a href="tel:+78005511996">
                 <div class="svg">
                   <svg>
-                    <use xlinkHref="/spritemap.svg#icon-phone" />
+                    <use xlinkHref="/__spritemap#sprite-phone" />
                   </svg>
                 </div>
                 8 (800) 551-19-96
@@ -36,7 +36,7 @@ const Header = () => {
           <div class="row">
             <Link class="header__logo" to="/">
               <svg>
-                <use xlinkHref="/spritemap.svg#icon-logo" />
+                <use xlinkHref="/__spritemap#sprite-logo" />
               </svg>
             </Link>
             <form class="header__search">
@@ -44,7 +44,7 @@ const Header = () => {
                 <input type="text" name="search" placeholder="Поиск товара" />
                 <button type="submit">
                   <svg>
-                    <use xlinkHref="/spritemap.svg#icon-magnifying-glass" />
+                    <use xlinkHref="/__spritemap#sprite-magnifying-glass" />
                   </svg>
                 </button>
               </label>
@@ -52,19 +52,19 @@ const Header = () => {
             <div class="header__action">
               <a href="#">
                 <svg>
-                  <use xlinkHref="/spritemap.svg#icon-user" />
+                  <use xlinkHref="/__spritemap#sprite-user" />
                 </svg>
                 <span>Войти</span>
               </a>
               <Link to="/favorites">
                 <svg>
-                  <use xlinkHref="/spritemap.svg#icon-heart" />
+                  <use xlinkHref="/__spritemap#sprite-heart" />
                 </svg>
                 <span>Избранное</span>
               </Link>
               <Link to="/basket">
                 <svg>
-                  <use xlinkHref="/spritemap.svg#icon-cart-shopping" />
+                  <use xlinkHref="/__spritemap#sprite-cart-shopping" />
                 </svg>
                 <span>Корзина</span>
               </Link>

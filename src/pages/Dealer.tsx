@@ -104,7 +104,7 @@ export const Dealer = () => {
           <div className="row">
             <div className="dealer__who-item">
               <svg>
-                <use xlinkHref="/spritemap.svg#icon-person-dolly" />
+                <use xlinkHref="/__spritemap#sprite-person-dolly" />
               </svg>
               <span className="h1">
                 Торгующие <br />
@@ -113,7 +113,7 @@ export const Dealer = () => {
             </div>
             <div className="dealer__who-item">
               <svg>
-                <use xlinkHref="/spritemap.svg#icon-revenue" />
+                <use xlinkHref="/__spritemap#sprite-revenue" />
               </svg>
               <span className="h1">
                 Сервисные <br />
@@ -122,7 +122,7 @@ export const Dealer = () => {
             </div>
             <div className="dealer__who-item">
               <svg>
-                <use xlinkHref="/spritemap.svg#icon-tools" />
+                <use xlinkHref="/__spritemap#sprite-tools" />
               </svg>
               <span className="h1">Сотрудники крупных компаний</span>
             </div>

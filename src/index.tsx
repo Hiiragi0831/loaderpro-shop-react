@@ -7,6 +7,7 @@ import "./scss/main.scss";
 
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import { MobileBar } from "./components/MobileBar";
 import ErrorPage from "./error-page";
 import { About } from "./pages/About";
 import Article from "./pages/Article";
@@ -28,9 +29,9 @@ import { RepairMaintenance } from "./pages/RepairMaintenance";
 import RequestParts from "./pages/RequestParts";
 import SelectionParts from "./pages/SelectionParts";
 import { Suppliers } from "./pages/Suppliers";
+import { TireService } from "./pages/TireService";
 import { Vacancy } from "./pages/Vacancy";
 import { VacancyManager } from "./pages/Vacancy/VacancyManager";
-import {TireService} from "./pages/TireService";
 
 const BaseTemplate = () => {
   return (
@@ -38,6 +39,7 @@ const BaseTemplate = () => {
       <ScrollRestoration />
       <Header />
       <Outlet />
+      <MobileBar />
       <Footer />
     </div>
   );

@@ -37,7 +37,7 @@ export const VacancyManager = () => {
                 </p>
               </div>
               <svg className="for-desktop">
-                <use xlinkHref="/spritemap.svg#icon-logo" />
+                <use xlinkHref="/__spritemap#sprite-logo" />
               </svg>
             </div>
             <div className="vacancy-inner__conditions">
