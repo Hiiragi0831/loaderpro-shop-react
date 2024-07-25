@@ -171,10 +171,10 @@ export const PolyurethaneSurfacing = () => {
           </picture>
         </div>
       </section>
-      <section className="polyurethane__cta">
+      <section className="leadcta">
         <div className="container">
           <div className="row">
-            <div className="polyurethane__cta-text">
+            <div className="leadcta__text">
               <span className="h1">
                 <p>Зачем покупать новые?</p>
                 <p>Восстановите старые!</p>
@@ -190,14 +190,13 @@ export const PolyurethaneSurfacing = () => {
                 разнообразной складской техники – ричтраки, самоходные тележки, штабелёры, палетоперевозчики, роклы,
                 комплектовщики заказов, узкопроходные штабелёры с высокой грузоподъемностью.
               </p>
-              <button className="button button__outline for-devices">Оставить заявку</button>
+              <button className="button button__outline">Оставить заявку</button>
             </div>
-            <div className="polyurethane__cta-img">
+            <div className="leadcta__img">
               <picture>
                 <source srcSet={`/assets/images/polyurethane/cta.png`} />
                 <img src={`/assets/images/polyurethane/cta.png`} alt="" decoding="async" />
               </picture>
-              <button className="button button__outline for-desktop">Оставить заявку</button>
             </div>
           </div>
         </div>
