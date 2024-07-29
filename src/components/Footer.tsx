@@ -36,22 +36,22 @@ const Footer = () => {
             </p>
           </div>
           <div className="footer__socials">
-            <a className="footer__social" href="#">
+            <a className="footer__social" href="https://vk.com/loaderproru">
               <svg>
                 <use xlinkHref="/__spritemap#sprite-vk" />
               </svg>
             </a>
-            <a className="footer__social" href="#">
+            <a className="footer__social" href="https://t.me/loaderpro">
               <svg>
                 <use xlinkHref="/__spritemap#sprite-tg" />
               </svg>
             </a>
-            <a className="footer__social" href="#">
+            <a className="footer__social" href="https://wa.me/79643421256">
               <svg>
                 <use xlinkHref="/__spritemap#sprite-wt" />
               </svg>
             </a>
-            <a className="footer__social" href="#">
+            <a className="footer__social" href="https://www.youtube.com/@loaderpro">
               <svg>
                 <use xlinkHref="/__spritemap#sprite-youtube" />
               </svg>
@@ -126,7 +126,7 @@ const Footer = () => {
               <Link className="footer__link" to="/tire-service">
                 Шиномонтаж
               </Link>
-              <Link className="footer__link" to="#">
+              <Link className="footer__link" to="/polyurethane-surfacing">
                 Восстановление колес
               </Link>
               <Link className="footer__link" to="/repair-maintenance">
