@@ -31,7 +31,8 @@
 		@include devices {
 			gap: vc(5);
 
-			h1 {
+			.h1 {
+				margin: 0 !important;
 				font-size: vc(14);
 				line-height: 1;
 			}
@@ -83,8 +84,10 @@
 
 	&.columns {
 		.row {
-			grid-template-columns: 100%;
-			gap: vc(20);
+			@include desktop {
+				grid-template-columns: 100%;
+				gap: vc(20);
+			}
 		}
 	}
 
@@ -95,6 +98,52 @@
 			padding: 0;
 			width: 100%;
 			max-width: 100%;
+		}
+	}
+
+	&.small {
+		.cta__form {
+			grid-template-columns: 100%;
+
+			> * {
+				grid-column: auto;
+				width: 100%;
+			}
+		}
+
+		@include desktop {
+			.row {
+				grid-template-columns: 100%;
+				padding: vc(10);
+				gap: vc(10);
+			}
+
+			.cta__info {
+				gap: vc(10);
+			}
+
+			.h1 {
+				font-size: vc(22);
+				line-height: 1;
+			}
+
+			p {
+				font-size: vc(18);
+			}
+
+			.cta__form {
+				gap: vc(10);
+
+				input {
+					padding: vc(12) vc(20);
+					font-size: vc(20);
+				}
+
+				button {
+					padding: vc(12) vc(20);
+					font-size: vc(20);
+				}
+			}
 		}
 	}
 }

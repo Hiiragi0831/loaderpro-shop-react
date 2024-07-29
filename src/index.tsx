@@ -32,6 +32,7 @@ import { Suppliers } from "./pages/Suppliers";
 import { TireService } from "./pages/TireService";
 import { Vacancy } from "./pages/Vacancy";
 import { VacancyManager } from "./pages/Vacancy/VacancyManager";
+import {OilsLubricants} from "./pages/OilsLubricants";
 
 const BaseTemplate = () => {
   return (
@@ -136,6 +137,10 @@ const router = createBrowserRouter([
       {
         path: "/tire-service",
         element: <TireService />,
+      },
+      {
+        path: "/oils-lubricants",
+        element: <OilsLubricants />,
       },
     ],
   },

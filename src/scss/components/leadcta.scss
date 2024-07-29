@@ -79,6 +79,21 @@
 		}
 	}
 
+	&__half {
+		display: flex;
+		flex-direction: column;
+
+		picture {
+			overflow: hidden;
+			border-radius: vc(10);
+		}
+
+		span {
+			margin: auto;
+			text-align: center;
+		}
+	}
+
 	.button {
 		display: flex;
 		align-items: center;

@@ -91,47 +91,47 @@ const Footer = () => {
           <div className="footer__links">
             <p className="footer__links-head">Товары</p>
             <div className="footer__links-row">
-              <a className="footer__link" href="#">
+              <Link className="footer__link" to="#">
                 Спецтехника
-              </a>
-              <a className="footer__link" href="#">
+              </Link>
+              <Link className="footer__link" to="#">
                 Запасные части
-              </a>
-              <a className="footer__link" href="#">
+              </Link>
+              <Link className="footer__link" to="#">
                 Навесное оборудование
-              </a>
-              <a className="footer__link" href="#">
+              </Link>
+              <Link className="footer__link" to="#">
                 Шины и диски
-              </a>
-              <a className="footer__link" href="#">
+              </Link>
+              <Link className="footer__link" to="/battery">
                 Тяговые аккумуляторы
-              </a>
-              <a className="footer__link" href="#">
+              </Link>
+              <Link className="footer__link" to="/polyurethane-wheels">
                 Полиуретановые колеса
-              </a>
-              <a className="footer__link" href="#">
+              </Link>
+              <Link className="footer__link" to="#">
                 Фильтры
-              </a>
-              <a className="footer__link" href="#">
+              </Link>
+              <Link className="footer__link" to="/oils-lubricants">
                 Масла и смазки
-              </a>
+              </Link>
             </div>
           </div>
           <div className="footer__links">
             <p className="footer__links-head">Услуги</p>
             <div className="footer__links-row footer__links-row--1">
-              <a className="footer__link" href="#">
+              <Link className="footer__link" to="#">
                 Подбор запасных частей
-              </a>
+              </Link>
               <Link className="footer__link" to="/tire-service">
                 Шиномонтаж
               </Link>
-              <a className="footer__link" href="#">
+              <Link className="footer__link" to="#">
                 Восстановление колес
-              </a>
-              <a className="footer__link" href="#">
+              </Link>
+              <Link className="footer__link" to="/repair-maintenance">
                 Ремонт и обслуживание
-              </a>
+              </Link>
             </div>
           </div>
         </div>
