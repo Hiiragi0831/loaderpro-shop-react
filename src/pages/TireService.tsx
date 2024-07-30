@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Achievement } from "../components/Achievement";
 import Articles from "../components/Articles";
 import { Cta } from "../components/Cta";
+import {VideoBlock} from "../components/VideoBlock";
 
 export const TireService = () => {
   return (
@@ -154,11 +155,8 @@ export const TireService = () => {
               </p>
               <button className="button button__outline">Оставить заявку</button>
             </div>
-            <div className="leadcta__img">
-              <picture>
-                <source srcSet={`/assets/images/tireservice/hqdefault.png`} />
-                <img src={`/assets/images/tireservice/hqdefault.png`} alt="" decoding="async" />
-              </picture>
+            <div className="leadcta__video">
+              <VideoBlock id={"k2i9-GugGaw"} className={"title-hidden"} />
             </div>
           </div>
         </div>

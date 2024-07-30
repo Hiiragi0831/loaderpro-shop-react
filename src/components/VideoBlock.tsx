@@ -23,11 +23,16 @@ export const VideoBlock: FC<VideoBlockType> = ({ id, className }) => {
           delay(() => setToggler(!toggler), 100);
         }}
       >
+        <div class="videoblock__play">
+          <svg>
+            <use xlinkHref="/__spritemap#sprite-play-solid" />
+          </svg>
+        </div>
         <picture>
           <source srcSet={video.image} />
           <img src={video.image} alt={video.title} decoding="async" />
         </picture>
-        <p className="h4 videoblock__title">{video.title}</p>
+        <p className="h1 videoblock__title">{video.title}</p>
       </button>
       <FsLightbox toggler={toggler} sources={[video.link]} key={productIndex} />
     </div>

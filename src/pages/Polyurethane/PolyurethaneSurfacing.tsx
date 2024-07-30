@@ -4,6 +4,7 @@ import { Achievement } from "../../components/Achievement";
 import Articles from "../../components/Articles";
 import { Cta } from "../../components/Cta";
 import { Category } from "./components/Category";
+import {VideoBlock} from "../../components/VideoBlock";
 
 export const PolyurethaneSurfacing = () => {
   return (
@@ -192,11 +193,8 @@ export const PolyurethaneSurfacing = () => {
               </p>
               <button className="button button__outline">Оставить заявку</button>
             </div>
-            <div className="leadcta__img">
-              <picture>
-                <source srcSet={`/assets/images/polyurethane/cta.png`} />
-                <img src={`/assets/images/polyurethane/cta.png`} alt="" decoding="async" />
-              </picture>
+            <div className="leadcta__video">
+              <VideoBlock id={"gVuSID82kpY"} className={"title-hidden"} />
             </div>
           </div>
         </div>

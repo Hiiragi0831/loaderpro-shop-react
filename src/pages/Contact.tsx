@@ -52,7 +52,7 @@ export const Contact = () => {
               </div>
             </div>
             <div className="contact__social">
-              <div className="contact__qr">
+              <a className="contact__qr" href="https://wa.me/79643421256" target="_blank" rel="noreferrer">
                 <picture>
                   <source srcSet="/assets/images/contact/qr-w.png" />
                   <img src="/assets/images/contact/qr-w.png" alt="" decoding="async" />
@@ -61,21 +61,21 @@ export const Contact = () => {
                   Ответы на
                   <br /> любые вопросы
                 </p>
-              </div>
-              <div className="contact__qr">
+              </a>
+              <a className="contact__qr" href="https://t.me/loaderpro" target="_blank" rel="noreferrer">
                 <picture>
                   <source srcSet="/assets/images/contact/qr-t.png" />
                   <img src="/assets/images/contact/qr-t.png" alt="" decoding="async" />
                 </picture>
                 <p>Акции, скидки, чат профессионалов</p>
-              </div>
-              <div className="contact__qr">
+              </a>
+              <a className="contact__qr" href="https://vk.com/loaderproru" target="_blank" rel="noreferrer">
                 <picture>
                   <source srcSet="/assets/images/contact/qr-v.png" />
                   <img src="/assets/images/contact/qr-v.png" alt="" decoding="async" />
                 </picture>
                 <p>Полезная информация, жизнь компании и новости</p>
-              </div>
+              </a>
             </div>
           </div>
         </div>

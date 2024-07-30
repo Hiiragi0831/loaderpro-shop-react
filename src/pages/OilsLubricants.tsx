@@ -2,6 +2,7 @@ import { Achievement } from "../components/Achievement";
 import Articles from "../components/Articles";
 import { Cta } from "../components/Cta";
 import Products from "../components/Products";
+import { VideoBlock } from "../components/VideoBlock";
 
 export const OilsLubricants = () => {
   return (
@@ -103,19 +104,11 @@ export const OilsLubricants = () => {
       <section className="leadcta">
         <div className="container">
           <div className="row">
-            <div className="leadcta__half">
-              <picture>
-                <source srcSet={`/assets/images/oilslubricants/v-01.jpg`} />
-                <img src={`/assets/images/oilslubricants/v-01.jpg`} alt="" decoding="async" />
-              </picture>
-              <span className="h1">Какое моторное масло выбрать?</span>
+            <div className="leadcta__video">
+              <VideoBlock id={"Lv_111FXrBA"} />
             </div>
-            <div className="leadcta__half">
-              <picture>
-                <source srcSet={`/assets/images/oilslubricants/v-02.png`} />
-                <img src={`/assets/images/oilslubricants/v-02.png`} alt="" decoding="async" />
-              </picture>
-              <span className="h1">Обзор завода производства масла NEO OIL.</span>
+            <div className="leadcta__video">
+              <VideoBlock id={"ORqmLv8IsMM"} />
             </div>
           </div>
         </div>
