@@ -23,6 +23,10 @@
 	}
 
 	&__text {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+
 		.h1 {
 			font-size: vc(60);
 			text-align: center;
@@ -85,28 +89,16 @@
 	}
 
 	&__video {
+		height: 100%;
+
 		.videoblock {
 			height: 100%;
 		}
+
 		@include devices {
 			order: -1;
 			margin: vc(-10);
 			height: vc(160);
-		}
-	}
-
-	&__half {
-		display: flex;
-		flex-direction: column;
-
-		picture {
-			overflow: hidden;
-			border-radius: vc(10);
-		}
-
-		span {
-			margin: auto;
-			text-align: center;
 		}
 	}
 
