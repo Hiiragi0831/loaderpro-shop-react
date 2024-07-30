@@ -87,6 +87,17 @@ class APIService {
       console.error("Error fetching:", error.message);
     }
   }
+  public async getYoutubeVideo(id): Promise<any> {
+    const YOUTUBE_API = "https://youtube.googleapis.com/youtube/v3/videos";
+    const YOUTUBE_KEY = "AIzaSyA2UEjRCI--QCtdYoA_jeN5s84htgXNyF0";
+
+    try {
+      const res = await fetch(`${YOUTUBE_API}?part=snippet%2CcontentDetails%2Cstatistics&id=${id}&key=${YOUTUBE_KEY}`);
+      return res.json();
+    } catch (error) {
+      console.error("Error fetching:", error.message);
+    }
+  }
 }
 
 export const api: APIService = new APIService();

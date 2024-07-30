@@ -4,6 +4,7 @@ import Articles from "../../components/Articles";
 import { Cta } from "../../components/Cta";
 import { InfoBox } from "../../components/InfoBox";
 import { Category } from "./components/Category";
+import {VideoBlock} from "../../components/VideoBlock";
 
 export const PolyurethaneWheels = () => {
   const assortment = ["Ведущие колеса", "Грузовые колеса", "Грузовые ролики", "Опорные колеса"];
@@ -120,11 +121,8 @@ export const PolyurethaneWheels = () => {
                 Перейти
               </Link>
             </div>
-            <div className="leadcta__img">
-              <picture>
-                <source srcSet={`/assets/images/polyurethane/cta.png`} />
-                <img src={`/assets/images/polyurethane/cta.png`} alt="" decoding="async" />
-              </picture>
+            <div className="leadcta__video">
+              <VideoBlock id={"gVuSID82kpY"} className={"title-hidden"} />
             </div>
           </div>
         </div>

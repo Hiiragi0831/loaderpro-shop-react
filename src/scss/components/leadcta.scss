@@ -17,6 +17,11 @@
 		}
 	}
 
+	.container {
+		position: inherit;
+		z-index: inherit;
+	}
+
 	&__text {
 		.h1 {
 			font-size: vc(60);
@@ -76,6 +81,17 @@
 			picture {
 				height: vc(160);
 			}
+		}
+	}
+
+	&__video {
+		.videoblock {
+			height: 100%;
+		}
+		@include devices {
+			order: -1;
+			margin: vc(-10);
+			height: vc(160);
 		}
 	}
 
