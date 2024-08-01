@@ -55,7 +55,7 @@ body {
 
 main {
 	flex: 1;
-	margin-top: vc(200);
+	margin-top: vc(210);
 
 	@include devices {
 		margin-top: vc(64);
@@ -63,7 +63,7 @@ main {
 }
 
 section {
-	margin: vc(60) 0;
+	margin: vc(90) 0;
 
 	@include devices {
 		margin: vc(30) 0;
@@ -157,14 +157,6 @@ iframe {
 	display: block;
 }
 
-[data-barba='container'] {
-	position: absolute;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-}
-
 .site {
 	display: flex;
 	flex-direction: column;
@@ -188,6 +180,7 @@ iframe {
 
 h1,
 .h1 {
+	display: block;
 	font-weight: 500;
 	font-size: vc(40);
 	line-height: vc(48);
@@ -200,6 +193,7 @@ h1,
 
 h2,
 .h2 {
+	display: block;
 	font-weight: 500;
 	font-size: vc(30);
 
@@ -211,6 +205,7 @@ h2,
 
 h3,
 .h3 {
+	display: block;
 	font-weight: 500;
 	font-size: vc(26);
 
@@ -222,6 +217,7 @@ h3,
 
 h4,
 .h4 {
+	display: block;
 	font-weight: 500;
 	font-size: vc(20);
 }
@@ -235,7 +231,7 @@ h4,
 	padding-bottom: vc(10);
 
 	> *:nth-child(2) {
-		width: 48%;
+		width: 50%;
 
 		@include devices {
 			width: 100%;

@@ -1,4 +1,9 @@
 .dealer {
+	&__hero {
+		overflow: hidden;
+		border-radius: vc(10);
+	}
+
 	&__lead {
 		overflow: hidden;
 		border-radius: vc(10);
@@ -71,6 +76,10 @@
 			padding: vc(54) vc(100);
 			color: $color-white;
 			background: $color-tree-poppy-400;
+
+			b {
+				color: $color-black;
+			}
 
 			@include devices {
 				padding: vc(10);

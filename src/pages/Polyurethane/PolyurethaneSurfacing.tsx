@@ -147,7 +147,7 @@ export const PolyurethaneSurfacing = () => {
       </section>
       <section className="polyurethane__col">
         <div className="container">
-          <span class="h1">Где заказать качественное восстановление полиуретановых колес?</span>
+          <span class="h1 text-center">Где заказать качественное восстановление полиуретановых колес?</span>
           <div className="row">
             <p>
               Качественная наплавка полиуретана на ролики должна проводиться под контролем специалистов с использованием

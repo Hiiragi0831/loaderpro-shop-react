@@ -1,4 +1,23 @@
 .steps {
+	position: relative;
+
+	.container {
+		&::before {
+			content: "";
+			position: absolute;
+			left: 0;
+			bottom: vc(-18);
+			width: 100%;
+			height: vc(18);
+			background: url("/assets/images/icons/arrow-steps.png") no-repeat center center;
+			background-size: 100%;
+
+			@include devices {
+				display: none;
+			}
+		}
+	}
+
 	.swiper {
 		margin: vc(15) vc(-15) 0;
 		padding: vc(15);

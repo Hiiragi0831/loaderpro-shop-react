@@ -15,7 +15,7 @@ const Battery = () => {
       <section className="battery__intro">
         <div className="container">
           <div className="row">
-            <h1>Тяговые аккумуляторы LOADERPRO</h1>
+            <h1 className="h1 text-center">Тяговые аккумуляторы LOADERPRO</h1>
             <div className="battery__intro-box">
               <p>
                 Тяговые аккумуляторы <b>LOADERPRO</b> используются в транспортных средствах с электрическим приводом,
@@ -32,7 +32,7 @@ const Battery = () => {
       <Types />
       <section className="battery__which">
         <div className="container">
-          <h1>Какой аккумулятор используется в вилочном погрузчике?</h1>
+          <span className="h1 text-center d-block">Какой аккумулятор используется в вилочном погрузчике?</span>
           <div className="battery__which-intro">
             <div>
               <p>

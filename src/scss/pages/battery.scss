@@ -1,5 +1,7 @@
 .battery {
 	&__hero {
+		margin-top: vc(60);
+
 		picture {
 			overflow: hidden;
 			border-radius: vc(10);

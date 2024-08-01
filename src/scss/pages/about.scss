@@ -51,6 +51,10 @@
 		overflow: hidden;
 		border-radius: vc(10);
 		height: vc(442);
+
+		@include devices {
+			height: auto;
+		}
 	}
 
 	&-preference {
@@ -68,7 +72,9 @@
 
 	&-requisite {
 		.table {
+			overflow: hidden;
 			border: 2px solid $color-black;
+			border-radius: vc(10);
 			width: 100%;
 
 			&__item {

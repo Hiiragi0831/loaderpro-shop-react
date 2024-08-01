@@ -17,4 +17,12 @@
 			}
 		}
 	}
+
+	&__premium {
+		@include devices {
+			.image {
+				order: -1;
+			}
+		}
+	}
 }

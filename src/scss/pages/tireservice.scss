@@ -22,8 +22,10 @@
 
 	&__pressing,
 	&__price {
-		.image {
-			order: -1;
+		@include devices {
+			.image {
+				order: -1;
+			}
 		}
 	}
 }

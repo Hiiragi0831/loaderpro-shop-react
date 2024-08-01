@@ -31,8 +31,13 @@
 		flex-direction: column;
 		gap: vc(10);
 
-		h1 {
-			margin-bottom: vc(20);
+		.h1 {
+			margin-bottom: vc(30);
+		}
+
+		p + h3,
+		p + h2 {
+			margin-top: vc(20);
 		}
 	}
 

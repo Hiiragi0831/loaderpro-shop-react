@@ -54,6 +54,27 @@
 		}
 	}
 
+	&__info-box {
+		.info-box__text {
+			position: relative;
+
+			&::before {
+				content: "";
+				position: absolute;
+				left: 0;
+				top: 50%;
+				width: 1px;
+				height: 70%;
+				background-color: $color-black;
+				transform: translateY(-50%);
+
+				@include devices {
+					display: none;
+				}
+			}
+		}
+	}
+
 	&__category {
 		.row {
 			display: grid;
@@ -141,6 +162,11 @@
 		}
 
 		&-text {
+			p,
+			.h1 {
+				margin-bottom: vc(10);
+			}
+
 			.button {
 				display: inline-block;
 				margin-top: vc(20);

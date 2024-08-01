@@ -10,7 +10,7 @@ export const useVideo = (id) => {
     if (data) {
       return {
         link: `https://www.youtube.com/watch?v=${data.items[0].id}`,
-        image: data.items[0].snippet.thumbnails.standard.url,
+        image: data.items[0].snippet.thumbnails.maxres.url,
         title: data.items[0].snippet.title,
       };
     }
