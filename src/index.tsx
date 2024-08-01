@@ -21,6 +21,7 @@ import { Dealer } from "./pages/Dealer";
 import { DeliveryPayment } from "./pages/DeliveryPayment";
 import { Favorites } from "./pages/Favorites";
 import Home from "./pages/Home";
+import { OilsLubricants } from "./pages/OilsLubricants";
 import { PolyurethaneSurfacing } from "./pages/Polyurethane/PolyurethaneSurfacing";
 import { PolyurethaneWheels } from "./pages/Polyurethane/PolyurethaneWheels";
 import { PrivacyPolicy } from "./pages/PrivacyPolicy";
@@ -32,7 +33,6 @@ import { Suppliers } from "./pages/Suppliers";
 import { TireService } from "./pages/TireService";
 import { Vacancy } from "./pages/Vacancy";
 import { VacancyManager } from "./pages/Vacancy/VacancyManager";
-import {OilsLubricants} from "./pages/OilsLubricants";
 
 const BaseTemplate = () => {
   return (
