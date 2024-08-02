@@ -1,4 +1,4 @@
-import { Pagination } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 export const Brands = () => {
@@ -69,15 +69,15 @@ export const Brands = () => {
       <div className="container">
         <Swiper
           slidesPerView={1}
+          // @ts-expect-error @ts-expect-error
+          autoplay={{ delay: 3000 }}
+          modules={[Autoplay]}
+          loop={true}
           breakpoints={{
             1024: {
               slidesPerView: 8,
             },
           }}
-          pagination={{
-            clickable: true,
-          }}
-          modules={[Pagination]}
         >
           {data.map((brand, id) => {
             return (
