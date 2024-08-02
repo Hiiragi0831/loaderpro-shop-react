@@ -65,23 +65,17 @@ const Footer = () => {
               <Link className="footer__link" to="/">
                 Главная
               </Link>
-              <Link className="footer__link" to="/suppliers">
-                Поставщикам
+              <Link className="footer__link" to="/vacancy">
+                Вакансии
               </Link>
               <Link className="footer__link" to="/about">
                 О компании
               </Link>
-              <Link className="footer__link" to="/dealer">
-                Дилерам
-              </Link>
-              <Link className="footer__link" to="/delivery-payment">
-                Оплата и доставка
-              </Link>
               <Link className="footer__link" to="/privacy-policy">
                 Конфиденциальность
               </Link>
-              <Link className="footer__link" to="/vacancy">
-                Вакансии
+              <Link className="footer__link" to="/delivery-payment">
+                Оплата и доставка
               </Link>
               <Link className="footer__link" to="/contact">
                 Контакты
@@ -92,28 +86,22 @@ const Footer = () => {
             <p className="footer__links-head">Товары</p>
             <div className="footer__links-row">
               <Link className="footer__link" to="#">
-                Спецтехника
+                Складская техника
               </Link>
               <Link className="footer__link" to="#">
                 Запасные части
               </Link>
-              <Link className="footer__link" to="#">
-                Навесное оборудование
+              <Link className="footer__link" to="/battery">
+                Тяговые аккумуляторы
               </Link>
               <Link className="footer__link" to="#">
                 Шины и диски
               </Link>
-              <Link className="footer__link" to="/battery">
-                Тяговые аккумуляторы
+              <Link className="footer__link" to="/oils-lubricants">
+                Масла и смазки
               </Link>
               <Link className="footer__link" to="/polyurethane-wheels">
                 Полиуретановые колеса
-              </Link>
-              <Link className="footer__link" to="#">
-                Фильтры
-              </Link>
-              <Link className="footer__link" to="/oils-lubricants">
-                Масла и смазки
               </Link>
             </div>
           </div>
@@ -129,9 +117,9 @@ const Footer = () => {
               <Link className="footer__link" to="/polyurethane-surfacing">
                 Восстановление колес
               </Link>
-              <Link className="footer__link" to="/repair-maintenance">
-                Ремонт и обслуживание
-              </Link>
+              {/*<Link className="footer__link" to="/repair-maintenance">*/}
+              {/*  Ремонт и обслуживание*/}
+              {/*</Link>*/}
             </div>
           </div>
         </div>

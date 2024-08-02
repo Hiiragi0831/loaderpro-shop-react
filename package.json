@@ -8,6 +8,7 @@
 	},
 	"dependencies": {
 		"@codesweetly/react-youtube-playlist": "^2.0.0",
+		"@uidotdev/usehooks": "^2.4.1",
 		"fslightbox-react": "^1.7.6",
 		"localforage": "^1.10.0",
 		"lodash-es": "^4.17.21",

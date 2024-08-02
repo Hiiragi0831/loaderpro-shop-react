@@ -1,9 +1,46 @@
+import { useState } from "preact/hooks";
+
 import Articles from "../../components/Articles";
 import { Cta } from "../../components/Cta";
+import { Modal } from "../../components/Modal";
 
 export const VacancyManager = () => {
+  const [modalOpen, setModalOpen] = useState(false);
   return (
     <main>
+      {modalOpen && (
+        <Modal onClose={() => setModalOpen(false)}>
+          <div className="vacancy-modal">
+            <div className="vacancy-modal__text">
+              <div className="vacancy-modal__head">
+                <p className="h1">Крючкова Надежда Андреевна</p>
+                <small>Специалист по подбору персонала</small>
+              </div>
+              <p>Здравствуйте! Меня зовут Надежда, я HR-менеджер в компании ООО “Спецмашина”!</p>
+              <p>Отправьте своё резюме с указанием должности или позвоните и запишитесь на собеседование.</p>
+              <div class="contact__info">
+                <div className="contact__item">
+                  <small>Телефон:</small>
+                  <a href="tel:+79045560011">+7 (904) 556-00-11</a>
+                </div>
+                <div className="contact__item">
+                  <small>Почта:</small>
+                  <a href="mailto:hr@loaderpro.ru">hr@loaderpro.ru</a>
+                </div>
+              </div>
+              <button className="button button__primary" onClick={() => setModalOpen(false)}>
+                Посмотреть другие вакансии
+              </button>
+            </div>
+            <div class="vacancy-modal__image">
+              <picture>
+                <source srcSet="/assets/images/vacancy/hr.jpg" />
+                <img src="/assets/images/vacancy/hr.jpg" alt="" decoding="async" />
+              </picture>
+            </div>
+          </div>
+        </Modal>
+      )}
       <section className="vacancy-inner">
         <div className="container">
           <div className="vacancy-inner__head">
@@ -16,7 +53,9 @@ export const VacancyManager = () => {
               <p>Полная занятость, удаленная работа</p>
             </div>
             <div className="vacancy__buttons">
-              <button className="button button__outline">Показать контакты</button>
+              <button className="button button__outline" onClick={() => setModalOpen(true)}>
+                Показать контакты
+              </button>
               <button className="button button__primary">Откликнуться</button>
             </div>
           </div>

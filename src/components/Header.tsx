@@ -10,6 +10,7 @@ const Header = () => {
               <Link to="/dealer">Дилерам</Link>
               <Link to="/suppliers">Поставщикам</Link>
             </div>
+            <p className="text-uppercase">Ваша техника под надежной защитой</p>
             <div class="header__top-contacts">
               <a href="mailto:zakaz@loaderpro.ru">
                 <div class="svg">
@@ -81,8 +82,8 @@ const Header = () => {
         <div class="container">
           <div class="row">
             <nav>
-              <Link to="#" title="Спецтехника">
-                Спецтехника
+              <Link to="#" title="Складская техника">
+                Складская техника
               </Link>
               <Link to="/catalog" title="Запасные части">
                 Запасные части
@@ -90,17 +91,17 @@ const Header = () => {
               <Link to="#" title="Шины и диски">
                 Шины и диски
               </Link>
-              <Link to="#" title="Навесное оборудование">
-                Навесное оборудование
-              </Link>
               <Link to="/battery" title="Тяговые аккумуляторы">
                 Тяговые аккумуляторы
               </Link>
               <Link to="/polyurethane-wheels" title="Полиуретановые колеса">
                 Полиуретановые колеса
               </Link>
-              <Link to="/repair-maintenance" title="Ремонт и обслуживание">
-                Ремонт и обслуживание
+              <Link to="/polyurethane-surfacing" title="Восстановление колес">
+                Восстановление колес
+              </Link>
+              <Link to="/contact" title="Контакты">
+                Контакты
               </Link>
             </nav>
           </div>
