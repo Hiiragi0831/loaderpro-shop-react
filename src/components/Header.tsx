@@ -9,6 +9,7 @@ const Header = () => {
             <div class="header__top-links">
               <Link to="/dealer">Дилерам</Link>
               <Link to="/suppliers">Поставщикам</Link>
+              <Link to="/">Личный кабинет</Link>
             </div>
             <p className="text-uppercase">Ваша техника под надежной защитой</p>
             <div class="header__top-contacts">
@@ -55,7 +56,7 @@ const Header = () => {
                 <svg>
                   <use xlinkHref="/__spritemap#sprite-user" />
                 </svg>
-                <span>Войти</span>
+                <span>Запросы</span>
               </a>
               <Link to="/favorites">
                 <svg>

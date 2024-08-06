@@ -21,16 +21,14 @@ export const Favorites = () => {
   };
 
   // filteredProducts = data.filter((item) => item.like === true).slice(0);
-  // favorites.indexOf(item.id) !== -1 ? true : false
-
   filteredProducts = data.filter((item) => favorites.indexOf(item.id) !== -1).slice(0);
 
   useLayoutEffect(() => void loadProducts(), []);
   return (
     <main>
-      <section className="product__section">
+      <section className="favorites">
         <div className="container">
-          <h1>Избранное</h1>
+          <h1 className="h1">Избранное</h1>
           <div className="row">
             {isLoading ? "Загрузка" : filteredProducts.map((post) => <Product key={post.id} {...post} />)}
           </div>

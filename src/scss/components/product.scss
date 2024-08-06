@@ -55,13 +55,32 @@
 		cursor: pointer;
 
 		svg {
+			position: absolute;
+			top: 0;
+			transition: opacity $transition, visibility $transition;
+		}
+
+		.heart {
 			fill: $color-woodsmoke-400;
-			transition: fill $transition;
+			opacity: 1;
+			visibility: visible;
+		}
+
+		.heart-solid {
+			fill: $color-tree-poppy-400;
+			opacity: 0;
+			visibility: hidden;
 		}
 
 		@include hover {
-			svg {
-				fill: $color-tree-poppy-400;
+			.heart {
+				opacity: 0;
+				visibility: hidden;
+			}
+
+			.heart-solid {
+				opacity: 1;
+				visibility: visible;
 			}
 		}
 	}

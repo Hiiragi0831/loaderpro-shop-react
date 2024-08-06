@@ -12,12 +12,19 @@ type Props = Pick<ProductType, "price" | "status" | "id" | "image" | "title" | "
 const Product: FC<Props> = (data) => {
   const addToCart = useBasket((state) => state.addToBasket);
   const toggleFavorite = useFavorite((state) => state.toggleFavorite);
+  const favorites = useFavorite((state) => state.favorite);
 
   return (
     <div className="product">
-      <button className={`product__like ${data.like ? "is-active" : ""}`} onClick={() => toggleFavorite(data.id)}>
-        <svg>
+      <button
+        className={`product__like ${favorites.indexOf(data.id) !== -1 ? "is-active" : ""}`}
+        onClick={() => toggleFavorite(data.id)}
+      >
+        <svg className="heart">
           <use xlinkHref="/__spritemap#sprite-heart" />
+        </svg>
+        <svg className="heart-solid">
+          <use xlinkHref="/__spritemap#sprite-heart-solid" />
         </svg>
       </button>
       <div className="product__img">
