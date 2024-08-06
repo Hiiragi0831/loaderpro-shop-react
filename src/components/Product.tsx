@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import { Product as ProductType } from "../common/types/Product";
 import { useBasket } from "../store/basket";
+import { useFavorite } from "../store/favorite";
 import { getPriceFormat } from "../utils/getPriceFormat";
 import { getProductStatus, getProductStatusColor } from "../utils/getProductStatus";
 
@@ -10,13 +11,15 @@ type Props = Pick<ProductType, "price" | "status" | "id" | "image" | "title" | "
 
 const Product: FC<Props> = (data) => {
   const addToCart = useBasket((state) => state.addToBasket);
+  const toggleFavorite = useFavorite((state) => state.toggleFavorite);
+
   return (
     <div className="product">
-      <div className={`product__like ${data.like ? "is-active" : ""}`}>
+      <button className={`product__like ${data.like ? "is-active" : ""}`} onClick={() => toggleFavorite(data.id)}>
         <svg>
           <use xlinkHref="/__spritemap#sprite-heart" />
         </svg>
-      </div>
+      </button>
       <div className="product__img">
         <picture>
           <source srcSet={data.image} />
