@@ -23,8 +23,8 @@ const Footer = () => {
               <use xlinkHref="/__spritemap#sprite-phone" />
             </svg>
             <p>
-              <a href="tel:8 (800) 551-19-96">8 (800) 551-19-96</a> |{" "}
-              <a href="tel:+7 (812) 642-12-56">+7 (812) 642-12-56</a>
+              <a href="tel:88005511996">8 (800) 551-19-96</a> |{" "}
+              <a href="tel:+78126421256">+7 (812) 642-12-56</a>
             </p>
           </div>
           <div className="footer__mail">
@@ -85,16 +85,16 @@ const Footer = () => {
           <div className="footer__links">
             <p className="footer__links-head">Товары</p>
             <div className="footer__links-row">
-              <Link className="footer__link" to="#">
+              <Link className="footer__link" to="/warehouse-equipment">
                 Складская техника
               </Link>
-              <Link className="footer__link" to="#">
+              <Link className="footer__link" to="/spare-parts">
                 Запасные части
               </Link>
               <Link className="footer__link" to="/battery">
                 Тяговые аккумуляторы
               </Link>
-              <Link className="footer__link" to="#">
+              <Link className="footer__link" to="/tires-rims">
                 Шины и диски
               </Link>
               <Link className="footer__link" to="/oils-lubricants">

@@ -29,10 +29,13 @@ import Product from "./pages/Product";
 import { RepairMaintenance } from "./pages/RepairMaintenance";
 import RequestParts from "./pages/RequestParts";
 import SelectionParts from "./pages/SelectionParts";
+import { SpareParts } from "./pages/SpareParts";
 import { Suppliers } from "./pages/Suppliers";
 import { TireService } from "./pages/TireService";
+import { TiresRims } from "./pages/TiresRims";
 import { Vacancy } from "./pages/Vacancy";
 import { VacancyManager } from "./pages/Vacancy/VacancyManager";
+import { WarehouseEquipment } from "./pages/WarehouseEquipment";
 
 const BaseTemplate = () => {
   return (
@@ -141,6 +144,18 @@ const router = createBrowserRouter([
       {
         path: "/oils-lubricants",
         element: <OilsLubricants />,
+      },
+      {
+        path: "/warehouse-equipment",
+        element: <WarehouseEquipment />,
+      },
+      {
+        path: "/spare-parts",
+        element: <SpareParts />,
+      },
+      {
+        path: "/tires-rims",
+        element: <TiresRims />,
       },
     ],
   },
