@@ -9,7 +9,7 @@ const Header = () => {
             <div class="header__top-links">
               <Link to="/dealer">Дилерам</Link>
               <Link to="/suppliers">Поставщикам</Link>
-              <Link to="/">Личный кабинет</Link>
+              <Link to="/account/user">Личный кабинет</Link>
             </div>
             <p className="text-uppercase">Ваша техника под надежной защитой</p>
             <div class="header__top-contacts">
@@ -52,12 +52,12 @@ const Header = () => {
               </label>
             </form>
             <div class="header__action">
-              <a href="#">
+              <Link to="/selectionparts">
                 <svg>
-                  <use xlinkHref="/__spritemap#sprite-user" />
+                  <use xlinkHref="/__spritemap#sprite-rectangle-history-circle-plus" />
                 </svg>
                 <span>Запросы</span>
-              </a>
+              </Link>
               <Link to="/favorites">
                 <svg>
                   <use xlinkHref="/__spritemap#sprite-heart" />

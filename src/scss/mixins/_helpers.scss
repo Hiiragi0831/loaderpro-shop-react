@@ -62,7 +62,7 @@
 @mixin hover {
 	@include desktop {
 		&:hover,
-		&.is-active {
+		&.active {
 			@content;
 		}
 	}

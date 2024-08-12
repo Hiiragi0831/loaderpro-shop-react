@@ -10,6 +10,10 @@ import Header from "./components/Header";
 import { MobileBar } from "./components/MobileBar";
 import ErrorPage from "./error-page";
 import { About } from "./pages/About";
+import { Account } from "./pages/Account";
+import { AccountTemplate } from "./pages/Account/AccountTemplate";
+import { Favorites as AccountFavorites } from "./pages/Account/Favorites";
+import { History } from "./pages/Account/History";
 import Article from "./pages/Article";
 import Basket from "./pages/Basket";
 import Battery from "./pages/Battery";
@@ -156,6 +160,24 @@ const router = createBrowserRouter([
       {
         path: "/tires-rims",
         element: <TiresRims />,
+      },
+    ],
+  },
+  {
+    element: <AccountTemplate />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "/account/user",
+        element: <Account />,
+      },
+      {
+        path: "/account/history",
+        element: <History />,
+      },
+      {
+        path: "/account/favorites",
+        element: <AccountFavorites />,
       },
     ],
   },
