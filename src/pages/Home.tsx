@@ -1,3 +1,5 @@
+import { Helmet } from "react-helmet/es/Helmet";
+
 import Advantages from "../components/Advantages";
 import Articles from "../components/Articles";
 import { Brands } from "../components/Brands";
@@ -11,6 +13,13 @@ import { VideoGallery } from "../components/VideoGallery";
 export default function Home() {
   return (
     <main>
+      <Helmet>
+        <title>Your Page Title</title>
+        <meta name="description" content="Your page description." />
+        <meta property="og:title" content="Your Open Graph Title" />
+        <meta property="og:description" content="Your Open Graph Description" />
+        <meta property="og:image" content="url-to-your-image" />
+      </Helmet>
       <HomeSlider />
       <section>
         <div className="container">

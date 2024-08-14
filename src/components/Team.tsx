@@ -49,8 +49,8 @@ export const Team = () => {
                   <SwiperSlide key={post.id}>
                     <div className="team__slide">
                       <picture>
-                        <source srcSet={post.image} />
-                        <img src={post.image} alt={post.title} decoding="async" />
+                        <source srcSet={`/assets/${post.image}`} />
+                        <img src={`/assets/${post.image}`} alt={post.title} decoding="async" />
                       </picture>
                       <p>
                         <b>{post.title}</b>
