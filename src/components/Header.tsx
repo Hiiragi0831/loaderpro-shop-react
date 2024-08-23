@@ -9,6 +9,7 @@ const Header = () => {
             <div class="header__top-links">
               <Link to="/dealer">Дилерам</Link>
               <Link to="/suppliers">Поставщикам</Link>
+              <Link to="/account/user">Личный кабинет</Link>
             </div>
             <p className="text-uppercase">Ваша техника под надежной защитой</p>
             <div class="header__top-contacts">
@@ -51,12 +52,12 @@ const Header = () => {
               </label>
             </form>
             <div class="header__action">
-              <a href="#">
+              <Link to="/selectionparts">
                 <svg>
-                  <use xlinkHref="/__spritemap#sprite-user" />
+                  <use xlinkHref="/__spritemap#sprite-rectangle-history-circle-plus" />
                 </svg>
-                <span>Войти</span>
-              </a>
+                <span>Запросы</span>
+              </Link>
               <Link to="/favorites">
                 <svg>
                   <use xlinkHref="/__spritemap#sprite-heart" />
@@ -82,13 +83,13 @@ const Header = () => {
         <div class="container">
           <div class="row">
             <nav>
-              <Link to="#" title="Складская техника">
+              <Link to="/warehouse-equipment" title="Складская техника">
                 Складская техника
               </Link>
               <Link to="/catalog" title="Запасные части">
                 Запасные части
               </Link>
-              <Link to="#" title="Шины и диски">
+              <Link to="/tires-rims" title="Шины и диски">
                 Шины и диски
               </Link>
               <Link to="/battery" title="Тяговые аккумуляторы">

@@ -12,8 +12,8 @@ const Article: FC<Props> = ({ id, title, description, image, date, link }) => {
     <div className="article">
       <div className="article__img">
         <picture>
-          <source srcSet={image} />
-          <img src={image} alt={title} decoding="async" />
+          <source srcSet={`/assets/${image}`} />
+          <img src={`/assets/${image}`} alt={title} decoding="async" />
         </picture>
       </div>
       <div className="article__title">

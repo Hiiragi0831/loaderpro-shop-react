@@ -10,6 +10,10 @@ import Header from "./components/Header";
 import { MobileBar } from "./components/MobileBar";
 import ErrorPage from "./error-page";
 import { About } from "./pages/About";
+import { Account } from "./pages/Account";
+import { AccountTemplate } from "./pages/Account/AccountTemplate";
+import { Favorites as AccountFavorites } from "./pages/Account/Favorites";
+import { History } from "./pages/Account/History";
 import Article from "./pages/Article";
 import Basket from "./pages/Basket";
 import Battery from "./pages/Battery";
@@ -29,10 +33,13 @@ import Product from "./pages/Product";
 import { RepairMaintenance } from "./pages/RepairMaintenance";
 import RequestParts from "./pages/RequestParts";
 import SelectionParts from "./pages/SelectionParts";
+import { SpareParts } from "./pages/SpareParts";
 import { Suppliers } from "./pages/Suppliers";
 import { TireService } from "./pages/TireService";
+import { TiresRims } from "./pages/TiresRims";
 import { Vacancy } from "./pages/Vacancy";
 import { VacancyManager } from "./pages/Vacancy/VacancyManager";
+import { WarehouseEquipment } from "./pages/WarehouseEquipment";
 
 const BaseTemplate = () => {
   return (
@@ -141,6 +148,36 @@ const router = createBrowserRouter([
       {
         path: "/oils-lubricants",
         element: <OilsLubricants />,
+      },
+      {
+        path: "/warehouse-equipment",
+        element: <WarehouseEquipment />,
+      },
+      {
+        path: "/spare-parts",
+        element: <SpareParts />,
+      },
+      {
+        path: "/tires-rims",
+        element: <TiresRims />,
+      },
+    ],
+  },
+  {
+    element: <AccountTemplate />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "/account/user",
+        element: <Account />,
+      },
+      {
+        path: "/account/history",
+        element: <History />,
+      },
+      {
+        path: "/account/favorites",
+        element: <AccountFavorites />,
       },
     ],
   },

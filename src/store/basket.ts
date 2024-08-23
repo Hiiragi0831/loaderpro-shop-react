@@ -65,13 +65,6 @@ export const useBasket = create<Store>()(
           set({ basket: products });
         }
       },
-      // toggleTodo: (todoId) => set({
-      //   todos: get().todos.map(
-      //     todo => todoId === todo.id
-      //       ? { ...todo, completed: !todo.completed }
-      //       : todo
-      //   )
-      // }),
     }),
     { name: "basket" },
   ),

@@ -1,8 +1,8 @@
 import { useLayoutEffect, useState } from "preact/hooks";
 
-import Product from "../components/Product";
-import { api } from "../services/api";
-import { useFavorite } from "../store/favorite";
+import Product from "../../components/Product";
+import { api } from "../../services/api";
+import { useFavorite } from "../../store/favorite";
 
 export const Favorites = () => {
   const [data, setData] = useState([]);
@@ -25,15 +25,14 @@ export const Favorites = () => {
 
   useLayoutEffect(() => void loadProducts(), []);
   return (
-    <main>
-      <section className="favorites">
-        <div className="container">
-          <h1 className="h1">Избранное</h1>
-          <div className="row">
-            {isLoading ? "Загрузка" : filteredProducts.map((post) => <Product key={post.id} {...post} />)}
-          </div>
-        </div>
-      </section>
-    </main>
+    <div class="account__tab">
+      <div class="account__title">
+        <h1>Личный кабинет</h1>
+        <small>Избранное</small>
+      </div>
+      <div class="account__favorite">
+        {isLoading ? "Загрузка" : filteredProducts.map((post) => <Product key={post.id} {...post} />)}
+      </div>
+    </div>
   );
 };

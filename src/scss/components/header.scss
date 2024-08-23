@@ -1,8 +1,8 @@
 .header {
 	position: fixed;
-	background: $color-white;
 	z-index: 10;
 	width: 100%;
+	background: $color-white;
 
 	&__logo {
 		width: vc(260);
@@ -13,8 +13,8 @@
 		}
 
 		@include devices {
-			width: vc(160);
-			height: vc(33);
+			width: vc(140);
+			height: vc(28);
 		}
 	}
 
@@ -74,7 +74,7 @@
 			grid-template-columns: repeat(3, vc(22));
 			margin-right: vc(15);
 			margin-left: auto;
-			gap: vc(15);
+			gap: vc(8);
 
 			a {
 				width: vc(22);
