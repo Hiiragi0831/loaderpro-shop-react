@@ -1,10 +1,8 @@
-import { Link } from "react-router-dom";
-
 import { Achievement } from "../../components/Achievement";
 import Articles from "../../components/Articles";
 import { Cta } from "../../components/Cta";
+import { VideoBlock } from "../../components/VideoBlock";
 import { Category } from "./components/Category";
-import {VideoBlock} from "../../components/VideoBlock";
 
 export const PolyurethaneSurfacing = () => {
   return (
